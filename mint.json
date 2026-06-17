@@ -1,11 +1,6 @@
 {
   "$schema": "https://mintlify.com/schema.json",
   "name": "UniTix",
-  "logo": {
-    "dark": "/logo/dark.png",
-    "light": "/logo/light.png"
-  },
-  "favicon": "/favicon.ico",
   "colors": {
     "primary": "#6B46C1",
     "light": "#9F7AEA",
@@ -23,14 +18,14 @@
   },
   "navigation": [
     {
-      "group": "🚀 Getting Started",
+      "group": "Getting Started",
       "pages": [
-        "introduction",
+        "index",
         "quickstart"
       ]
     },
     {
-      "group": "👥 User Roles & Guides",
+      "group": "User Roles & Guides",
       "pages": [
         "roles/student-guide",
         "roles/society-admin-guide",
@@ -40,7 +35,7 @@
       ]
     },
     {
-      "group": "⚙️ Core Engine Features",
+      "group": "Core Engine Features",
       "pages": [
         "features/waitlist-automation",
         "features/ticket-security",
@@ -49,7 +44,7 @@
     }
   ],
   "footerSocials": {
-    "github": "https://github.com/your-username/unitix",
+    "github": "https://github.com/absar091/unitix",
     "website": "https://unitix.aarx.online"
   }
 }
