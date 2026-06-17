@@ -1,0 +1,55 @@
+{
+  "$schema": "https://mintlify.com/schema.json",
+  "name": "UniTix",
+  "logo": {
+    "dark": "/logo/dark.png",
+    "light": "/logo/light.png"
+  },
+  "favicon": "/favicon.ico",
+  "colors": {
+    "primary": "#6B46C1",
+    "light": "#9F7AEA",
+    "dark": "#44337A"
+  },
+  "topbarLinks": [
+    {
+      "name": "Support",
+      "url": "mailto:support@unitix.com"
+    }
+  ],
+  "topbarCtaButton": {
+    "name": "Open UniTix",
+    "url": "https://unitix.aarx.online"
+  },
+  "navigation": [
+    {
+      "group": "🚀 Getting Started",
+      "pages": [
+        "introduction",
+        "quickstart"
+      ]
+    },
+    {
+      "group": "👥 User Roles & Guides",
+      "pages": [
+        "roles/student-guide",
+        "roles/society-admin-guide",
+        "roles/event-manager-guide",
+        "roles/scanner-guide",
+        "roles/super-admin-guide"
+      ]
+    },
+    {
+      "group": "⚙️ Core Engine Features",
+      "pages": [
+        "features/waitlist-automation",
+        "features/ticket-security",
+        "features/sponsors"
+      ]
+    }
+  ],
+  "footerSocials": {
+    "github": "https://github.com/your-username/unitix",
+    "website": "https://unitix.aarx.online"
+  }
+}

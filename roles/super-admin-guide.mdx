@@ -1,0 +1,25 @@
+---
+title: "Super Admin Guide"
+description: "Global platform management and payouts."
+---
+
+# Super Administration
+
+The **Super Admin** role is reserved for the owners and creators of the UniTix platform. Super Admins have global access to all data across all universities and societies.
+
+## 1. Society Approvals
+
+When a new student organization wants to use UniTix, they fill out the `/register-society` form.
+
+To prevent spam and fraudulent organizations from creating events on campus, their account is placed into a "Pending Review" state.
+
+The Super Admin must log into the Admin Dashboard, review the society's credentials and faculty advisor details, and explicitly click **Approve**. Once approved, the society's Firebase token is granted the `society_admin` custom claim.
+
+## 2. Payout Processing
+
+UniTix acts as the escrow for all ticket sales. When a society requests to withdraw their funds to pay for their event catering or venue, the request goes to the Super Admin.
+
+1. Navigate to the **Global Payouts** dashboard.
+2. Review the Society's requested amount against their current total wallet balance.
+3. Wire the funds to the Society's provided bank account via your real-world banking app.
+4. Click **Mark as Completed** on the dashboard. This deducts the withdrawn amount from the society's virtual wallet.

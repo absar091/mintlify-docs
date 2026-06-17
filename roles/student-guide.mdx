@@ -1,0 +1,40 @@
+---
+title: "Student Guide"
+description: "Everything a student needs to know to buy tickets and attend events."
+---
+
+# The Student Experience
+
+UniTix makes it incredibly easy to find events on campus, purchase tickets, and get through the gate without printing a single piece of paper.
+
+## 1. Buying a Ticket
+
+From the main Dashboard, you will see a feed of all upcoming events.
+
+When you click on an event, you have two checkout options depending on the Society's rules:
+
+- **Free Events:** You can simply click "Reserve Spot" and the ticket is instantly generated.
+- **Paid Events:** You must complete the payment. If the Society uses manual cash collection (e.g., setting up a desk in the cafeteria), you will upload an image of your payment receipt (a "Proof"). The ticket will remain in a **"Pending Payment"** state until the Event Manager manually verifies the cash was received.
+
+## 2. The Digital Ticket
+
+Once your ticket is confirmed, it lives entirely on your phone.
+
+Your ticket is a highly secure, interactive web page accessible at `/ticket/[id]`.
+
+### Features of the Ticket Pass:
+- **Giant QR Code:** Designed to be scanned from a distance with high-contrast borders and a pulsing "READY TO SCAN" indicator.
+- **Dynamic Data:** It shows exactly what time the gates open and what your specific Ticket Type (e.g., VIP, General) is.
+- **Anti-Fraud Protections:** The QR code is a secure JWT. Do not screenshot it! The scanner checks the live cryptographic signature at the gate.
+
+<Tip>
+  You can use the buttons at the top of your digital ticket to save the QR code directly to your device as an image or a PDF if you are worried about cellular data at the venue!
+</Tip>
+
+## 3. Joining the Waitlist
+
+If an event is sold out, the "Buy Ticket" button will automatically change to a **"Join Waitlist"** button.
+
+When you join the waitlist, you are placed in a queue. If someone cancels their ticket, the system will instantly email the first person in the queue and grant them an exclusive **24-hour reservation window** to buy the ticket. 
+
+*For an in-depth look at how this works, read the [Waitlist Automation](/features/waitlist-automation) feature guide.*
