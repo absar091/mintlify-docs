@@ -1,5 +1,5 @@
 {
-  "$schema": "https://mintlify.com/docs.json",
+  "$schema": "https://unitix.aarx.online/docs.json",
   "theme": "mint",
   "name": "UniTix",
   "colors": {
@@ -10,28 +10,29 @@
   "navigation": {
     "pages": [
       {
-        "group": "Getting Started",
+        "group": "Welcome",
         "pages": [
           "index",
-          "quickstart"
+          "getting-started"
         ]
       },
       {
-        "group": "User Roles & Guides",
+        "group": "For Students",
         "pages": [
-          "roles/student-guide",
-          "roles/society-admin-guide",
-          "roles/event-manager-guide",
-          "roles/scanner-guide",
-          "roles/super-admin-guide"
+          "students/browsing-events",
+          "students/digital-tickets",
+          "students/waitlist",
+          "students/policies"
         ]
       },
       {
-        "group": "Core Engine Features",
+        "group": "For Organizers",
         "pages": [
-          "features/waitlist-automation",
-          "features/ticket-security",
-          "features/sponsors"
+          "organizers/dashboard-overview",
+          "organizers/event-creation",
+          "organizers/team-management",
+          "organizers/gate-scanner",
+          "organizers/finances-and-payouts"
         ]
       }
     ],
