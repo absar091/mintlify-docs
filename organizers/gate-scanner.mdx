@@ -1,27 +1,25 @@
 ---
 title: "The Gate Scanner"
-description: "Checking in attendees quickly and securely on event day."
+description: "How to operate the mobile QR scanner app at the venue entrance."
 ---
 
-# Gate Operations
+# Operating the Gate
 
-The UniTix Gate Scanner is a mobile-optimized dashboard designed specifically for fast, secure, and error-free entry operations at the venue. Any user with the **Scanner**, **Event Manager**, or **Society Admin** role can access it.
+The UniTix Gate Scanner is a mobile-optimized web app designed for speed. 
 
-Navigate to `/scan` on your mobile browser (or click **Scanner** in the sidebar) to open the app.
+## How to Scan Tickets
+1. On your mobile phone, open your browser and navigate to `unitix.aarx.online/scan`.
+2. Log in (you must have the Society Admin, Event Manager, or Scanner role).
+3. Select the Event you are currently operating from the dropdown.
+4. Your browser will ask for Camera Permissions. Click **Allow**.
+5. Point the camera at a student's digital QR ticket. The scanner processes the JWT payload and communicates with the server instantly.
 
-## How to Scan
-1. Select the Event you are scanning for from the dropdown.
-2. Grant browser permissions to access your device's camera.
-3. Point the camera at a student's digital QR ticket.
-4. The scanner processes the JWT payload and communicates with the server instantly.
+## Reading the Results
+The scanner will display a large, color-coded alert *above* the camera viewport so you don't have to scroll down.
 
-## Scan Results
-The scanner will display a large, color-coded alert *above* the camera viewport so you don't have to scroll down to see the result:
-
-- **🟢 SUCCESS:** The ticket is valid and the attendee is now checked in. The student's name and ticket tier will be displayed.
-- **🟡 WARNING (Already Scanned):** The ticket is authentic, but this QR code has already been scanned today. This prevents students from sending screenshots of valid tickets to friends outside the gate.
+- **🟢 SUCCESS:** The ticket is valid. The student's name and ticket tier will be displayed. Let them in!
+- **🟡 WARNING (Already Scanned):** The ticket is authentic, but this QR code has already been scanned today. This prevents students from sending screenshots to friends outside the gate. Deny entry.
 - **🔴 ERROR (Invalid/Fake):** The QR code is a forgery, belongs to a different event, or the cryptographic signature is invalid. Deny entry.
 
-<Tip>
-Ensure your scanning devices have a stable 4G/LTE connection, as the scanner requires live verification to prevent screenshot fraud.
-</Tip>
+> [!TIP]
+> Ensure your scanning devices have a stable 4G/LTE connection. The scanner requires live verification to prevent screenshot fraud.

@@ -1,31 +1,24 @@
 ---
 title: "Digital Tickets"
-description: "How to access and use your UniTix digital pass."
+description: "How to access your secure QR code and present it at the gate."
 ---
 
-# Your Digital Ticket
+# Your Cryptographic Ticket
 
-UniTix eliminates the need for paper tickets. Your ticket is a secure, digital pass stored directly in your account.
+UniTix does not use easily-faked PDF attachments or static images. Every ticket is a dynamic, cryptographically signed JSON Web Token (JWT) represented as a QR code.
 
 ## Accessing Your Ticket
-1. Log in to your UniTix account.
-2. Navigate to **My Tickets** in your dashboard.
-3. Click on the upcoming event to view your digital pass.
-
-## Security Features
-
-UniTix tickets are incredibly secure. We use **JWT (JSON Web Token) encryption** to generate the QR code on your ticket. 
-
-What this means for you:
-- **Screenshot-Proof:** Your QR code regenerates and is cryptographically signed. If someone tries to use a screenshot of your ticket, the scanner will immediately flag it as invalid.
-- **Unique Identification:** Every ticket is tied to your account and a unique alphanumeric code (e.g., `UTX-2027-000001`).
+1. Log in to your UniTix account on your smartphone.
+2. Click **My Tickets** in the top navigation bar.
+3. You will see a list of all your upcoming and past events. Click on an upcoming event to view the ticket.
+4. Your unique **QR Code** will be displayed in the center of the screen, along with your Name, University ID, and the Ticket Tier (e.g., VIP).
 
 ## At the Gate
-When you arrive at the event:
-1. Open your UniTix digital pass on your phone and ensure your screen brightness is turned up.
-2. The event staff will scan your QR code using the UniTix Gate Scanner app.
-3. The scan takes less than 2 seconds, and you will be checked in immediately.
+**How to check in:**
+1. Open the My Tickets page on your phone while waiting in line.
+2. Turn up your screen brightness.
+3. Present the live QR code to the Gate Scanner volunteer.
+4. They will scan it, and their device will instantly verify the cryptographic signature and check you into the system.
 
-<Tip>
-Because the tickets require live verification, please make sure you load your ticket while you have internet access before reaching the gate.
-</Tip>
+> [!WARNING]
+> **Do NOT take a screenshot!** The Gate Scanner app tracks live validation. If you attempt to send a screenshot of your ticket to a friend, or present a screenshot at the gate, the scanner will flag it as a duplicate or invalid ticket, and you may be denied entry.

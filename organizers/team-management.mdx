@@ -1,25 +1,33 @@
 ---
 title: "Team Management"
-description: "Delegating tasks using role-based access control."
+description: "How to safely invite managers and scanners using Role-Based Access Control."
 ---
 
 # Building Your Team
 
-As a Society Admin, you shouldn't have to do everything yourself. UniTix provides a strict Role-Based Access Control (RBAC) system so you can safely invite your team members to help manage the platform without giving them the keys to your bank account.
+As a Society Admin, you have the ability to delegate operations securely using strict Role-Based Access Control (RBAC). 
 
-Navigate to **Members** in your dashboard to send email invitations to your team.
+## How to Invite a Team Member
+1. Navigate to the **Members** tab in your dashboard sidebar.
+2. Click **Invite Member**.
+3. Enter their registered UniTix email address.
+4. Select their Role (see below).
+5. Click Send Invite. The member will receive an email and their dashboard will update instantly.
 
 ## Available Roles
 
-### Event Manager
-Event Managers have extensive permissions to run the day-to-day operations.
+### 1. Event Manager
+Event Managers handle the heavy lifting of day-to-day operations.
 - **Can:** Create events, edit ticket tiers, view the public page, and manually approve pending payment screenshots.
 - **Cannot:** Access the Wallet, request payouts, change the society's bank details, or delete the society.
 
-### Scanner
-The Scanner role is highly restricted and designed exclusively for event day volunteers at the gate.
-- **Can:** Log in to the Gate Scanner app, scan QR codes, and view basic attendee check-in stats.
-- **Cannot:** View revenue, edit events, or access any other part of the dashboard.
+### 2. Scanner
+The Scanner role is exclusively for event day volunteers at the gate.
+- **Can:** Access the `/scan` mobile app to validate QR codes.
+- **Cannot:** View revenue, edit events, or access the main dashboard.
 
-## Revoking Access
-If a team member leaves your society, you can instantly revoke their access from the Members tab. The next time they try to load any dashboard page, they will be securely blocked by the platform's route guards.
+## How to Revoke Access
+If a team member leaves, you must remove them to protect your data.
+1. Go to the **Members** tab.
+2. Click the trash icon next to their name.
+3. Their access is instantly terminated by our backend route guards.

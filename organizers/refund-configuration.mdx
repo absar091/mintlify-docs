@@ -1,0 +1,32 @@
+---
+title: "Configuring Refunds"
+description: "How to set up your cancellation penalty distributions."
+---
+
+# The Dynamic Refund Policy
+
+As an Organizer, you have total control over whether your event offers refunds, and what penalties apply when a student cancels their ticket.
+
+## How to Configure the Policy
+When creating or editing an event, scroll to the **Cancellation & Refund Policy** section.
+
+If you enable refunds, you must configure **Penalty Tiers**. The total percentage across the 3 fields in a tier MUST equal 100%.
+
+### Example Setup
+**Tier 1: Cancelled over 7 Days before event**
+- `% Refunded to Student`: 80%
+- `% Kept by Society`: 10%
+- `% Kept by Platform (UniTix)`: 10% (Note: UniTix keeps the baseline fee + processing overhead)
+
+**Tier 2: Cancelled 48 Hours to 7 Days before event**
+- `% Refunded to Student`: 50%
+- `% Kept by Society`: 30%
+- `% Kept by Platform (UniTix)`: 20%
+
+*Hardcoded Rule: Cancellations within 24 hours of purchase are 100% refunded to the student (buyer's remorse), and cancellations under 48 hours before the event are 0% refunded to prevent last-minute empty seats.*
+
+## Automated Processing
+When a student clicks "Cancel Reservation" in their dashboard, the platform automatically determines which time window they fall into. 
+- The ticket is immediately released to the Waitlist.
+- Your Society's Gross Revenue is instantly recalculated based on the penalty percentage you kept.
+- UniTix Operations will handle routing the refunded percentage back to the student.

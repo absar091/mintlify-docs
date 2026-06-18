@@ -10,7 +10,7 @@
   "navigation": {
     "pages": [
       {
-        "group": "Welcome",
+        "group": "Getting Started",
         "pages": [
           "index",
           "getting-started"
@@ -20,8 +20,11 @@
         "group": "For Students",
         "pages": [
           "students/browsing-events",
-          "students/digital-tickets",
+          "students/checkout-payments",
           "students/waitlist",
+          "students/digital-tickets",
+          "students/ticket-transfer",
+          "students/certificates",
           "students/policies"
         ]
       },
@@ -29,10 +32,20 @@
         "group": "For Organizers",
         "pages": [
           "organizers/dashboard-overview",
+          "organizers/public-presence",
           "organizers/event-creation",
+          "organizers/refund-configuration",
           "organizers/team-management",
           "organizers/gate-scanner",
-          "organizers/finances-and-payouts"
+          "organizers/finances-and-payouts",
+          "organizers/analytics-and-reports"
+        ]
+      },
+      {
+        "group": "Legal & Compliance",
+        "pages": [
+          "legal/privacy-policy",
+          "legal/terms-of-service"
         ]
       }
     ],
