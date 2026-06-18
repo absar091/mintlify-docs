@@ -1,7 +1,7 @@
 {
   "$schema": "https://unitix.aarx.online/docs.json",
   "theme": "mint",
-  "name": "UniTix",
+  "name": "UniTix by AARX Labs",
   "colors": {
     "primary": "#6B46C1",
     "light": "#9F7AEA",
@@ -70,6 +70,20 @@
     "socials": {
       "github": "https://github.com/absar091/unitix",
       "website": "https://unitix.aarx.online"
+    }
+  },
+  "description": "UniTix is a modern, all-in-one event management and ticketing platform designed exclusively for university societies and student bodies. We bridge the gap between event organizers and students. We've built a platform that handles everything from beautiful event pages and seamless checkout flows to on-the-ground QR scanning and post-event analytics.",
+  "logo": {
+    "light": "/images/ChatGPTImageJun16,2026,08_13_50AM.png",
+    "dark": "/images/ChatGPTImageJun16,2026,08_13_50AM.png"
+  },
+  "favicon": {
+    "light": "/images/ChatGPTImageJun16,2026,08_13_50AM.png",
+    "dark": "/images/ChatGPTImageJun16,2026,08_13_50AM.png"
+  },
+  "fonts": {
+    "heading": {
+      "family": "Roboto"
     }
   }
 }
