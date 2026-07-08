@@ -13,12 +13,12 @@ Popular university events, guest lectures, and concerts frequently sell out with
 When an event's overall venue capacity or a specific ticket tier's inventory limit reaches `100% Sold Out`:
 - The standard **Buy Ticket / Get Free Ticket** buttons automatically convert into **Join Waitlist**.
 - Any verified student can click **Join Waitlist** with one tap.
-- You are added to a structured chronological queue (`waitlists` collection in Firestore), timestamped to the exact millisecond you clicked.
+- You are added to a structured chronological waitlist queue, timestamped to the exact millisecond you clicked.
 
 ---
 
 ## 2. Automatic Inventory Reallocation
-Our serverless cron jobs (`/api/cron/release-tickets` and `/api/cron/cleanup-waitlist`) monitor event inventory 24/7. A sold-out slot automatically reopens whenever:
+Our automated reallocation engine monitors event inventory 24/7. A sold-out slot automatically reopens whenever:
 1. **A Student Cancels:** An existing attendee clicks *Cancel Reservation* inside their dashboard.
 2. **A Payment Receipt Is Rejected:** An organizer rejects a pending manual payment screenshot (`pending_payment -> cancelled`).
 3. **An Organizer Increases Capacity:** The society expands the venue limit or adds additional seats to a tier.

@@ -30,7 +30,7 @@ A high-velocity dashboard built for Society Presidents, Vice Presidents, and Eve
 - **Hero Analytics Suite:** 8 real-time metric cards tracking *Gross Revenue, Net Take-Home (`Gross - Fee - Refunds`), Tickets Sold, Available Inventory, Pending Verifications, Booked Passes, Cancelled Orders,* and *Refund Requests*.
 - **Interactive Visualizations:** `Recharts` powered time-series revenue graphs and ticket status pie breakdowns.
 - **Double-Capacity Protection:** Strict venue safety locks preventing overcrowding and blocking capacity reductions below already sold ticket counts.
-- **Automated Waitlists:** Serverless cron jobs automatically reallocate sold-out slots to queued students whenever an attendee cancels or a payment receipt is rejected.
+- **Automated Waitlists:** Automated background workers instantly reallocate sold-out slots to queued students whenever an attendee cancels or a payment receipt is rejected.
 
 ### 4. 🔒 Role-Based Access Control & Financial Transparency
 - **Multi-Tiered RBAC:** Delegate operations without exposing sensitive credentials. Invite officers as *Event Managers* (can edit events and verify payments) or volunteers as *Gate Scanners* (can only access the `/scan` mobile app).
@@ -51,7 +51,7 @@ Explore our exhaustive operational guides tailored to your exact campus role:
     Master our paid checkout workflow: claiming free passes, uploading JazzCash/IBFT receipts, and tracking pending reviews.
   </Card>
   <Card title="Automated Waitlists & Queue Tracking" icon="clock" href="/students/waitlist">
-    Understand how our serverless cron engine reallocates sold-out inventory and how to claim waitlisted slots within 24 hours.
+    Understand how our automated reallocation engine reassigns sold-out inventory and how to claim waitlisted slots within 24 hours.
   </Card>
   <Card title="Digital QR Passes & Security" icon="qrcode" href="/students/digital-tickets">
     Explore the cryptographic JWT structure of your mobile pass, offline presentation, and why screenshots are blocked at gates.
@@ -90,9 +90,21 @@ Explore our exhaustive operational guides tailored to your exact campus role:
     Track ticket sales velocity, analyze conversion funnels across date horizons, and export structured `.CSV` attendee manifests.
   </Card>
   <Card title="Privacy & Data Protection Policy" icon="lock" href="/legal/privacy-policy">
-    Review how we encrypt student identity, protect CNIC/KYC storage via Firestore and Cloud Storage, and comply with PDPA/GDPR.
+    Review how we encrypt student identity, protect identity records via multi-region cloud storage, and comply with data protection regulations.
   </Card>
   <Card title="Terms of Service & Platform Rules" icon="gavel" href="/legal/terms-of-service">
     Examine user agreements governing ticket ownership, anti-scalping bans, overcrowding safety rules, and payout obligations.
+  </Card>
+  <Card title="Platform Governance & Compliance" icon="shield-halved" href="/admin/platform-governance">
+    Explore how administration audits society KYC records, manages fee structures, and enforces venue safety standards.
+  </Card>
+  <Card title="Financial Audit & Payout Operations" icon="file-invoice-dollar" href="/admin/financial-reconciliation">
+    Review how administration audits ledger balances, executes electronic wire transfers (`IBFT`), and reconciles event refunds.
+  </Card>
+  <Card title="Student Ambassador Program" icon="bullhorn" href="/programs/student-ambassadors">
+    Learn how campus promoters earn rewards, generate unique referral links, and track sales commissions across leaderboards.
+  </Card>
+  <Card title="Public Certificate Verification" icon="circle-check" href="/programs/public-certificate-verification">
+    Discover how employers and HR recruiters verify attendance certificates instantly via QR scan or unique Certificate UUIDs.
   </Card>
 </CardGroup>

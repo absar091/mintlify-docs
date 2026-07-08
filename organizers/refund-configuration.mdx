@@ -52,8 +52,8 @@ Once the clock ticks below **48 hours prior to event commencement**, automated c
 
 ## 5. What Happens When a Ticket Is Cancelled?
 When a student triggers a valid cancellation from their dashboard (`My Tickets -> Cancel Reservation`):
-1. **Status Update:** The ticket document in Firestore immediately transitions from `approved` to `cancelled` (or `refunded`).
+1. **Status Update:** The student's ticket record immediately transitions from `approved` to `cancelled` (or `refunded`).
 2. **QR Invalidation:** The student's digital QR token (`qrToken`) is permanently revoked, ensuring the cancelled pass cannot be scanned at the gate.
 3. **Inventory Release:** The venue capacity and specific ticket tier inventory count are instantly decremented (`sold - 1`), reopening one available slot for new purchases.
-4. **Waitlist Trigger:** If students are queued on the automated waitlist, the cron engine immediately reserves the newly freed slot for the first student in line and dispatches an SMS/Email notification.
+4. **Waitlist Trigger:** If students are queued on the automated waitlist, our background allocation engine immediately reserves the newly freed slot for the first student in line and dispatches an SMS/Email notification.
 5. **Ledger Reconciliation:** Your dashboard Net Revenue card dynamically updates to subtract the refunded portion while retaining your society's cancellation penalty cut.

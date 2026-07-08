@@ -1,49 +1,44 @@
 ---
-title: "Financial Reconciliation & Payouts"
-description: "How platform administrators audit society balances, process bulk wire withdrawals, complete refunds, and manage university directories."
+title: "Financial Reconciliation & Payout Operations"
+description: "How UniTix Administration audits society ledger balances, executes electronic wire transfers, and reconciles event refunds."
 ---
 
 # Financial Audit & Payout Operations
 
-The **Financial Reconciliation Hub** (`admin-dashboard/payouts` and `admin-dashboard/refunds`) provides root platform operators with absolute oversight over the entire financial ledger. Every ticket sale, cancellation deduction, and payout request flows through immutable transaction records.
+The **Financial Reconciliation Hub** provides UniTix Administration with absolute oversight over the platform's financial ledger. Every ticket sale, cancellation deduction, and wire payout request flows through immutable transaction records to ensure total financial transparency and accuracy.
 
 ---
 
-## 1. Processing Society Payout Requests
-When an event concludes and a society requests a withdrawal from their **Available Balance (`PKR`)**, the request appears in the **Pending Payouts Queue** (`/admin-dashboard/payouts`).
+## 1. Auditing & Processing Society Payouts
+When an event successfully concludes, the organizing society submits a withdrawal request for their **Available Balance (`PKR`)** from their wallet.
 
-### Step-by-Step Payout Execution:
-1. Navigate to **Pending Payouts**.
-2. **Review Reconciliation Summary:** Inspect the society's total Gross Revenue, total Platform Fee deductions (`2.5%` or `customFeePercentage`), total processed refunds, and any penalty deductions applied by administration.
-3. **Verify Bank Ledger:** Check the society's registered Bank Account Title, Bank Name, and International Bank Account Number (`IBAN`).
-4. **Execute Wire Transfer (`IBFT / EFT`):** Open the platform's corporate banking portal and execute an electronic funds transfer matching the exact requested take-home amount (`PKR`).
-5. **Mark as Paid (`/api/admin/payouts/process`):**
-   - Enter the official Bank Transaction Reference Number (`EFT-Ref-UUID`) into the admin dashboard modal.
-   - Click **Complete Payout**.
-   - The society's wallet balance resets cleanly, and an official payout receipt is deposited directly into their ledger history.
-
----
-
-## 2. Bulk Refund Reconciliation (`/api/admin/refunds/bulk-complete`)
-When an event is postponed or cancelled, or when dozens of students cancel reservations within eligible time windows, those refunds enter the **Refunds Queue** (`/admin-dashboard/refunds`).
-
-### How Bulk Refunds Work:
-1. Filter open refund requests by specific event or organizing society.
-2. Select individual or bulk student refund rows.
-3. **Execute Reversals:** Once funds are reversed via payment gateway or manual bank credit, click **Mark Complete / Bulk Complete**.
-4. The ticket documents permanently transition to `status: refunded`, and the accounting ledgers for both the student and the society balance to exact zero.
+### Step-by-Step Reconciliation & Wire Execution:
+1. **Ledger Audit:** Accounting officers review the comprehensive event reconciliation summary, verifying:
+   - Total Gross Ticket Revenue collected across all tiers.
+   - Standard processing fee or custom institutional tier deductions (`2.5%` or negotiated rate).
+   - Total approved refunds processed back to students.
+   - Final net take-home earnings (`Net Revenue`).
+2. **Banking Verification:** Officers re-verify the society's registered **International Bank Account Number (`IBAN`)** and Account Title against KYC compliance records.
+3. **Electronic Wire Execution (`IBFT / EFT`):** Funds are transferred directly from the platform's corporate settlement accounts to the society's registered bank account via secure Inter-Bank Fund Transfer (`IBFT`).
+4. **Receipt Inscription:** Upon successful wire completion, the official Bank Transaction Reference Number (`EFT Reference ID`) is logged directly into the society's permanent payout history, marking the cycle as completed.
 
 ---
 
-## 3. Managing the University Directory
-To ensure structured onboarding across campuses, the Super Admin maintains the **Universities Directory** (`admin-dashboard/universities`).
-- Add new target universities along with their official domain extensions (`@lums.edu.pk`, `@nust.edu.pk`, `@giki.edu.pk`).
-- Organizers registering from those campuses are automatically mapped to their respective university directories across the student marketplace filters.
+## 2. Bulk Refund & Event Postponement Reconciliation
+In the event that an organizing society postpones or cancels an event, or when significant cancellation requests occur within eligible time windows, UniTix Administration coordinates bulk financial reversals:
+- **Batch Processing:** Approved student refunds are processed back to the original payment methods (`JazzCash`, `EasyPaisa`, or direct bank credit) across structured batches.
+- **Ledger Balancing:** The ticket records transition cleanly to refunded status, ensuring that both the student wallet history and the society accounting ledger balance to exact zero without discrepancy.
 
 ---
 
-## 4. User Moderation & Role Assignment
-The **Users Management Table** (`admin-dashboard/users`) allows administrators to inspect every registered user account across the entire ecosystem.
-- Search users by Name, Roll Number, or Email address.
-- **Role Assignment (`/api/admin/users/action`):** Elevate standard students to *Super Admin* or demote compromised accounts.
-- **Account Suspension:** Immediately lock user profiles or revoke compromised authentication sessions if suspicious ticket transfer patterns or scalping attempts are detected.
+## 3. University Directory & Campus Mapping
+To ensure structured onboarding across diverse academic institutions, Administration maintains the verified **Universities Directory**:
+- New university campuses are mapped to their official institutional domain names (`@university.edu.pk`).
+- Organizers and students registering from those institutions are automatically organized into distinct campus directories across the student marketplace discovery filters.
+
+---
+
+## 4. Account Integrity & Anti-Scalping Moderation
+UniTix Administration actively monitors platform transactions to protect the student community from unauthorized ticket scalping, bot reservations, or receipt fraud:
+- Accounts found attempting to commercialize or auction student passes above face value (`PKR`) are immediately restricted.
+- Voided or fraudulent reservations are instantly cancelled, and the associated inventory slots are automatically released back to legitimate students queued on the event waitlist.

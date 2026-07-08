@@ -42,9 +42,9 @@
         ]
       },
       {
-        "group": "Platform Governance & Admin",
+        "group": "Platform & Compliance Governance",
         "pages": [
-          "admin/super-admin-command-center",
+          "admin/platform-governance",
           "admin/financial-reconciliation"
         ]
       },
