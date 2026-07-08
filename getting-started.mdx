@@ -1,34 +1,46 @@
 ---
-title: "Getting Started"
-description: "How to register as a student or apply to bring your university society to UniTix."
+title: "Comprehensive Getting Started Guide"
+description: "Detailed onboarding walkthrough for university students, volunteer gate scanners, and society presidents."
 ---
 
-# Creating a Student Account
+# Welcome to UniTix
 
-To purchase tickets, transfer them, or join waitlists, you need a Student Account.
-
-**How to Sign Up:**
-1. Navigate to `unitix.aarx.online` and click **Login / Sign Up** in the top right.
-2. Enter your primary email address and a secure password.
-3. Verify your email address (check your inbox for a confirmation link).
-4. Complete your profile by entering your **Full Name** and **University Roll/Registration Number**.
-5. Upload a clear **Profile Picture**. *(Important: This picture is displayed to Gate Scanners to verify your identity. Use a clear headshot.)*
+Whether you are a university student looking to discover campus events or a society president preparing to launch a 2,000-person festival, this onboarding guide walks you through every step required to configure your account, verify your academic credentials, and unlock our full enterprise ticketing engine.
 
 ---
 
-# Registering a Society (For Organizers)
+## 1. Creating & Verifying a Student Account
+To purchase digital passes, join waitlists, transfer tickets, or claim post-event attendance certificates, you must create an official **UniTix Student Profile**.
 
-If you are a Society President or Executive, you must submit your society for approval before you can start selling tickets.
+### Step-by-Step Student Onboarding:
+1. Navigate to the primary marketplace: `unitix.aarx.online` and click **Login / Sign Up** in the top right header.
+2. **Account Creation:** Enter your primary university email address (or personal email) and create a strong password (`8+ characters`).
+3. **Email Verification:** Check your inbox for our automated verification link (`Verify Your Email Address`). Click the link to activate your session.
+4. **Academic Identity Verification (`Required for Ticket Purchases`):**
+   - **Full Legal Name:** Enter your name exactly as it appears on your student ID card.
+   - **University Roll / Registration Number:** Enter your exact student number (`e.g., 2022-CS-101` or `21-EE-045`). This number is permanently stamped on your digital QR passes and attendance certificates.
+5. **Profile Headshot (`Facial Check at Gate`):** Upload a clear, high-contrast headshot photograph. 
+   - *Security Notice:* When you present your digital pass at venue gates (`unitix.aarx.online/scan`), your profile picture is rendered directly on the security guard's screen alongside your roll number to verify your physical identity and prevent pass sharing.
 
-**How to Register Your Society:**
-1. Create a standard Student Account (see above).
-2. While logged in, click **Register Society** in the navigation bar.
-3. Fill out the multi-step application form:
-   - **Basic Details:** Society Name, University Name, and a Logo.
-   - **Faculty Advisor:** Provide the Name, Email, and Phone Number of the university staff member overseeing your society.
-   - **President Details:** Provide your CNIC (National ID Card) Front and Back images.
-   - **Bank Details:** Enter the official IBAN and Account Title where ticket payouts should be routed.
-4. Click **Submit Application**.
+---
 
-**What Happens Next?**
-Your application enters the **Pending** state. The UniTix Operations team will manually review your submitted documents to ensure compliance with Anti-Money Laundering (AML) regulations and verify your society's authenticity. This process usually takes 24-48 hours. Once approved, your dashboard will unlock!
+## 2. Registering an Organizing Society (For Presidents)
+If you are the President, Vice President, or Executive Director of a university society, club, or departmental chapter, you must submit an official registration application before you can create events or collect funds.
+
+### Step-by-Step Society Registration:
+1. Log into your verified Student Account on `unitix.aarx.online`.
+2. Click **Register Society** in the top navigation bar or sidebar.
+3. Complete the **Multi-Stage Onboarding Application**:
+   - **Basic Identity:** Enter your exact Society Name, select your University, choose a clean URL slug (`/s/your-slug`), and upload a `1:1` square logo and `16:9` widescreen banner.
+   - **Faculty Advisor Verification:** Enter the full Name, Title, and official university email address (`@university.edu.pk`) of your supervising Professor or Faculty Advisor.
+   - **KYC Identity Verification:** Upload high-resolution photographs of the Society President's **National ID Card (`CNIC`) Front & Back**. This is required by financial regulations to prevent money laundering (`AML`) and fraudulent ticket operations.
+   - **Society Banking Ledger:** Enter your official Bank Account Title, Bank Name, and International Bank Account Number (`IBAN`). All ticket revenue payouts are routed via direct wire (`IBFT`) exclusively to this registered account.
+4. Click **Submit Application for Review**.
+
+---
+
+## 3. The Verification Review Lifecycle
+Once submitted, your society transitions into the **Pending Review (`status: pending`)** state:
+- **Operations Audit (`24 to 48 Hours`):** Our compliance team manually inspects your CNIC copies, verifies the university IBAN format, and validates your Faculty Advisor.
+- **Advisor Endorsement:** An automated verification link is emailed directly to your Faculty Advisor (`/api/public/verify-advisor`). Once the advisor clicks to confirm their supervision, your profile unlocks the **Verified Blue Checkmark (`☑️ Verified Society`)**.
+- **Dashboard Unlock:** Upon approval, your student navigation bar dynamically updates to include **Society Dashboard**, giving you instant access to the Event Builder, Gate Scanners, Analytics Suite, and Wallet!

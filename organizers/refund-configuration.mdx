@@ -1,32 +1,59 @@
 ---
-title: "Configuring Refunds"
-description: "How to set up your cancellation penalty distributions."
+title: "Configuring Refunds & Cancellation Policies"
+description: "Detailed operational guide on setting up tiered cancellation penalty distributions and automated refund workflows."
 ---
 
-# The Dynamic Refund Policy
+# The Multi-Tiered Refund Engine
 
-As an Organizer, you have total control over whether your event offers refunds, and what penalties apply when a student cancels their ticket.
+UniTix empowers event organizers with a fully customizable, automated **Multi-Tiered Cancellation & Refund Engine**. Instead of dealing with messy manual disputes on social media or email, your cancellation rules are codified into your event settings, displayed transparently during checkout, and enforced automatically by our serverless logic.
 
-## How to Configure the Policy
-When creating or editing an event, scroll to the **Cancellation & Refund Policy** section.
+---
 
-If you enable refunds, you must configure **Penalty Tiers**. The total percentage across the 3 fields in a tier MUST equal 100%.
+## 1. Enabling & Structuring Refund Policies
+When creating or modifying an event in the Event Builder (`society-dashboard/events`), scroll to the **Cancellation & Refund Policy** section. You can toggle **Allow Refunds** on or off:
+- **No Refunds (Strict):** Once purchased, tickets cannot be cancelled by the student for financial reimbursement (though they may still transfer them if transfers are enabled).
+- **Tiered Refunds (Dynamic):** Students can cancel their reservations within specific time windows, triggering automated split distributions.
 
-### Example Setup
-**Tier 1: Cancelled over 7 Days before event**
-- `% Refunded to Student`: 80%
-- `% Kept by Society`: 10%
-- `% Kept by Platform (UniTix)`: 10% (Note: UniTix keeps the baseline fee + processing overhead)
+---
 
-**Tier 2: Cancelled 48 Hours to 7 Days before event**
-- `% Refunded to Student`: 50%
-- `% Kept by Society`: 30%
-- `% Kept by Platform (UniTix)`: 20%
+## 2. Penalty Split Distribution Logic
+For every cancellation window you define, the financial distribution across three entities **must equal exactly 100%**:
 
-*Hardcoded Rule: Cancellations within 24 hours of purchase are 100% refunded to the student (buyer's remorse), and cancellations under 48 hours before the event are 0% refunded to prevent last-minute empty seats.*
+$$\text{Student Refund \%} + \text{Society Cut \%} + \text{Platform Cut \%} = 100\%$$
 
-## Automated Processing
-When a student clicks "Cancel Reservation" in their dashboard, the platform automatically determines which time window they fall into. 
-- The ticket is immediately released to the Waitlist.
-- Your Society's Gross Revenue is instantly recalculated based on the penalty percentage you kept.
-- UniTix Operations will handle routing the refunded percentage back to the student.
+### Breakdown of Entities:
+1. **Student Refund (`% Refunded to Student`):** The exact percentage of the original ticket price returned to the student's payment account (`PKR`).
+2. **Society Cut (`% Kept by Society`):** The cancellation penalty fee retained by your society as compensation for holding the inventory slot. This amount remains part of your take-home revenue.
+3. **Platform Cut (`% Kept by Platform`):** The processing and gateway fee retained by UniTix (`10% - 20%` depending on tier) to cover payment reversal costs, SMS notifications, and database operations.
+
+---
+
+## 3. Standard Time-Window Configurations
+Our system evaluates cancellation requests based on the exact timestamp difference between the cancellation click and your event's scheduled start time:
+
+| Cancellation Window | Recommended Student Refund | Recommended Society Cut | Recommended Platform Cut | Operational Rationale |
+| :--- | :--- | :--- | :--- | :--- |
+| **Tier 1: > 7 Days Before Event** | `80%` | `10%` | `10%` | Plenty of time remains to resell the ticket to waitlisted students. |
+| **Tier 2: 48 Hours to 7 Days** | `50%` | `30%` | `20%` | Moderate penalty to discourage casual cancellations closer to event day. |
+| **Final Window: < 48 Hours** | `0%` | `100%` | `0%` | **Hard Lock:** Prevents last-minute no-shows from leaving empty seats at the venue. |
+
+---
+
+## 4. Built-In Platform Safety Policies
+To protect both students and organizers from edge cases, the UniTix backend enforces two immutable global rules:
+
+### ⏱️ 24-Hour Buyer's Remorse Grace Period
+If a student purchases a ticket and requests a cancellation **within 24 hours of the original purchase timestamp** (and the event is more than 48 hours away), they are automatically granted a **100% full refund**. This protects students who accidentally selected the wrong tier or date during checkout.
+
+### 🛑 48-Hour Hard Cutoff Guard
+Once the clock ticks below **48 hours prior to event commencement**, automated cancellation requests are locked across all standard events (`0% refund`). This ensures your catering, venue seating, and security numbers remain stable during final preparations.
+
+---
+
+## 5. What Happens When a Ticket Is Cancelled?
+When a student triggers a valid cancellation from their dashboard (`My Tickets -> Cancel Reservation`):
+1. **Status Update:** The ticket document in Firestore immediately transitions from `approved` to `cancelled` (or `refunded`).
+2. **QR Invalidation:** The student's digital QR token (`qrToken`) is permanently revoked, ensuring the cancelled pass cannot be scanned at the gate.
+3. **Inventory Release:** The venue capacity and specific ticket tier inventory count are instantly decremented (`sold - 1`), reopening one available slot for new purchases.
+4. **Waitlist Trigger:** If students are queued on the automated waitlist, the cron engine immediately reserves the newly freed slot for the first student in line and dispatches an SMS/Email notification.
+5. **Ledger Reconciliation:** Your dashboard Net Revenue card dynamically updates to subtract the refunded portion while retaining your society's cancellation penalty cut.

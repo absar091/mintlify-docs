@@ -1,23 +1,36 @@
 ---
-title: "The Automated Waitlist"
-description: "How to secure a spot when an event sells out."
+title: "Automated Waitlists & Queue Management"
+description: "How to join event waitlists, track your queue position, and automatically secure tickets when cancellations occur."
 ---
 
-# Joining the Waitlist
+# Fair & Automated Waitlists
 
-When an event reaches its maximum venue capacity, or a specific ticket tier sells out, ticket sales are immediately halted. Instead of turning you away, UniTix automatically activates the Waitlist system.
+Popular university events, guest lectures, and concerts frequently sell out within minutes of going live. Instead of forcing students to refresh the page endlessly or rely on unfair manual lists, UniTix features an **Automated Waitlist & Reallocation Engine**.
 
-**How to join:**
-1. Navigate to the sold-out Event Page.
-2. The "Buy Ticket" button will have changed to **Join Waitlist**.
-3. Click it to reserve your spot in line. You do not need to enter payment info to join the waitlist.
+---
 
-## Claiming a Waitlist Spot
+## 1. How the Waitlist Triggers
+When an event's overall venue capacity or a specific ticket tier's inventory limit reaches `100% Sold Out`:
+- The standard **Buy Ticket / Get Free Ticket** buttons automatically convert into **Join Waitlist**.
+- Any verified student can click **Join Waitlist** with one tap.
+- You are added to a structured chronological queue (`waitlists` collection in Firestore), timestamped to the exact millisecond you clicked.
 
-If an attendee cancels their ticket, or the organizers increase the venue capacity, the system will automatically release a ticket to the *first* person on the waitlist.
+---
 
-**How it works:**
-1. You will receive an **email notification** that a ticket has become available for you.
-2. The system gives you a strict **24-hour window** to claim the ticket.
-3. Log in to UniTix, go to your Dashboard, and you will see an alert prompting you to complete your purchase.
-4. If you fail to complete the checkout within 24 hours, the reservation expires, and the ticket is immediately offered to the next person in line.
+## 2. Automatic Inventory Reallocation
+Our serverless cron jobs (`/api/cron/release-tickets` and `/api/cron/cleanup-waitlist`) monitor event inventory 24/7. A sold-out slot automatically reopens whenever:
+1. **A Student Cancels:** An existing attendee clicks *Cancel Reservation* inside their dashboard.
+2. **A Payment Receipt Is Rejected:** An organizer rejects a pending manual payment screenshot (`pending_payment -> cancelled`).
+3. **An Organizer Increases Capacity:** The society expands the venue limit or adds additional seats to a tier.
+
+### The Instant Reallocation Workflow:
+1. **Queue Check:** The moment a slot frees up, the backend queries the waitlist for the `#1` student in line for that specific event and tier.
+2. **Reservation Lock:** The slot is immediately reserved for that student, removing them from the queue and locking the ticket under their profile (`status: waitlist_claimed` or `pending`).
+3. **Instant Notification:** The system dispatches an urgent SMS and Email alert: *“Good news! A ticket for [Event Name] has become available and is reserved for you.”*
+
+---
+
+## 3. Claiming Your Reallocated Slot
+Once you receive a waitlist reallocation notification:
+- **Free Tickets:** If the ticket is free, the system automatically marks it `Approved` and deposits the digital QR pass into your **My Tickets** dashboard immediately!
+- **Paid Tickets:** If the ticket has a cost, you are given a **24-Hour Exclusive Claim Window**. You must log into UniTix, complete the checkout, and upload your payment screenshot before the countdown timer expires. If you miss the window, your reservation lapses, and the slot is automatically offered to student `#2` on the waitlist.

@@ -1,26 +1,41 @@
 ---
-title: "Public Profiles & Presence"
-description: "How to customize your society's public page and brand identity."
+title: "Public Profiles, Branding & Sponsors"
+description: "Detailed guide on customizing your public society page, linking corporate sponsors, and earning campus verification badges."
 ---
 
-# Your Society Profile
+# Your Society's Public Presence
 
-Every Society on UniTix is granted a public-facing profile. This acts as a centralized hub where students can discover your mission, see your corporate sponsors, and view a timeline of all your upcoming and past events.
+Every approved society on UniTix receives a dedicated, high-converting public landing page (`unitix.aarx.online/s/[society-slug]`). This page serves as your society's digital storefront where university students, faculty advisors, and corporate sponsors can review your mission, inspect active events, and browse past event photo galleries.
 
-## How to Edit Your Profile
-1. Navigate to the **Profile** tab in your dashboard sidebar.
-2. Here, you can update your:
-   - **Society Description:** A rich-text bio detailing your society's goals.
-   - **Social Links:** Connect your Instagram, LinkedIn, or Facebook pages.
-   - **Logo & Banner:** Upload a square logo and a 16:9 banner image.
+---
 
-When students click your Society Name on any event page, they are routed to this public profile. Keeping it updated is crucial for building trust and a follower base on campus.
+## 1. Customizing Your Brand Identity
+To configure how your society appears across the student marketplace, navigate to **Society Profile** (`society-dashboard/profile`):
+- **Official Society Name & Slug:** Set your clean URL slug (e.g., `/s/acm-chapter` or `/s/dramatics-club`).
+- **Square Logo:** Upload a high-resolution 1:1 square logo (`PNG` or `WebP`). This renders on student digital QR tickets and event cards.
+- **Hero Banner:** Upload a 16:9 widescreen banner image that serves as the visual header of your public profile page.
+- **Mission Statement & Bio:** Write a rich-text overview of your society's vision, regular workshops, and campus activities.
+- **Social Media Integration:** Connect your official Instagram, LinkedIn, Facebook, and Discord URLs to build followers directly from ticket checkouts.
 
-## Managing Sponsors
-If your events are backed by corporate sponsors, displaying them adds significant legitimacy to your public presence.
+---
 
-**How to Add Sponsors:**
-1. Navigate to the **Sponsors** tab in the sidebar.
-2. Click **Add Sponsor**.
-3. Upload their logo and enter their company name.
-4. When you create an Event, you can select these sponsors from a dropdown menu. Their logos will automatically appear in the "Supported By" section on the public Event Details page.
+## 2. Earning the Verified Badge (KYC & Faculty Verification)
+To protect students from fraudulent or unofficial campus clubs, UniTix awards a prominent **Verified Blue Checkmark (`☑️ Verified Society`)** alongside your society name across all event listings.
+
+### Verification Requirements:
+1. **President CNIC Audit:** The society president must upload clear front and back photos of their National ID Card during initial registration.
+2. **Faculty Advisor Endorsement:** You must submit the official university email address (`@university.edu.pk`) of your supervising Professor or Faculty Advisor.
+3. **Automated Verification Link:** UniTix dispatches a secure verification token to your Faculty Advisor (`/api/public/verify-advisor`). Once the advisor clicks to confirm their supervision, your society profile automatically unlocks the official **Verified Status Badge**.
+
+---
+
+## 3. Corporate Sponsorship Management
+If your events are backed by corporate sponsors, prominently displaying their brand identities adds immense institutional credibility and helps fulfill contractual sponsor impressions.
+
+### How to Add & Link Sponsors:
+1. Navigate to the **Sponsors** tab in your dashboard sidebar and click **Add Sponsor**.
+2. Upload the corporate partner's logo (`PNG` with transparent background recommended) and enter their company name and official website URL.
+3. **Link to Specific Events:** When building or editing any event (`society-dashboard/events`), scroll to the **Sponsors Dropdown**.
+4. Select all relevant brand partners. Their logos will automatically render:
+   - In the **"Supported By"** hero section of your public Event Details page.
+   - On the printable PDF and digital mobile passes issued to checked-in attendees.

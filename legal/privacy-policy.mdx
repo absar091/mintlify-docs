@@ -1,35 +1,56 @@
 ---
-title: "Privacy Policy"
-description: "How UniTix collects, uses, and protects your data."
+title: "Privacy Policy & Data Protection"
+description: "How UniTix collects, encrypts, and safeguards student personal identifiable information (PII) and society financial documents."
 ---
 
-At UniTix ("we," "our," or "us"), securing your personal and financial data is our highest priority. Because we process financial transactions and issue cryptographically secure digital tickets, we are legally required to collect specific identifying information to prevent fraud and maintain the integrity of our platform.
+# Privacy & Data Security Policy
 
-# Information We Collect from Students
-When you register as a student or purchase a ticket, we collect the following to ensure tickets are issued to real, verifiable students:
-- **Identity Data:** Full Legal Name, University Roll/Registration Number, and Profile Image.
-- **Contact Data:** Primary Email Address.
-- **Financial Data:** When purchasing tickets, we collect uploaded screenshots of payment receipts (e.g., JazzCash, EasyPaisa, Bank Transfer) or securely process credit card details via our PCI-compliant payment gateways.
-- **Usage & Device Data:** IP address, browser type, device identifiers, and platform interactions.
+At **UniTix** (`unitix.aarx.online`), safeguarding student identity and organizer financial records is our highest priority. This Privacy Policy details the exact mechanisms by which we collect, store, process, and protect your data in compliance with international privacy standards and local data protection regulations (`PDPA / GDPR`).
 
-# Information We Collect from Society Organizers (KYC)
-To protect students from fraudulent events and to comply with Anti-Money Laundering (AML) regulations regarding payouts, we enforce a strict **Know Your Customer (KYC)** protocol for all Society Organizers. During society registration, we mandate the collection of:
-- **Government Identification:** The front and back images of the Society President/Admin's CNIC (Computerized National Identity Card).
-- **University Documentation:** Official University Letters verifying the Society's existence.
-- **Financial Routing Data:** Official Bank Account details (IBAN, Account Name, Branch Code) for processing ticket payouts.
-- **Faculty Advisor Details:** The name, email, and contact number of the supervising University Faculty member responsible for the society.
+---
 
-# How We Use Your Information
-We do not collect this data arbitrarily. Your information is strictly utilized to:
-- **Verify Authenticity:** We use CNICs, University IDs, and Faculty Advisor contacts to manually verify that every Society on UniTix is authentic, preventing scam events from being hosted on our platform.
-- **Process Payouts securely:** Bank details are used exclusively by UniTix Operations to disburse event earnings to the organizers.
-- **Enforce Ticket Security:** Student names and Profile Images are directly tied to the digital QR tickets. When scanned at the gate, this data is displayed to the scanner to prevent ticket scalping and transfer fraud.
+## 1. Information We Collect
 
-# Information Sharing and Disclosure
-We absolutely **do not sell** your personal information to third parties. Information is only shared under the following circumstances:
-- **With Event Organizers:** When a student buys a ticket, the specific Society organizing that event gains access to the student's Name and University ID to facilitate check-in and manage attendance.
-- **With Law Enforcement:** If required by a court order, subpoena, or to prevent imminent physical harm or financial fraud, we will share identity documents (like CNICs) with appropriate legal authorities.
-- **With Service Providers:** Encrypted data is shared with our secure cloud hosting providers (Google Cloud/Firebase) and payment processors strictly for operational purposes.
+### A. From Student Attendees
+To verify academic status and issue forgery-proof digital passes, we collect:
+- **Core Identity:** Full Legal Name, Primary Email Address, and Phone Number (`SMS OTP validation`).
+- **Academic Verification:** University Name, Degree Program, and Official University Roll/Registration Number (`e.g., 2022-CS-101`).
+- **Profile Headshot:** A clear facial photograph uploaded during onboarding. This photo is displayed to on-site Gate Scanners exclusively for facial verification against ticket transfers or QR fraud.
+- **Transaction Proofs:** Screenshots of manual bank transfers (`JazzCash`, `EasyPaisa`, `IBFT`) and transaction reference IDs (`TxID`) submitted during paid checkouts.
 
-# Data Security & Storage
-All sensitive documents, including uploaded payment receipts and CNIC images, are uploaded directly to secured Google Cloud Storage buckets. Access to these buckets is restricted via strict IAM (Identity and Access Management) rules and Firebase Security Rules. Only authenticated UniTix Platform Management personnel and the uploading user can access these files.
+### B. From Society Organizers & Presidents
+To comply with Anti-Money Laundering (`AML`) and Know-Your-Customer (`KYC`) financial regulations:
+- **Official Identifiers:** Society Name, Campus Slug, and Faculty Advisor verification credentials (`Email & Contact`).
+- **President KYC Documents:** National ID Card (`CNIC`) Front and Back photographs submitted during society registration.
+- **Banking Credentials:** Official Bank Account Title, Bank Name, and International Bank Account Number (`IBAN`) for ticket sales payout transfers.
+
+---
+
+## 2. How Your Data Is Used & Processed
+We process your personal information strictly for core platform functionality:
+1. **Cryptographic Ticket Issuance:** Generating dynamic JSON Web Tokens (`JWT`) and QR codes (`qrToken`) tied directly to your roll number and identity.
+2. **Gate Check-in & Security:** Displaying your name, roll number, and profile headshot to authorized volunteer Gate Scanners during on-site entry to prevent screenshot sharing.
+3. **Financial Reconciliation:** Verifying payment screenshots against society ledger statements and executing payout wire transfers (`IBFT`).
+4. **Automated Waitlists & Notifications:** Dispatches SMS (`OTP/Alerts`) and transaction emails when tickets are approved, transferred, or reallocated from waitlists.
+
+---
+
+## 3. Data Sharing & Disclosure Boundaries
+**UniTix never sells, rents, or monetizes your personal data to third-party advertisers.** Data access is strictly compartmentalized:
+- **Society Visibility:** When you reserve a ticket, the organizing society gains access to your Name, Roll Number, Email, and Check-in Status for event management and `.CSV` attendee manifest generation.
+- **Role-Based Access Control (RBAC):** Volunteer Gate Scanners only see your Name, Roll Number, and Photo during the split-second scan. They cannot download attendee spreadsheets or view financial details.
+- **Legal Compliance:** We reserve the right to disclose KYC identity records to university administration or law enforcement if required by lawful subpoena in cases of financial fraud, ticket forgery, or campus safety violations.
+
+---
+
+## 4. Encryption & Data Storage
+- **In-Transit Encryption:** All communication between mobile browsers, gate scanners, and our serverless API endpoints is encrypted using industry-standard `TLS 1.3 / HTTPS`.
+- **At-Rest Storage:** User records, event data, and cryptographic tickets are stored securely inside **Google Cloud Firestore (`Firebase Admin SDK`)** across multi-region databases with enterprise IAM access controls.
+- **KYC & Receipt Storage:** Sensitive CNIC images and bank receipts are stored in **Firebase Cloud Storage** protected by strict signed-URL token boundaries.
+
+---
+
+## 5. Your Data Rights & Deletion Requests
+As a registered student or organizer, you retain absolute sovereignty over your profile data:
+- **Access & Corrections:** You can update your profile name, roll number, and password anytime inside `My Profile`.
+- **Account Deletion (`Right to be Forgotten`):** You may request permanent deletion of your account and personal identifiers by contacting `support@unitix.aarx.online`. Note that financial audit logs, completed payout records, and used ticket transaction IDs must be retained for `7 years` to comply with tax and AML regulations.

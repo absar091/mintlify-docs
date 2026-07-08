@@ -1,33 +1,65 @@
 ---
-title: "Team Management"
-description: "How to safely invite managers and scanners using Role-Based Access Control."
+title: "Team & Role-Based Access Control (RBAC)"
+description: "Detailed operational guide on securely delegating society workflows to managers, gate scanners, and ambassadors."
 ---
 
-# Building Your Team
+# Building Your Organizational Team
 
-As a Society Admin, you have the ability to delegate operations securely using strict Role-Based Access Control (RBAC). 
+Running high-impact university events requires delegation, but sharing the primary Society President/Admin login credentials poses severe security, financial, and data privacy risks. UniTix resolves this through **Role-Based Access Control (RBAC)**, allowing you to invite volunteers and officers with strictly scoped permissions.
 
-## How to Invite a Team Member
-1. Navigate to the **Members** tab in your dashboard sidebar.
+---
+
+## 1. Inviting Team Members
+1. Navigate to the **Members & Team** tab (`society-dashboard/members`) in your left sidebar.
 2. Click **Invite Member**.
-3. Enter their registered UniTix email address.
-4. Select their Role (see below).
-5. Click Send Invite. The member will receive an email and their dashboard will update instantly.
+3. Input the registered UniTix email address of your team member (they must have created a standard Student Account first).
+4. Assign their specific operational **Role** from the dropdown menu.
+5. Click **Send Invitation**. Their student dashboard will instantly unlock specialized organizer tools based on their assigned tier.
 
-## Available Roles
+---
 
-### 1. Event Manager
-Event Managers handle the heavy lifting of day-to-day operations.
-- **Can:** Create events, edit ticket tiers, view the public page, and manually approve pending payment screenshots.
-- **Cannot:** Access the Wallet, request payouts, change the society's bank details, or delete the society.
+## 2. Exhaustive Role Permission Hierarchy
 
-### 2. Scanner
-The Scanner role is exclusively for event day volunteers at the gate.
-- **Can:** Access the `/scan` mobile app to validate QR codes.
-- **Cannot:** View revenue, edit events, or access the main dashboard.
+| Feature / Action | Society Admin (President) | Event Manager | Gate Scanner | Ambassador |
+| :--- | :---: | :---: | :---: | :---: |
+| **Create & Edit Events** | ✅ Yes | ✅ Yes | ❌ No | ❌ No |
+| **Configure Ticket Tiers & Pricing** | ✅ Yes | ✅ Yes | ❌ No | ❌ No |
+| **Verify Manual Bank Payments** | ✅ Yes | ✅ Yes | ❌ No | ❌ No |
+| **Access Gate Scanner App (`/scan`)** | ✅ Yes | ✅ Yes | ✅ Yes | ❌ No |
+| **View Attendee Lists & Export `.CSV`** | ✅ Yes | ✅ Yes | ❌ No | ❌ No |
+| **View Wallet & Request Payouts (`PKR`)** | ✅ Yes | ❌ No | ❌ No | ❌ No |
+| **Edit Society Bank Details (IBAN)** | ✅ Yes | ❌ No | ❌ No | ❌ No |
+| **Invite / Remove Team Members** | ✅ Yes | ❌ No | ❌ No | ❌ No |
+| **Generate Promo / Referral Codes** | ✅ Yes | ✅ Yes | ❌ No | ✅ Yes (Assigned only) |
 
-## How to Revoke Access
-If a team member leaves, you must remove them to protect your data.
-1. Go to the **Members** tab.
-2. Click the trash icon next to their name.
-3. Their access is instantly terminated by our backend route guards.
+---
+
+## 3. Role Breakdown & Operational Scope
+
+### 👑 Society Admin (President)
+The root account holder who originally registered the society and submitted KYC documentation (`CNIC`, Faculty Advisor verification). The Admin retains **100% full governance over all financial, legal, and personnel settings**, including the ability to request payouts, update bank IBANs, and remove other team members.
+
+### 🛠️ Event Manager
+Designed for Vice Presidents, General Secretaries, and Event Directors. Event Managers handle the day-to-day heavy lifting:
+- Can launch new event pages, modify capacities, upload promotional banners, and manage waitlists.
+- Can audit and verify manual payment screenshots submitted by students.
+- **Security Guard:** Strict API route guards block Event Managers from accessing the `/wallet` endpoint or viewing sensitive bank transfer balances.
+
+### 📱 Gate Scanner
+Designed exclusively for event-day entry volunteers and security staff.
+- When logged in, Scanners are routed directly to `unitix.aarx.online/scan`.
+- They can select active events and operate their mobile camera to validate student QR passes.
+- They have zero visibility into ticket pricing, revenue numbers, society settings, or attendee contact sheets.
+
+### 🎟️ Ambassador / Promoter
+Designed for student promoters who earn commission or track sales milestones through personalized referral links (`/ambassadors`).
+- Ambassadors get a dedicated tracking portal showing how many student checkouts occurred via their unique referral link.
+- Cannot view or edit society administrative settings.
+
+---
+
+## 4. Revoking Access & Security Auditing
+If an officer graduates or a volunteer leaves your team:
+1. Navigate to **Members & Team**.
+2. Click the **Trash / Revoke Icon** next to the user's name.
+3. Upon confirmation, their custom Firebase Auth claims (`role: "manager" | "scanner"`) are instantly revoked on the backend, and any active browser session is immediately downgraded to a standard student account.

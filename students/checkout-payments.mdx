@@ -1,34 +1,52 @@
 ---
-title: "Checkout & Payments"
-description: "How to purchase tickets and upload payment receipts."
+title: "Checkout & Payment Verification"
+description: "Step-by-step guide on claiming free passes, completing paid checkouts via JazzCash/Bank transfers, and uploading payment receipts."
 ---
 
-# Purchasing a Ticket
+# Secure Ticket Checkout
 
-Once you've selected your desired ticket tier on the Event Page, it's time to check out. UniTix supports both Free and Paid events.
+Once you select your preferred ticket tier on an Event Page, you enter the **UniTix Checkout Flow**. Our checkout engine supports instant free claims as well as localized manual bank and mobile wallet verifications (`JazzCash`, `EasyPaisa`, `IBFT`).
 
-## Claiming a Free Ticket
-If the event is completely free:
-1. Select the quantity (usually limited to 1 per student).
+---
+
+## 1. Claiming Free Tickets
+If the event or ticket tier is priced at `Rs. 0` (Free):
+1. Select your desired quantity (subject to per-student purchase limits set by the organizer).
 2. Click **Get Free Ticket**.
-3. You will be instantly redirected to a Success page, and your ticket will appear in your **My Tickets** dashboard. No payment info required!
+3. The system instantly registers your attendance without requesting any financial or bank details.
+4. You are routed directly to the **Success Confirmation Page**, and your digital QR pass (`qrToken`) is immediately deposited into your **My Tickets** wallet.
 
-## Paying for a Ticket
-If the ticket has a cost, UniTix utilizes a secure **Pending Payments** system to support local transaction methods like JazzCash, EasyPaisa, or direct Bank Transfers.
+---
 
-**How to complete a paid checkout:**
-1. Click **Buy Ticket** on your selected tier.
-2. You will be taken to the Checkout screen. Here, you will see the Society's official bank details (Account Name and IBAN).
-3. **Open your banking app** (or JazzCash/EasyPaisa) on your phone.
-4. Transfer the exact ticket amount to the provided bank details.
-5. Take a screenshot of the successful transaction receipt.
-6. Return to UniTix. Enter the **Transaction ID** from your receipt into the input field.
-7. Click **Upload Receipt** and attach your screenshot.
-8. Click **Submit Payment**.
+## 2. Paying for Tickets via Manual Bank / JazzCash
+Because many university students do not possess active credit/debit cards, UniTix utilizes a localized **Manual Receipt Verification Engine** (`pending_payment`).
 
-## The Verification Process
-Your ticket will now appear in your dashboard with a yellow **PENDING** status.
+### Step-by-Step Paid Checkout Workflow:
+1. Click **Buy Ticket** on your selected paid tier (e.g., `General Admission - Rs. 500`).
+2. On the checkout screen, review the **Official Society Bank Details**:
+   - **Bank / Wallet Name:** e.g., *JazzCash*, *EasyPaisa*, or *HBL Bank*
+   - **Account Title:** e.g., *UniTix Society Ledger* or *ACM Chapter*
+   - **Account / IBAN Number:** e.g., `PK99JAZZ00001234567890`
+3. **Execute Transfer:** Open your personal banking or mobile wallet app (`JazzCash`, `EasyPaisa`, `Sadapay`, `NayaPay`) and transfer the **exact ticket amount (`PKR`)** to the society's account.
+4. **Capture Screenshot:** Take a clear screenshot of your successful transaction receipt showing the **Date, Amount, and Transaction Reference ID (TxID)**.
+5. **Submit Receipt on UniTix:**
+   - Enter your exact **Transaction Reference ID / TxID** into the text input field.
+   - Click **Upload Screenshot** and select your saved payment receipt.
+   - Click **Submit Payment for Verification**.
 
-The Society Organizers receive a notification and will manually verify your screenshot against their bank statement. 
-- If valid, they will **Approve** it, and your ticket will turn green (Valid).
-- If invalid or the amount is incorrect, they will **Reject** it, and your ticket reservation will be canceled. You will receive an email notification in both cases.
+---
+
+## 3. The Verification Review State (`Pending Payment`)
+Once submitted, your order transitions to the **Pending Payment (`pending_payment`)** state inside your **My Tickets** dashboard:
+- Your inventory slot is temporarily reserved while the society review team verifies your receipt against their bank ledger.
+- **Approval:** Once the organizer verifies the funds arrived in their bank account and clicks *Approve*, your ticket instantly turns green (`Approved / Valid`) and your digital QR code unlocks. You will receive an instant email confirmation.
+- **Rejection:** If your screenshot is illegible, duplicate, or the transaction ID cannot be found in the society bank statement, the organizer will click *Reject*. Your ticket reservation will be voided (`Cancelled`) and the inventory slot released. You will receive a rejection notification via email with instructions on how to retry or contact support.
+
+---
+
+## 4. Cancelling a Pending Reservation
+If you submitted a payment receipt by mistake or decided not to attend before the organizer approves your ticket:
+1. Go to **My Tickets**.
+2. Click on the pending ticket card.
+3. Click **Cancel Reservation**.
+4. Your pending reservation is immediately cancelled (`cancelled`), and your slot is released to the waitlist.

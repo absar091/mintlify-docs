@@ -1,24 +1,44 @@
 ---
-title: "Digital Tickets"
-description: "How to access your secure QR code and present it at the gate."
+title: "Digital Tickets & QR Passes"
+description: "How to access your mobile ticket passes, understand cryptographic QR validation, and present your ticket at the gate."
 ---
 
-# Your Cryptographic Ticket
+# Your Digital QR Pass
 
-UniTix does not use easily-faked PDF attachments or static images. Every ticket is a dynamic, cryptographically signed JSON Web Token (JWT) represented as a QR code.
+UniTix eliminates paper tickets and physical printouts. Once your ticket purchase or free claim is confirmed, your smartphone becomes your official pass to the event.
 
-## Accessing Your Ticket
-1. Log in to your UniTix account on your smartphone.
+---
+
+## 1. Accessing Your Tickets
+1. Log into your **Student Dashboard** (`unitix.aarx.online`).
 2. Click **My Tickets** in the top navigation bar.
-3. You will see a list of all your upcoming and past events. Click on an upcoming event to view the ticket.
-4. Your unique **QR Code** will be displayed in the center of the screen, along with your Name, University ID, and the Ticket Tier (e.g., VIP).
+3. You will see a grid of all your active, pending, and past event passes.
+4. Click on any active card to expand the **Full-Screen Digital Pass**, which displays:
+   - **Hero Visual & Event Title**
+   - **Verified Student Full Name & Roll Number**
+   - **Assigned Ticket Tier (`VIP`, `Early Bird`, `General Admission`)**
+   - **High-Contrast Cryptographic QR Code (`qrToken`)**
+   - **Live Check-in Status Badge**
 
-## At the Gate
-**How to check in:**
-1. Open the My Tickets page on your phone while waiting in line.
-2. Turn up your screen brightness.
-3. Present the live QR code to the Gate Scanner volunteer.
-4. They will scan it, and their device will instantly verify the cryptographic signature and check you into the system.
+---
 
-> [!WARNING]
-> **Do NOT take a screenshot!** The Gate Scanner app tracks live validation. If you attempt to send a screenshot of your ticket to a friend, or present a screenshot at the gate, the scanner will flag it as a duplicate or invalid ticket, and you may be denied entry.
+## 2. Cryptographic Security & Screenshot Blocking
+Unlike standard static QR codes that simply contain a website link or random text, UniTix digital passes generate a dynamic, cryptographically signed token (`qrToken`).
+
+### Why Screenshots Are Strictly Prohibited
+To protect campus events from duplicate entries and unauthorized badge sharing:
+- **Instant Use Lock:** When the Gate Scanner reads your QR pass at the entrance, your ticket status in the global database instantly flips from `Approved` to `Used`.
+- **Double-Scan Rejection:** If a classmate or friend attempts to scan a saved screenshot of your QR code even 30 seconds later, the scanner triggers a loud security alarm displaying: `Warning: Already Scanned Today (Time: XX:XX)`.
+- **Offline & Low-Light Presentation:** If your venue entrance has poor cellular reception, pre-load your **My Tickets** page while on campus Wi-Fi. The QR pass remains fully scannable from browser cache, and our high-contrast rendering ensures fast reads even on dim screens.
+
+---
+
+## 3. Understanding Ticket Status Badges
+
+| Status Badge | Visual Indicator | Exact Status Meaning |
+| :--- | :---: | :--- |
+| **🟢 APPROVED / VALID** | Green Badge | Ticket is confirmed, paid/verified, and ready for gate check-in. |
+| **🟡 PENDING PAYMENT** | Amber Badge | Your manual payment receipt was uploaded and is awaiting organizer verification. |
+| **🔵 TRANSFER PENDING** | Blue Badge | You initiated a transfer link. Your QR code is locked until the recipient claims or you cancel the transfer. |
+| **🟣 USED / CHECKED IN** | Purple Badge | Your QR pass was successfully scanned at the venue gate. |
+| **🔴 CANCELLED / REFUNDED** | Red Badge | Your ticket was voided, refunded, or rejected by the organizer. QR is permanently revoked. |
