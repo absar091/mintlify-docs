@@ -1,33 +1,55 @@
 ---
-title: "Creating Events"
-description: "How to set up ticketing, capacities, and sponsorships."
+title: "Creating & Managing Events"
+description: "How to set up ticketing tiers, capacity guards, sponsorships, and waitlists."
 ---
 
 # The Event Builder
 
-Creating an event on UniTix is done via the Event Builder, which allows you to configure everything from basic descriptions to advanced capacity limits.
+Creating and managing events on UniTix is powered by our multi-layered **Event Builder**. Whether you are running an exclusive workshop for 50 students or a campus-wide festival for 5,000, the builder gives you complete precision over capacity, inventory limits, and promotional assets.
 
-## How to Create a New Event
-1. Navigate to **Events** in your dashboard sidebar.
-2. Click the **Create New** button in the top right.
-3. **Basic Info:** Enter the Title, Date, Time, Venue, and Description.
-4. **Banner:** Upload a high-resolution 16:9 banner image. This will be the hero image on your public page.
+---
 
-## Setting Venue Capacity
-You must set an **Overall Event Capacity**. 
-If your venue holds 500 people, enter 500. Even if you create multiple ticket tiers (like 300 Early Bird and 300 General Admission), the system will automatically halt ALL sales the moment the *total* tickets sold reaches 500, preventing dangerous overcrowding.
+## 1. Step-by-Step Event Creation
+1. Navigate to **Events** in your dashboard sidebar and click **Create New**.
+2. **Basic Information:** Enter the Event Title, Category, Date, Start/End Time, and Physical Venue (or Virtual Link).
+3. **Rich Description:** Write a compelling event breakdown. Highlight guest speakers, agendas, and key highlights.
+4. **Hero Banner:** Upload a high-resolution 16:9 banner image (`PNG`, `JPG`, or `WebP`). This serves as the primary billboard on your public event page and student marketplace.
 
-## Adding Ticket Tiers
-You can create as many specific ticket types as you need.
-1. Scroll to the **Ticket Tiers** section.
-2. Click **Add Tier**.
-3. Define the **Name** (e.g., "Early Bird"), **Price** (or $0 for Free), and **Inventory Limit** (how many of *this specific ticket* are available).
-4. *Optional:* You can stagger ticket releases by setting "Start Sales" and "End Sales" times for each tier.
+---
 
-If an individual tier sells out, its specific Waitlist will activate, while other tiers may remain open.
+## 2. Overall Venue Capacity vs. Ticket Tiers
+One of UniTix's most critical safety features is our **Double-Capacity Protection System**:
 
-## Adding Sponsors
-If your event is financially supported by brands, you can feature them on the event page.
-1. Go to the **Sponsors** tab in your dashboard.
-2. Upload the sponsor's Logo and Name.
-3. When creating or editing an event, select the sponsor from the dropdown menu to link them to the event.
+### Overall Event Capacity (The Hard Stop)
+You must specify the maximum safety capacity of your venue (e.g., 500 attendees). 
+Regardless of how many individual ticket tiers or allocations you create below, **the entire event automatically halts sales the exact millisecond the sum of all sold tickets reaches your Overall Capacity.** This prevents physical overcrowding and fire safety violations.
+
+### Capacity Reduction Guard
+If you ever need to edit an existing event and reduce its capacity or tier quantities, **UniTix strictly blocks you from reducing capacity below the number of tickets already sold.** 
+For example, if you have already sold 320 tickets, attempting to set the capacity to 300 will immediately return a validation error, safeguarding already-confirmed attendees.
+
+---
+
+## 3. Configuring Ticket Tiers
+Create flexible pricing strategies to maximize attendance:
+1. Scroll to **Ticket Tiers** and click **Add Tier**.
+2. **Name & Pricing:** Set clear tier names (*Early Bird*, *VIP Front Row*, *General Admission*, *Student Member*) and specify the exact price in `PKR` (enter `0` for free events).
+3. **Tier Inventory Limit:** Set the maximum allocation available specifically for this tier.
+4. **Per-Student Purchase Limits:** Specify how many tickets a single student account can purchase in one order to prevent scalping or unfair hoarding.
+5. **Sales Scheduling:** Optionally configure automated release schedules with exact **Start Sales** and **End Sales** timestamps.
+
+---
+
+## 4. Automated Waitlists
+When an individual ticket tier or the overall event reaches 100% capacity:
+- The checkout button automatically transforms into **Join Waitlist**.
+- Students can join the waitlist with one click.
+- If an existing attendee cancels their ticket or their payment verification expires, the UniTix cron engine automatically reallocates that inventory slot and notifies the next student in line.
+
+---
+
+## 5. Linking Corporate Sponsors
+Showcasing brand partners adds immense credibility and helps fulfill sponsorship deliverables:
+1. Navigate to the **Sponsors** tab in your dashboard sidebar to upload sponsor logos and names.
+2. In the Event Builder, scroll to the **Sponsors** dropdown.
+3. Select any relevant corporate partners to link them directly to the event. Their logos will render prominently in the "Supported By" section across all public event details and digital check-in passes.

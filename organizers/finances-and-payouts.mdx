@@ -1,29 +1,51 @@
 ---
-title: "Finances & Payouts"
-description: "How to verify pending payments and request your earnings."
+title: "Finances, Revenue & Payouts"
+description: "How to manage ticket verifications, understand Net Revenue deductions, and withdraw your funds."
 ---
 
-# Financial Operations
+# Financial Operations & Control
 
-Your **Wallet** and **Payments** tabs are the control centers for your society's revenue.
+Your **Wallet** and **Payments** dashboard sections provide transparent, real-time control over every rupee entering and leaving your society's accounts.
 
-## 1. Verifying Pending Payments
-If you allow students to pay via Manual Bank Transfer, JazzCash, or EasyPaisa, you must manually verify their transactions.
+---
 
-**How to Verify:**
-1. Navigate to the **Payments** tab in your dashboard.
-2. You will see a list of all "Pending" transactions, containing the Student's Name, Ticket Tier, Transaction ID, and a button to view their uploaded Screenshot.
-3. **Open your Society Bank/JazzCash app** and verify that the exact amount was received from that Transaction ID.
-4. If the money arrived, click **Approve** in UniTix. The student's ticket will instantly turn green (Valid).
-5. If the money did not arrive or the screenshot is fake, click **Reject**.
+## 1. Verifying Manual Bank Transfers
+To accommodate university students who do not use credit/debit cards, UniTix supports **Manual Bank Transfers, JazzCash, and EasyPaisa**. When a student checks out via manual transfer, their order enters a **Pending Verification** state (`pending_payment`).
 
-## 2. Requesting a Payout
-When your event has successfully concluded, you can withdraw your Net Earnings (Gross Revenue minus the 2.5% platform fee).
+### The Verification Workflow
+1. Navigate to the **Payments** tab in your dashboard sidebar.
+2. Review the list of all pending transactions showing:
+   - **Student Name & Roll Number**
+   - **Ticket Tier & Amount (`PKR`)**
+   - **Transaction Reference ID (TxID)**
+   - **Uploaded Payment Screenshot**
+3. Click **View Screenshot** to inspect the transfer receipt submitted by the student.
+4. **Bank App Audit:** Open your official Society Bank, JazzCash, or EasyPaisa app and confirm that the exact amount (`PKR`) matching that Transaction ID was credited to your ledger.
+5. **Take Action:**
+   - Click **Approve** if verified: The ticket instantly transitions to `Approved`, generating a valid digital QR pass (`qrToken`) for the student.
+   - Click **Reject** if the screenshot is forged or uncredited: The ticket is voided (`Cancelled`), freeing up the capacity slot for other students or waitlist members.
 
-**How to Request Funds:**
-1. Navigate to the **Wallet** tab.
-2. Ensure your Society Bank Details (IBAN, Account Name) are securely saved in your Profile settings.
-3. Check your "Available Balance".
-4. Click the **Request Payout** button.
+---
 
-Once requested, UniTix Operations will audit the transactions and process the wire transfer directly to your society's bank account within 3-5 business days. You can track the status of your payout (Pending, Processing, Completed) directly from the Wallet.
+## 2. Understanding Net Revenue & Fees
+UniTix operates on full financial transparency. Your dashboard metrics clearly differentiate between Gross collection and Net take-home revenue:
+
+$$\text{Net Revenue} = \text{Gross Revenue} - \text{Platform Fee} - \text{Total Refunds}$$
+
+### How Fees Are Applied
+- **Global Platform Fee:** By default, UniTix deducts a flat **2.5% platform fee** on gross ticket sales to cover infrastructure, automated SMS/email gateways, and server operations.
+- **Custom Society Tiers:** If your society has negotiated a custom fee tier with university administration (`customFeePercentage`), that exact custom percentage (`0%`, `1.5%`, etc.) is dynamically calculated and displayed directly on your Net Revenue metric card (`Net Revenue (after X% fee)`).
+- **Refund Deductions:** Any tickets approved for a refund are subtracted from both your active sales volume and net take-home calculation automatically.
+
+---
+
+## 3. Requesting a Payout
+Once your event successfully concludes, you can withdraw your clean **Available Balance** directly to your society's bank account.
+
+### How to Withdraw Funds
+1. Navigate to the **Wallet** tab in your dashboard.
+2. Verify that your **Society Bank Details** (IBAN, Bank Name, Account Title) are securely registered and up to date in your Profile.
+3. Review your **Available to Withdraw (`PKR`)** balance (which shows your net revenue minus any previously processed withdrawals).
+4. Click **Request Payout**.
+
+Once submitted, UniTix Operations audits the event reconciliation and processes a direct wire transfer (`EFT / IBFT`) to your society's account within 3 to 5 business days. You can monitor every payout status (`Pending`, `Completed`, `Rejected`) alongside official bank transaction IDs directly in your **Payout History** ledger.

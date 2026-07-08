@@ -1,24 +1,43 @@
 ---
-title: "Analytics & Reports"
-description: "How to track your event performance and export data."
+title: "Analytics, Reporting & Exports"
+description: "How to track event conversions, analyze ticket velocity, and export attendee manifests."
 ---
 
-# The Analytics Dashboard
+# Deep-Dive Analytics & Reporting
 
-Data drives successful events. Your UniTix Analytics dashboard provides real-time insights into your ticket sales and marketing performance.
+Data drives successful campus events. Beyond the high-level metrics on your main overview, the **Analytics Suite** (`society-dashboard/analytics`) provides detailed, multi-dimensional reporting across all your events and financial cycles.
 
-## Tracking Conversions
-Navigate to the **Analytics** tab to view your core metrics:
-- **Total Revenue:** The gross amount collected across all your events.
-- **Tickets Sold:** The raw volume of inventory moved.
-- **Page Views:** How many unique students have landed on your Event Pages.
-- **Conversion Rate:** The percentage of students who viewed your page and actually completed a purchase. If your views are high but sales are low, consider adjusting your ticket prices or updating your event description!
+---
 
-## Exporting Attendee Lists
-While the Gate Scanner app is the best way to manage entry, sometimes you need a raw spreadsheet of your attendees (e.g., for printing physical name tags).
+## 1. Core Analytics Metrics
+Navigate to the **Analytics** tab in your sidebar to track interactive time-series performance:
+- **Total Revenue & Net Take-Home:** Compare gross ticket volume against net proceeds after platform fees and refunds.
+- **Ticket Sales Velocity:** Track exact daily and hourly ticket purchase spikes to measure the direct ROI of your Instagram posts, campus booth promotions, or early bird deadline countdowns.
+- **Conversion Rate Tracking:** Monitor how many unique students visited your public event page versus how many completed a checkout. If page views are high but conversions are low, adjust your pricing tiers or add clearer event details!
 
-**How to Export:**
-1. Navigate to the **Events** tab.
-2. Click on the specific event you want to manage.
-3. In the top right corner, click **Export Attendees**.
-4. The system will generate a `.csv` file containing the Names, Ticket Tiers, and check-in status of every student who reserved a ticket.
+---
+
+## 2. Dynamic Date Range & Event Filtering
+Customize your reporting scope with two powerful filtering dimensions:
+- **Time Horizons:** Filter data by *Last 7 Days*, *Last 30 Days*, *Last 90 Days*, or *All Time*.
+- **Event-Specific Breakdown:** Select an individual event from the top switcher to isolate its exact conversion funnel, revenue breakdown, and check-in rate independently of your broader society portfolio.
+
+---
+
+## 3. Exporting Attendee Manifests (`.CSV`)
+While the digital Gate Scanner app is recommended for real-time check-ins, certain venue regulations or physical badge printing workflows require raw data spreadsheets.
+
+### How to Export Attendee Lists
+1. Navigate to the **Events** tab in your dashboard sidebar.
+2. Click on the specific event you want to export.
+3. In the top right header, click **Export Attendees**.
+4. The system automatically compiles and downloads a structured `.csv` spreadsheet containing:
+   - **Student Full Name**
+   - **University Roll/Registration Number**
+   - **Ticket Tier (`Early Bird`, `VIP`, etc.)**
+   - **Order Reference ID & Payment Method**
+   - **Check-in Status (`Checked In`, `Valid`, `Pending`)**
+   - **Check-in Timestamp (if scanned at gate)**
+
+> [!IMPORTANT]
+> Exported attendee manifests contain personal identifiable information (PII) such as student roll numbers and phone/email contacts. Treat these files securely in accordance with university data protection policies (`PDPA / GDPR`).

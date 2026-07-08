@@ -1,19 +1,55 @@
 ---
 title: "Dashboard Overview"
-description: "How to navigate your Society Admin dashboard and customize your workspace."
+description: "How to navigate your Society Admin dashboard, monitor real-time analytics, and customize your workspace."
 ---
 
 # Your Command Center
 
-Once your society registration is approved, logging into UniTix will route you directly to the **Society Dashboard**. This is your central hub for all operations.
+Once your society registration is approved, logging into UniTix routes you directly to the **Society Dashboard**. Designed for speed and executive clarity, your dashboard serves as the nerve center for all event operations, ticket management, and financial analytics.
 
-## Customizing Your Sidebar (Pinning)
-Every society operates differently. To make your workflow faster, UniTix allows you to **Pin** your most-used features to the top of your sidebar.
+## 1. Top Navigation & Context Switcher
+At the top of your screen, you'll find your society header and quick-access controls:
+- **Greeting & Society Identity:** Displays your society logo, name, and current time-sensitive greeting.
+- **Current Event Switcher:** By default, the dashboard aggregates data across **All Events**. Use the dropdown switcher in the top right to filter all metrics, charts, and timelines to a single specific event instantly.
+- **Notification Bell & Profile:** Access system alerts, announcements, and quick settings.
 
-**How to Pin an item:**
-1. Hover your mouse over any menu item in the left sidebar (e.g., "Analytics").
-2. Click the small **Pin Icon** (`📌`) that appears on the right edge of the item.
-3. The item will instantly jump to a new "Pinned" section at the top of your sidebar.
-4. To unpin, simply click the icon again.
+---
 
-*Note: Pinned preferences are saved securely in your browser's local storage, ensuring your layout loads instantly every time you visit.*
+## 2. Hero Analytics Section (The 8 Metric Cards)
+Directly beneath the header lies the **Hero Analytics Suite**, giving you real-time visibility into your society's health across 8 dynamic cards:
+
+| Metric Card | What It Tracks | How It Is Calculated |
+| :--- | :--- | :--- |
+| **Gross Revenue** | Total ticket sales volume | Sum of all revenue across active events |
+| **Net Revenue** | Your actual take-home earnings | `Gross Revenue - Platform Fee (2.5% or custom tier) - Refunds` |
+| **Tickets Sold** | Confirmed & verified attendees | Count of tickets with status `approved` or `used` |
+| **Available Tickets** | Remaining venue inventory | `Total Venue Capacity - Tickets Sold` |
+| **Pending Verifications** | Manual bank transfer approvals waiting | Count of student orders requiring manual screenshot check |
+| **Booked Tickets** | Reserved inventory awaiting payment | Count of tickets currently in `pending` or `pending_payment` status |
+| **Cancelled Tickets** | Orders voided by students or organizers | Count of tickets marked `cancelled` |
+| **Refund Requests** | Open disputes or tier adjustments | Count of active refund requests across selected events |
+
+Each card features **interactive trend percentages** and mini **sparkline charts** (`Recharts` powered), giving you immediate visual cues on whether sales momentum is accelerating or slowing down.
+
+---
+
+## 3. Real-Time Revenue & Ticket Status Charts
+The center of your dashboard provides deep visual analytics without leaving the main overview:
+- **Revenue Over Time (Line Chart):** Tracks gross and net revenue performance across dates so you can pinpoint how marketing campaigns or early bird deadlines impacted sales surges.
+- **Ticket Status Breakdown (Pie Chart):** A clean distribution chart displaying the exact ratio of `Paid`, `Booked`, `Cancelled`, `Refunded`, and `Checked In` tickets.
+
+---
+
+## 4. Upcoming Tasks & Activity Timeline
+Never miss an operational bottleneck during crunch time:
+- **Actionable Tasks:** Automatically highlights urgent action items—such as pending manual bank verifications, unassigned gate scanners, or unresolved refund disputes—with direct one-click links to resolve them.
+- **Recent Activity Timeline:** A live chronological log showing real-time ticket bookings, approvals, transfers, and check-ins as they happen at the gate.
+
+---
+
+## 5. Customizing Your Sidebar (Pinning)
+To tailor the workspace to your exact daily routine, UniTix includes an instant **Sidebar Pinning** system:
+1. Hover over any navigation item in the left sidebar (e.g., *Gate Scanners*, *Analytics*, *Wallet*).
+2. Click the **Pin Icon** (`📌`) on the right edge.
+3. The item immediately jumps to a dedicated **Pinned** section at the top of your menu.
+4. Your pinned layout is saved directly in local storage, ensuring your custom command center loads instantly every time you log in.
