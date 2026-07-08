@@ -42,6 +42,20 @@
         ]
       },
       {
+        "group": "Platform Governance & Admin",
+        "pages": [
+          "admin/super-admin-command-center",
+          "admin/financial-reconciliation"
+        ]
+      },
+      {
+        "group": "Ecosystem & Special Programs",
+        "pages": [
+          "programs/student-ambassadors",
+          "programs/public-certificate-verification"
+        ]
+      },
+      {
         "group": "Legal & Compliance",
         "pages": [
           "legal/privacy-policy",

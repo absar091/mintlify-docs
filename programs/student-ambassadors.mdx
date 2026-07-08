@@ -1,0 +1,34 @@
+---
+title: "The Student Ambassador Program"
+description: "How campus promoters earn rewards, generate referral links, and track sales commissions across university events."
+---
+
+# Campus Ambassador Network
+
+The **UniTix Student Ambassador Program** (`unitix.aarx.online/ambassadors`) bridges organizing societies with high-energy student promoters. Ambassadors receive unique cryptographic referral URLs, track their real-time ticket conversion metrics, and compete on campus leaderboards for exclusive rewards and commission payouts.
+
+---
+
+## 1. Becoming an Ambassador
+1. Log into your verified **Student Account** (`unitix.aarx.online`).
+2. Navigate to the **Ambassador Portal** (`/ambassadors`).
+3. Complete the brief promoter application, selecting your primary campus and active student organizations.
+4. Once approved by society or platform administration, your dedicated Ambassador Dashboard unlocks immediately.
+
+---
+
+## 2. Generating & Sharing Referral Links
+To track exact ticket sales attributable to your marketing campaigns, UniTix utilizes dynamic URL parameter tracking (`?ref=[ambassador_id]`):
+1. In your Ambassador Dashboard, browse the list of **Active Promoted Events**.
+2. Click **Generate Referral Link** next to any event.
+3. Your unique cryptographic URL is copied to your clipboard:
+   `https://unitix.aarx.online/e/annual-tech-fest?ref=amb_99xyz...`
+4. Share this link across your WhatsApp groups, university Discord servers, Instagram stories, and campus marketing booths!
+
+---
+
+## 3. Real-Time Commission & Conversion Tracking
+When a classmate clicks your referral link and completes a ticket checkout:
+- **Instant Attribution:** The checkout engine captures your ambassador `ref` token and embeds it directly inside the generated ticket document in Firestore (`referredBy: "amb_99xyz"`).
+- **Live Metrics:** Your Ambassador Dashboard instantly increments your **Total Clicks**, **Confirmed Checkouts**, and **Conversion Rate (`%`)**.
+- **Leaderboard Rankings:** Compete against fellow ambassadors on the live campus leaderboard. Top-ranking promoters earn milestone rewards, VIP backstage passes, and direct monetary commission bonuses distributed alongside society payouts!

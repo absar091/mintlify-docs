@@ -1,0 +1,42 @@
+---
+title: "Public Certificate & Credential Verification"
+description: "How employers, HR recruiters, and university admissions officers verify student attendance certificates instantly without logging in."
+---
+
+# Zero-Trust Credential Verification
+
+In an era of easily manipulated PDF certificates and graphic design forgeries, UniTix guarantees academic integrity through our **Public Zero-Trust Verification Portal** (`unitix.aarx.online/verify-certificate`). Anyone holding a UniTix attendance certificate can be audited in seconds against our live cryptographic database.
+
+---
+
+## 1. How to Verify an Attendance Certificate
+There are two instant methods to verify any student's credential without creating an account or logging into UniTix:
+
+### Method A: Scanning the Embedded QR Code
+Every physical or digital certificate issued by UniTix includes a high-contrast QR code stamped directly into the bottom right corner.
+1. Point any smartphone camera or QR reader at the certificate's QR code.
+2. The scanner automatically redirects to our live verification URL:
+   `https://unitix.aarx.online/c/[Certificate-UUID]`
+3. The verification page immediately queries our serverless backend and displays the **Official Verification Verdict**.
+
+### Method B: Manual UUID Lookup (`/verify-certificate`)
+1. Open `unitix.aarx.online/verify-certificate` on any web browser.
+2. Locate the unique **Certificate ID / UUID (`Cert-UUID`)** printed at the bottom of the document (`e.g., cert-8812-abcd-9988`).
+3. Enter the ID into the search bar and click **Verify Credential**.
+
+---
+
+## 2. Understanding Verification Verdicts
+
+| Verdict State | Visual Banner | Information Confirmed on Server |
+| :--- | :---: | :--- |
+| **🟢 AUTHENTIC CREDENTIAL** | Green Badge | Confirms exact **Student Full Name**, **Roll Number**, **Event Title**, **Date**, **Organizing Society**, and **Physical Check-in Timestamp at Gate (`checkedIn: true`)**. |
+| **🔴 INVALID / FORGED** | Red Alarm Badge | The Certificate ID does not exist in the global ledger, or the student never physically checked in at the gate (`checkedIn: false`). **Document is a forgery.** |
+| **🟡 REVOKED CERTIFICATE** | Amber Alert Badge | The certificate was officially revoked by the organizing society or platform administration due to post-event disciplinary action or ticket cancellation. |
+
+---
+
+## 3. Why University Gate Check-ins Matter
+Unlike standard online course certificates that generate simply upon clicking a button, UniTix certificates require **Physical Gate Scan Validation (`/scan`)**. If a student purchased a ticket but did not present their QR pass at the venue entrance during the event (`status: approved` instead of `status: used`), our API routes **strictly block certificate generation and claim endpoints**. 
+
+This mathematical guarantee gives university faculty, prospective employers, and scholarship committees 100% confidence that the student physically attended and participated in the academic program.
