@@ -24,6 +24,7 @@
           "students/waitlist",
           "students/digital-tickets",
           "students/ticket-transfer",
+          "students/disputes-and-appeals",
           "students/certificates",
           "students/policies"
         ]
@@ -37,6 +38,7 @@
           "organizers/refund-configuration",
           "organizers/team-management",
           "organizers/gate-scanner",
+          "organizers/live-gate-monitor",
           "organizers/finances-and-payouts",
           "organizers/analytics-and-reports"
         ]
@@ -45,6 +47,7 @@
         "group": "Platform & Compliance Governance",
         "pages": [
           "admin/platform-governance",
+          "admin/security-and-anti-fraud",
           "admin/financial-reconciliation"
         ]
       },

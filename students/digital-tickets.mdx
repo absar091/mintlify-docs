@@ -1,44 +1,85 @@
 ---
-title: "Digital Tickets & QR Passes"
-description: "How to access your mobile ticket passes, understand cryptographic QR validation, and present your ticket at the gate."
+title: "Digital Tickets & Dynamic Security QR Passes"
+description: "How to view your dynamic rotating QR passes, understand 15-second anti-screenshot protection, and present passes at the gate."
 ---
 
-# Your Digital QR Pass
+<Tabs>
+  <Tab title="English">
+    # Your Digital Dynamic QR Pass
 
-UniTix eliminates paper tickets and physical printouts. Once your ticket purchase or free claim is confirmed, your smartphone becomes your official pass to the event.
+    UniTix completely eliminates insecure paper printouts and static barcodes. Once your ticket purchase or claim is confirmed, your smartphone acts as your official, fraud-proof digital pass.
 
----
+    ---
 
-## 1. Accessing Your Tickets
-1. Log into your **Student Dashboard** (`unitix.aarx.online`).
-2. Click **My Tickets** in the top navigation bar.
-3. You will see a grid of all your active, pending, and past event passes.
-4. Click on any active card to expand the **Full-Screen Digital Pass**, which displays:
-   - **Hero Visual & Event Title**
-   - **Verified Student Full Name & Roll Number**
-   - **Assigned Ticket Tier (`VIP`, `Early Bird`, `General Admission`)**
-   - **High-Contrast Cryptographic QR Code (`qrToken`)**
-   - **Live Check-in Status Badge**
+    ## 1. Accessing Your Digital Pass
+    1. Log into your **Student Dashboard** at `https://unitix.aarx.online`.
+    2. Click **My Tickets** in the top navigation bar.
+    3. Click on any active event card to expand your **Full-Screen Digital Pass**:
+       - **Hero Visual & Event Title**
+       - **Verified Student Full Name & Roll Number**
+       - **Ticket Tier (`VIP`, `Early Bird`, `General Admission`)**
+       - **Dynamic Cryptographic QR Code (`UTX-TOTP-V1|...`)**
+       - **Live Status Badge**
 
----
+    ---
 
-## 2. Cryptographic Security & Screenshot Blocking
-Unlike standard static QR codes that simply contain a website link or random text, UniTix digital passes generate a dynamic, cryptographically signed token (`qrToken`).
+    ## 2. Dynamic 15-Second QR Code Protection (Anti-Screenshot)
+    To ensure complete protection against scalping, unauthorized sharing, and screenshot abuse:
+    - **15-Second Auto-Rotation**: The QR code on your screen generates a new cryptographic HMAC-SHA256 signature proof every **15 seconds**.
+    - **Why Static Screenshots Fail**: If a screenshot of your QR code is shared or sent to a classmate, that static screenshot expires within seconds. When scanned at the gate, the scanner recognizes the timestamp has expired and rejects entry.
+    - **Zero Private Key Exposure**: The dynamic proof is a truncated cryptographic hash—your secret credential is never exposed to third-party scanners.
 
-### Why Screenshots Are Strictly Prohibited
-To protect campus events from duplicate entries and unauthorized badge sharing:
-- **Instant Use Lock:** When the Gate Scanner reads your QR pass at the entrance, your ticket status in the global database instantly flips from `Approved` to `Used`.
-- **Double-Scan Rejection:** If a classmate or friend attempts to scan a saved screenshot of your QR code even 30 seconds later, the scanner triggers a loud security alarm displaying: `Warning: Already Scanned Today (Time: XX:XX)`.
-- **Offline & Low-Light Presentation:** If your venue entrance has poor cellular reception, pre-load your **My Tickets** page while on campus Wi-Fi. The QR pass remains fully scannable from browser cache, and our high-contrast rendering ensures fast reads even on dim screens.
+    ---
 
----
+    ## 3. Presenting Your Pass at the Gate
+    1. Open the UniTix website or mobile app on your smartphone before walking up to the gate.
+    2. Set your phone brightness to medium/high.
+    3. Hold your screen steady in front of the gate scanner camera.
+    4. The scanner verifies your ticket in less than 300 milliseconds and displays a green confirmation.
 
-## 3. Understanding Ticket Status Badges
+    ---
 
-| Status Badge | Visual Indicator | Exact Status Meaning |
-| :--- | :---: | :--- |
-| **🟢 APPROVED / VALID** | Green Badge | Ticket is confirmed, paid/verified, and ready for gate check-in. |
-| **🟡 PENDING PAYMENT** | Amber Badge | Your manual payment receipt was uploaded and is awaiting organizer verification. |
-| **🔵 TRANSFER PENDING** | Blue Badge | You initiated a transfer link. Your QR code is locked until the recipient claims or you cancel the transfer. |
-| **🟣 USED / CHECKED IN** | Purple Badge | Your QR pass was successfully scanned at the venue gate. |
-| **🔴 CANCELLED / REFUNDED** | Red Badge | Your ticket was voided, refunded, or rejected by the organizer. QR is permanently revoked. |
+    ## 4. Ticket Status Badges
+
+    | Status Badge | Meaning & State | Gate Action |
+    | :--- | :--- | :--- |
+    | **🟢 APPROVED / VALID** | Confirmed and paid pass. Ready for entry. | **Admit Attendee** |
+    | **🟡 PENDING PAYMENT** | Payment proof uploaded; awaiting organizer verification. | **Entry Blocked** until approved. |
+    | **🔵 TRANSFER PENDING** | You initiated an official transfer link. | **QR Locked** until claimed or cancelled. |
+    | **🟣 USED / CHECKED IN** | Pass has been verified and used at the entrance gate. | **Entry Recorded** (Duplicate blocked). |
+    | **🔴 CANCELLED / REFUNDED** | Pass was voided or refunded. | **Entry Denied** (Permanently revoked). |
+  </Tab>
+
+  <Tab title="اردو (Urdu)">
+    # ڈیجیٹل ٹکٹ اور متحرک سیکیورٹی QR کوڈ
+
+    UniTix روایتی کاغذی پرچیوں اور غیر محفوظ ٹکٹوں کا خاتمہ کرتا ہے۔ آپ کی بکنگ کی تصدیق ہوتے ہی آپ کا موبائل فون ایک محفوظ ڈیجیٹل پاس بن جاتا ہے۔
+
+    ---
+
+    ## 1. اپنا ڈیجیٹل ٹکٹ دیکھنے کا طریقہ
+    1. ویب سائٹ `https://unitix.aarx.online` پر اپنے اسٹوڈنٹ اکاؤنٹ میں لاگ ان کریں۔
+    2. **My Tickets** سیکشن میں جائیں۔
+    3. کسی بھی فعال ایونٹ کے کارڈ پر کلک کریں تاکہ آپ کا فل سکرین ڈیجیٹل پاس کھل جائے:
+       - ایونٹ کا نام اور تصویر
+       - طالب علم کا نام اور رول نمبر
+       - ٹکٹ کی کیٹیگری (VIP، عام، وغیرہ)
+       - **متحرک سیکیورٹی QR کوڈ**
+
+    ---
+
+    ## 2. 15 سیکنڈ میں تبدیل ہونے والا متحرک QR کوڈ (سکرین شاٹ پروٹیکشن)
+    ٹکٹ کے غلط استعمال اور سکرین شاٹ کے ذریعے دھوکہ دہی کو روکنے کے لیے:
+    - **خودکار تبدیلی**: آپ کی موبائل سکرین پر موجود QR کوڈ ہر **15 سیکنڈ** بعد خود بخود تبدیل ہو جاتا ہے۔
+    - **سکرین شاٹ کیوں کام نہیں کرتا**: اگر کوئی طالب علم سکرین شاٹ لے کر کسی اور کو بھیجے گا تو وہ سکرین شاٹ چند سیکنڈ میں منسوخ ہو جائے گا۔ گیٹ پر سکینر فوری طور پر اسے مسترد کر دے گا۔
+    - **صرف لائیو ایپ استعمال کریں**: گیٹ پر ہمیشہ موبائل میں لائیو کھلا ہوا ٹکٹ دکھائیں۔
+
+    ---
+
+    ## 3. گیٹ پر ٹکٹ دکھانے کا طریقہ
+    1. گیٹ پر پہنچنے سے پہلے موبائل پر UniTix کھولیں۔
+    2. موبائل کی روشنی مناسب رکھیں۔
+    3. کیمرے کے سامنے لائیو QR کوڈ دکھائیں۔
+    4. ایک سیکنڈ سے کم وقت میں سبز سکرین کے ساتھ تصدیق ہو جائے گی۔
+  </Tab>
+</Tabs>

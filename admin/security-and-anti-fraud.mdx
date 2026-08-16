@@ -1,0 +1,72 @@
+---
+title: "Security, Cryptography & Anti-Fraud Architecture"
+description: "Detailed overview of UniTix's cryptographic token verification, anti-replay protections, offline manifest validation, and P2P Star Mesh consistency."
+---
+
+<Tabs>
+  <Tab title="English">
+    # Cryptographic Security & Anti-Fraud Architecture
+
+    UniTix employs defense-in-depth cryptographic protocols to safeguard ticket transactions, gate entries, and administrative operations against fraud, scalping, tampering, and double redemption.
+
+    ---
+
+    ## 1. Dynamic TOTP Cryptographic Engine
+
+    ### Protocol Format
+    ```
+    UTX-TOTP-V1 | <eventId> | <ticketId> | <timeWindowCounter> | <HMAC-SHA256 Proof>
+    ```
+
+    - **15-Second Ephemeral Time Step**: The client computes an epoch window counter $T = \lfloor \frac{\text{currentTime}}{15000} \rfloor$.
+    - **One-Way HMAC Digest**: The client generates a truncated 12-character hexadecimal HMAC-SHA256 digest using the permanent ticket secret.
+    - **Zero Private Key Exposure**: External mobile cameras and rogue QR scanners see only the truncated proof. The root secret is never transmitted or visible on screen.
+    - **Skew Tolerant Verification**: The server and scanner verify dynamic tokens within a $[-1, 0, +1]$ window ($\pm 15$ seconds) to accommodate minor device clock drift while strictly rejecting expired replay attempts.
+
+    ---
+
+    ## 2. Offline SQLite Manifest Engine
+
+    When operating in venues without internet connectivity:
+    - **Encrypted Local Storage**: The event manifest containing attendee lookup tables is stored within an encrypted SQLite database (`unitix_offline_v3.db`) with automatic schema version migrations.
+    - **Cryptographic Signature Validation**: The scanner verifies HMAC-SHA256 signatures offline using cached event credentials.
+    - **Local Scan Ledger**: Offline redemptions are recorded in a permanent SQLite audit table and automatically synchronized to the cloud when connectivity is restored.
+
+    ---
+
+    ## 3. P2P Star Mesh & Monotonic Sequence Counter
+
+    When multiple scanner devices operate offline concurrently:
+    - **Central Event Hub**: One device acts as the local transport hub, accepting paired gate scanner connections over local Wi-Fi or Bluetooth.
+    - **Monotonic Sequence Counter (`seqId`)**: Every approved redemption is assigned an incrementing sequence number ($1, 2, 3\dots$) to guarantee strict causal ordering.
+    - **Atomic Cross-Gate Locks**: Simultaneous redemptions of the same ticket across Gate 1 and Gate 2 yield exactly **one valid admission** and **one rejection**, eliminating multi-gate race conditions.
+  </Tab>
+
+  <Tab title="اردو (Urdu)">
+    # سیکیورٹی، خفیہ کاری اور اینٹی فراڈ نظام
+
+    UniTix جعلی ٹکٹوں، ڈبل انٹری اور سیکیورٹی حملوں سے مکمل تحفظ کے لیے بین الاقوامی معیار کے کرپٹوگرافک پروٹوکولز استعمال کرتا ہے۔
+
+    ---
+
+    ## 1. متحرک TOTP سیکیورٹی پروٹوکول
+
+    - **15 سیکنڈ کا خودکار دورانیہ**: ہر 15 سیکنڈ بعد نیا سیکیورٹی کوڈ بنتا ہے۔
+    - **خفیہ کیز کا تحفظ**: QR کوڈ میں خفیہ کی (Secret Key) نظر نہیں آتی بلکہ صرف ایک مخصوص ہیش (HMAC Proof) ہوتا ہے جس کی نقل نہیں کی جا سکتی۔
+    - **سکرین شاٹ کا مکمل خاتمہ**: اگر کوئی پرانا سکرین شاٹ دکھائے گا تو سسٹم اسے ایکسپائرڈ قرار دے کر فوراً مسترد کر دے گا۔
+
+    ---
+
+    ## 2. آف لائن محفوظ ڈیٹا بیس (Offline SQLite Manifest)
+
+    - انٹرنیٹ نہ ہونے کی صورت میں تمام ٹکٹوں کا ڈیٹا موبائل کی محفوظ لوکل ڈیٹا بیس میں محفوظ ہوتا ہے۔
+    - سکینر بغیر انٹرنیٹ کے ٹکٹ کی اصلیت کی تصدیق کرتا ہے اور تمام ریکارڈ محفوظ کر لیتا ہے۔ انٹرنیٹ بحال ہونے پر تمام حاضری کلاؤڈ پر منتقل ہو جاتی ہے۔
+
+    ---
+
+    ## 3. بغیر انٹرنیٹ کے گیٹس کے درمیان رابطہ (P2P Mesh)
+
+    - جب ایونٹ کے مختلف گیٹس ہوں اور انٹرنیٹ نہ ہو تو تمام موبائل آپس میں جڑ جاتے ہیں۔
+    - ایک گیٹ پر سکین ہونے والا ٹکٹ دوسرے تمام گیٹس پر فوراً بلاک ہو جاتا ہے، جس سے ایک ہی ٹکٹ پر دو افراد کا داخلہ ناممکن ہو جاتا ہے۔
+  </Tab>
+</Tabs>
