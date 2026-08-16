@@ -1,123 +1,175 @@
 ---
-title: "Society Wallet, Financials & Bank Payouts"
-description: "Step-by-step guide on managing society revenue, understanding escrow holds, adding bank account details, and requesting payouts."
+title: "Society Wallet, Dynamic Fee Structure & Bank Payouts"
+description: "Complete guide to the society wallet, the 3-tier dynamic platform fee hierarchy, escrow holds, bank account setup, and payout withdrawals."
 ---
 
 <Tabs>
   <Tab title="English">
-    # Society Financials & Bank Payout Guide
+    # Society Wallet, Dynamic Fee Structure & Bank Payout Guide
 
-    The **Society Wallet** (`/society-dashboard/wallet`) manages all ticket revenue, platform fee calculations, and automated bank payout disbursements for your society.
+    The **Society Wallet** (`/society-dashboard/wallet`) manages all ticket revenue, platform fee calculations, escrow holds, and bank payout disbursements for your society.
 
     ---
 
-    ## 1. Understanding Wallet Balances
+    ## 1. Understanding the 3-Tier Dynamic Platform Fee
 
-    | Balance Type | Meaning & Status |
+    The platform fee is **not** a fixed 2.5% for every society and every event. UniTix uses a hierarchical fee resolution system that checks three levels in order of priority:
+
+    | Priority | Fee Source | How It Works |
+    | :--- | :--- | :--- |
+    | **1 (Highest)** | **Event-Locked Fee** | When platform administrators approve and publish your event, they may set a specific fee percentage for that particular event. This rate is permanently locked to the event and never changes, even if other rates change later. |
+    | **2** | **Society Custom Fee** | If no event-level fee was set, the system checks whether your society has a negotiated custom fee rate. High-volume societies or societies with special partnership agreements may have reduced rates (e.g., 1.5% instead of 2.5%). |
+    | **3 (Default)** | **Global Platform Default** | If neither an event-level nor a society-level fee exists, the system-wide global default applies. The current global default is **2.5%**. |
+
+    ### How Fee Resolution Works in Practice
+
+    ```
+    When your event is approved:
+      1. Does the admin set a specific fee for THIS event?  ─── Yes ──→ Use that rate (e.g., 0%, 1%, 3%)
+                    │
+                    No
+                    │
+      2. Does your society have a custom negotiated fee?    ─── Yes ──→ Use the society rate (e.g., 1.5%)
+                    │
+                    No
+                    │
+      3. Use the global platform default                    ──────────→ 2.5%
+    ```
+
+    ### Important Fee Rules
+
+    - **Fee is calculated on the ORIGINAL ticket price**: If you create a promo code that gives students a 50% discount, the platform fee is still calculated on the full original base price, not the discounted amount. Societies absorb the cost of their own promotional discounts.
+    - **Fee is permanently locked at event approval**: The moment your event is approved and published, the resolved effective fee percentage is permanently stamped onto that event. Even if the global rate or your society's custom rate changes after that, your already-approved event keeps its original locked rate.
+    - **Visible per event**: The effective fee percentage for each of your events is displayed in the Wallet financial breakdown, so you always know exactly what rate applies.
+
+    ---
+
+    ## 2. Understanding Wallet Balances
+
+    | Balance Type | Meaning |
     | :--- | :--- |
-    | **Total Gross Revenue** | Total funds collected from all confirmed ticket sales before deductions. |
-    | **Platform Fee (2.5%)** | Standard platform processing fee automatically calculated per ticket. |
-    | **In Escrow (Upcoming Events)** | Revenue from events that have not yet taken place. Held securely in escrow to protect against cancellations. |
-    | **Available Balance** | Net revenue from completed events that is ready for bank payout withdrawal. |
+    | **Total Gross Revenue** | Total funds collected from all confirmed ticket sales before any deductions. |
+    | **Platform Fee** | The dynamically resolved fee (see 3-Tier system above) calculated per event on the original ticket prices. |
+    | **In Escrow (Upcoming Events)** | Revenue from events that have not yet taken place. Held securely until the event concludes to protect against cancellations. |
+    | **Cancellation Penalty Earnings** | Portions of cancelled tickets retained by the society according to the configured refund penalty schedule. |
+    | **Total Withdrawn** | Cumulative amount already transferred to your bank account via completed payout requests. |
+    | **Outstanding Penalties** | Any platform-imposed penalties (e.g., for policy violations) deducted from your balance. |
+    | **Pending Payout Requests** | Payout requests you have submitted that are awaiting administrative review. |
+    | **Available Balance** | The final withdrawable amount: (Revenue After Fee + Cancellation Earnings) minus (Withdrawn + Penalties + Pending Payouts). |
+
+    ### The Wallet Balance Formula
+
+    ```
+    Available Balance = (Revenue After Fee + Cancellation Penalty Earnings)
+                      - (Total Already Withdrawn + Outstanding Penalties + Pending Payout Requests)
+    ```
 
     ---
 
-    ## 2. Step-by-Step: Adding Your Society Bank Account
+    ## 3. Step-by-Step: Adding Your Society Bank Account
 
     Before requesting your first payout, you must link your official society or university bank account:
-
-    ```
-    Step 1: Open Wallet ➔ Step 2: Fill Bank Details ➔ Step 3: Click Save ➔ Step 4: Ready for Payouts
-    ```
 
     1. Log into your **Society Dashboard** at `https://unitix.aarx.online`.
     2. Click **Wallet** in the sidebar navigation.
     3. Scroll to the **Bank Account Details** card.
     4. Fill in the required fields:
-       - **Bank Name**: e.g., *Meezan Bank, HBL, Bank Alfalah, or Standard Chartered*.
+       - **Bank Name**: e.g., *Meezan Bank, HBL, Bank Alfalah, JazzCash, EasyPaisa, or Standard Chartered*.
        - **Account Title**: The official name registered on the bank account (e.g., *FAST Computer Society*).
        - **Account / IBAN Number**: Your 24-character IBAN or standard account number.
     5. Click **Save Bank Details**. A green confirmation banner will appear.
 
     ---
 
-    ## 3. Step-by-Step: Requesting a Bank Payout
+    ## 4. Step-by-Step: Requesting a Bank Payout
 
     Once an event finishes and funds move from Escrow to Available Balance:
-
-    ```
-    Step 1: Check Available Balance ➔ Step 2: Enter Amount ➔ Step 3: Submit ➔ Step 4: Track Transfer
-    ```
 
     1. On the **Wallet** page, check your **Available Balance** (e.g., `PKR 85,000`).
     2. In the **Request Payout** box, enter the amount you wish to withdraw (e.g., `50000`).
     3. Click **Submit Payout Request**.
     4. The requested amount is deducted from your Available Balance and logged in the **Payout History** table below.
-    5. Platform administrators review and process the direct bank transfer within 1–2 business days.
+    5. Platform administrators review and process the direct bank transfer within 1 to 2 business days.
 
     ---
 
-    ## 4. Payout Status Tracking
+    ## 5. Payout Status Tracking
 
-    | Status | Meaning & Next Step |
+    | Status | Meaning |
     | :--- | :--- |
     | **Pending Review** | Payout request submitted; awaiting administrative verification. |
-    | **Approved** | Payout approved; bank transfer dispatched. |
+    | **Approved** | Payout approved; bank transfer dispatched via IBFT. |
     | **Completed** | Funds successfully credited to your society bank account. |
-    | **Rejected** | Request declined (e.g., invalid IBAN or pending ticket dispute). Reason is displayed in the table. |
+    | **Rejected** | Request declined (e.g., invalid IBAN, outstanding penalty, or pending ticket dispute). Reason is displayed in the table. |
   </Tab>
 
   <Tab title="اردو (Urdu)">
-    # سوسائٹی والیٹ، آمدن اور بینک ادائیگی کا طریقہ کار
+    # سوسائٹی والیٹ، متحرک فیس کا نظام اور بینک ادائیگی
 
     **سوسائٹی والیٹ** (`/society-dashboard/wallet`) ایونٹس کی کل آمدن، پلیٹ فارم فیس اور بینک اکاؤنٹ میں رقوم کی منتقلی (Payouts) کا انتظام سنبھالتا ہے۔
 
     ---
 
-    ## 1. والیٹ میں رقوم کی مختلف اقسام
+    ## 1. پلیٹ فارم فیس کا 3 درجاتی متحرک نظام
 
-    | رقم کی قسم | مطلب اور حیثیت |
-    | :--- | :--- |
-    | **کل آمدن (Total Revenue)** | ایونٹ کے بک شدہ ٹکٹوں کی کل رقم۔ |
-    | **پلیٹ فارم فیس (2.5%)** | فی ٹکٹ معیاری سروس فیس۔ |
-    | **محفوظ رقم (In Escrow)** | آنے والے ایونٹس کی رقم جو ایونٹ کے کامیاب انعقاد تک محفوظ رہتی ہے۔ |
-    | **قابلِ نکلوانا بیلنس (Available)** | مکمل ہو چکے ایونٹس کی رقم جو بینک اکاؤنٹ میں ٹرانسفر کے لیے تیار ہے۔ |
+    پلیٹ فارم فیس ہر سوسائٹی اور ہر ایونٹ کے لیے **مقررہ 2.5% نہیں** ہے۔ UniTix ایک 3 سطحی ترجیحی نظام استعمال کرتا ہے:
+
+    | ترجیح | فیس کا ذریعہ | کیسے کام کرتا ہے |
+    | :--- | :--- | :--- |
+    | **1 (سب سے اعلی)** | **ایونٹ کی مقفل فیس** | جب ایڈمن آپ کا ایونٹ منظور کرتے ہیں تو وہ اس مخصوص ایونٹ کے لیے فیس کا فیصد مقرر کر سکتے ہیں۔ یہ شرح مستقل طور پر اس ایونٹ کے ساتھ بند ہو جاتی ہے اور کبھی تبدیل نہیں ہوتی۔ |
+    | **2** | **سوسائٹی کی مخصوص فیس** | اگر ایونٹ کی سطح پر کوئی فیس مقرر نہیں ہوئی تو سسٹم دیکھتا ہے کہ آپ کی سوسائٹی کے لیے کوئی خصوصی شرح طے ہے یا نہیں۔ زیادہ ایونٹس کرنے والی سوسائٹیز کم شرح حاصل کر سکتی ہیں (مثلاً 1.5%)۔ |
+    | **3 (ڈیفالٹ)** | **عالمی ڈیفالٹ** | اگر نہ ایونٹ کی سطح پر اور نہ سوسائٹی کی سطح پر کوئی فیس مقرر ہے تو نظام کی عالمی ڈیفالٹ شرح لاگو ہوتی ہے۔ فی الحال یہ **2.5%** ہے۔ |
+
+    ### اہم فیس قوانین
+    - **فیس اصل قیمت پر لگتی ہے**: اگر آپ پرومو کوڈ سے 50% رعایت دیتے ہیں تو پلیٹ فارم فیس پھر بھی اصل مکمل قیمت پر حساب ہوگی، رعایتی قیمت پر نہیں۔
+    - **فیس ایونٹ کی منظوری پر مستقل طور پر بند ہو جاتی ہے**: ایونٹ منظور ہونے کے بعد اس پر لاگو فیس کی شرح ہمیشہ وہی رہے گی چاہے بعد میں عالمی شرح تبدیل ہو جائے۔
+    - **ہر ایونٹ کے لیے نظر آتی ہے**: والیٹ میں ہر ایونٹ کے مقابل اس کی لاگو فیس کی شرح دکھائی دیتی ہے۔
 
     ---
 
-    ## 2. بینک اکاؤنٹ درج کرنے کا طریقہ
+    ## 2. والیٹ میں رقوم کی مختلف اقسام
 
-    پہلی بار رقم نکلوانے سے پہلے اپنا بینک اکاؤنٹ شامل کریں:
+    | رقم کی قسم | مطلب |
+    | :--- | :--- |
+    | **کل آمدن (Total Revenue)** | ایونٹ کے بک شدہ ٹکٹوں کی کل رقم۔ |
+    | **پلیٹ فارم فیس** | متحرک فیس (اوپر 3 درجاتی نظام دیکھیں) ہر ایونٹ کی اصل ٹکٹ قیمت پر حساب ہوتی ہے۔ |
+    | **محفوظ رقم (In Escrow)** | آنے والے ایونٹس کی رقم جو ایونٹ کے کامیاب انعقاد تک محفوظ رہتی ہے۔ |
+    | **منسوخی سے آمدنی** | منسوخ شدہ ٹکٹوں سے ریفنڈ پالیسی کے مطابق سوسائٹی کے حصے میں آنے والی رقم۔ |
+    | **قابلِ نکلوانا بیلنس (Available)** | حتمی رقم: (فیس کے بعد آمدنی + منسوخی کی آمدنی) منفی (نکلوائی گئی رقم + جرمانے + زیرِ جائزہ درخواستیں)۔ |
+
+    ---
+
+    ## 3. بینک اکاؤنٹ درج کرنے کا طریقہ
 
     1. سوسائٹی ڈیش بورڈ میں **Wallet** کے سیکشن میں جائیں۔
     2. **Bank Account Details** کے خانے میں آئیں۔
     3. مطلوبہ تفصیلات درج کریں:
-       - **بینک کا نام**: مثلاً میزان بینک، ایچ بی ایل، یا ال فلاح۔
-       - **اکاؤنٹ ٹائٹل**: وہ نام جس پر بینک اکاؤنٹ کھلا ہوا ہے (مثلاً فاسٹ کمپیوٹر سوسائٹی)۔
+       - **بینک کا نام**: مثلاً میزان بینک، ایچ بی ایل، جاز کیش، یا ایزی پیسہ۔
+       - **اکاؤنٹ ٹائٹل**: وہ نام جس پر بینک اکاؤنٹ کھلا ہوا ہے۔
        - **اکاؤنٹ / IBAN نمبر**: اپنا 24 ہندسوں پر مشتمل IBAN درج کریں۔
     4. **Save Bank Details** پر کلک کریں۔
 
     ---
 
-    ## 3. رقم بینک اکاؤنٹ میں نکلوانے کا طریقہ (Request Payout)
+    ## 4. رقم بینک اکاؤنٹ میں نکلوانے کا طریقہ
 
     ایونٹ کے اختتام پر جب رقم Available Balance میں آ جائے:
 
     1. اپنے والیٹ میں **Available Balance** دیکھیں (مثلاً 85,000 روپے)۔
     2. **Request Payout** کے خانے میں مطلوبہ رقم لکھیں (مثلاً `50000`)۔
     3. **Submit Payout Request** کے بٹن پر کلک کریں۔
-    4. درخواست جمع ہو جائے گی اور نیچے **Payout History** کی فہرست میں نظر آئے گی۔
-    5. ایڈمن کی تصدیق کے بعد 1 سے 2 دفتری ایام میں رقم آپ کے بینک اکاؤنٹ میں منتقل ہو جائے گی۔
+    4. درخواست جمع ہو جائے گی اور **Payout History** کی فہرست میں نظر آئے گی۔
+    5. ایڈمن کی تصدیق کے بعد 1 سے 2 دفتری ایام میں رقم آپ کے بینک اکاؤنٹ میں IBFT سے منتقل ہو جائے گی۔
 
     ---
 
-    ## 4. ادائیگی کے سٹیٹس کی معلومات
+    ## 5. ادائیگی کے سٹیٹس
 
     | سٹیٹس | مطلب |
     | :--- | :--- |
     | **Pending Review** | درخواست جمع ہو چکی ہے اور جائزہ لیا جا رہا ہے۔ |
     | **Approved** | درخواست منظور ہو گئی اور بینک ٹرانسفر بھیج دیا گیا۔ |
     | **Completed** | رقم کامیابی کے ساتھ آپ کے بینک اکاؤنٹ میں پہنچ چکی ہے۔ |
-    | **Rejected** | کسی خرابی (مثلاً غلط IBAN) کی وجہ سے درخواست مسترد ہوئی۔ وجہ سکرین پر نظر آئے گی۔ |
+    | **Rejected** | کسی خرابی (مثلاً غلط IBAN یا زیرِ سماعت تنازعہ) کی وجہ سے درخواست مسترد ہوئی۔ وجہ سکرین پر نظر آئے گی۔ |
   </Tab>
 </Tabs>
