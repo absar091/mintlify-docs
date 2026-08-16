@@ -1,65 +1,84 @@
 ---
-title: "Team & Role-Based Access Control (RBAC)"
-description: "Detailed operational guide on securely delegating society workflows to managers, gate scanners, and ambassadors."
+title: "Team Roles, Staff Permissions & Recruitment"
+description: "How societies manage co-managers, assign gate scanners to events, and review student membership recruitment applications."
 ---
 
-# Building Your Organizational Team
+<Tabs>
+  <Tab title="English">
+    # Society Team & Permissions Management
 
-Running high-impact university events requires delegation, but sharing the primary Society President/Admin login credentials poses severe security, financial, and data privacy risks. UniTix resolves this through **Role-Based Access Control (RBAC)**, allowing you to invite volunteers and officers with strictly scoped permissions.
+    Manage your executive cabinet, event managers, gate scanner volunteers, and membership recruitment directly from your Society Dashboard.
 
----
+    ---
 
-## 1. Inviting Team Members
-1. Navigate to the **Members & Team** tab (`society-dashboard/members`) in your left sidebar.
-2. Click **Invite Member**.
-3. Input the registered UniTix email address of your team member (they must have created a standard Student Account first).
-4. Assign their specific operational **Role** from the dropdown menu.
-5. Click **Send Invitation**. Their student dashboard will instantly unlock specialized organizer tools based on their assigned tier.
+    ## 1. Step-by-Step: Adding Co-Managers & Assigning Roles
 
----
+    ```
+    Step 1: Open Managers ➔ Step 2: Enter Details ➔ Step 3: Choose Permissions ➔ Step 4: Create Account
+    ```
 
-## 2. Exhaustive Role Permission Hierarchy
+    1. Go to **Society Dashboard** $\to$ **Managers** (`/society-dashboard/managers`).
+    2. Click **Add Manager / Staff Member**.
+    3. Enter the member's Full Name, Email Address, and a temporary password.
+    4. Select specific **Permission Toggles**:
+       - **Event Creator**: Can create and edit events.
+       - **Payment Verifier**: Can review and approve student bank receipts.
+       - **Gate Scanner**: Can log in to the scanner app and verify passes.
+       - **Analytics Viewer**: Can view revenue and attendance reports.
+    5. Assign them to **All Events** or **Specific Events**.
+    6. Click **Create Account**.
 
-| Feature / Action | Society Admin (President) | Event Manager | Gate Scanner | Ambassador |
-| :--- | :---: | :---: | :---: | :---: |
-| **Create & Edit Events** | ✅ Yes | ✅ Yes | ❌ No | ❌ No |
-| **Configure Ticket Tiers & Pricing** | ✅ Yes | ✅ Yes | ❌ No | ❌ No |
-| **Verify Manual Bank Payments** | ✅ Yes | ✅ Yes | ❌ No | ❌ No |
-| **Access Gate Scanner App (`/scan`)** | ✅ Yes | ✅ Yes | ✅ Yes | ❌ No |
-| **View Attendee Lists & Export `.CSV`** | ✅ Yes | ✅ Yes | ❌ No | ❌ No |
-| **View Wallet & Request Payouts (`PKR`)** | ✅ Yes | ❌ No | ❌ No | ❌ No |
-| **Edit Society Bank Details (IBAN)** | ✅ Yes | ❌ No | ❌ No | ❌ No |
-| **Invite / Remove Team Members** | ✅ Yes | ❌ No | ❌ No | ❌ No |
-| **Generate Promo / Referral Codes** | ✅ Yes | ✅ Yes | ❌ No | ✅ Yes (Assigned only) |
+    ---
 
----
+    ## 2. Step-by-Step: Assigning Gate Scanner Staff
 
-## 3. Role Breakdown & Operational Scope
+    1. Go to **Society Dashboard** $\to$ **Scanners** (`/society-dashboard/scanners`).
+    2. Create dedicated scanner volunteer accounts.
+    3. Select which active event each scanner is authorized to scan at the gate.
+    4. Scanner staff can only access passes for their assigned events, ensuring complete campus security.
 
-### 👑 Society Admin (President)
-The root account holder who originally registered the society and submitted KYC documentation (`CNIC`, Faculty Advisor verification). The Admin retains **100% full governance over all financial, legal, and personnel settings**, including the ability to request payouts, update bank IBANs, and remove other team members.
+    ---
 
-### 🛠️ Event Manager
-Designed for Vice Presidents, General Secretaries, and Event Directors. Event Managers handle the day-to-day heavy lifting:
-- Can launch new event pages, modify capacities, upload promotional banners, and manage waitlists.
-- Can audit and verify manual payment screenshots submitted by students.
-- **Security Guard:** Strict API route guards block Event Managers from accessing the `/wallet` endpoint or viewing sensitive bank transfer balances.
+    ## 3. Step-by-Step: Reviewing Membership Recruitment
 
-### 📱 Gate Scanner
-Designed exclusively for event-day entry volunteers and security staff.
-- When logged in, Scanners are routed directly to `unitix.aarx.online/scan`.
-- They can select active events and operate their mobile camera to validate student QR passes.
-- They have zero visibility into ticket pricing, revenue numbers, society settings, or attendee contact sheets.
+    1. Go to **Society Dashboard** $\to$ **Members** (`/society-dashboard/members`).
+    2. Review the list of incoming student applications to join your society.
+    3. View applicant details: Full Name, Roll Number, Department, and Reason for Joining.
+    4. Click **Approve** to add them to your official society roster, or **Reject** to dismiss the application.
+  </Tab>
 
-### 🎟️ Ambassador / Promoter
-Designed for student promoters who earn commission or track sales milestones through personalized referral links (`/ambassadors`).
-- Ambassadors get a dedicated tracking portal showing how many student checkouts occurred via their unique referral link.
-- Cannot view or edit society administrative settings.
+  <Tab title="اردو (Urdu)">
+    # ٹیم، عملے کے اختیارات اور ممبرشپ کا انتظام
 
----
+    اپنی سوسائٹی کے مینیجرز، گیٹ سکینرز اور نئی ممبرشپ کی درخواستوں کا انتظام ایک ہی جگہ سے سنبھالیں۔
 
-## 4. Revoking Access & Security Auditing
-If an officer graduates or a volunteer leaves your team:
-1. Navigate to **Members & Team**.
-2. Click the **Trash / Revoke Icon** next to the user's name.
-3. Upon confirmation, their custom Firebase Auth claims (`role: "manager" | "scanner"`) are instantly revoked on the backend, and any active browser session is immediately downgraded to a standard student account.
+    ---
+
+    ## 1. نیا مینیجر بنانے اور اختیارات دینے کا طریقہ
+
+    1. سوسائٹی ڈیش بورڈ میں **Managers** کے سیکشن میں جائیں۔
+    2. **Add Manager** پر کلک کریں۔
+    3. ممبر کا نام، ای میل اور پاس ورڈ درج کریں۔
+    4. مطلوبہ اختیارات منتخب کریں:
+       - **ایونٹ بنانے کا اختیار**: نیا ایونٹ بنانا اور ایڈٹ کرنا۔
+       - **رسیدیں تصدیق کرنے کا اختیار**: بینک رسیدوں کی جانچ پڑتال۔
+       - **سکینر کا اختیار**: گیٹ پر ٹکٹ چیک کرنا۔
+       - **اینالیٹکس دیکھنے کا اختیار**: آمدن اور رپورٹس دیکھنا۔
+    5. **Create Account** پر کلک کریں۔
+
+    ---
+
+    ## 2. گیٹ سکینرز کا تقرر
+
+    1. سوسائٹی ڈیش بورڈ میں **Scanners** پر جائیں۔
+    2. گیٹ کے عملے کا اکاؤنٹ بنائیں اور بتائیں کہ وہ کس ایونٹ کے گیٹ پر ڈیوٹی دیں گے۔
+
+    ---
+
+    ## 3. نئی ممبرشپ کی درخواستوں کی منظوری
+
+    1. سوسائٹی ڈیش بورڈ میں **Members** کے سیکشن میں جائیں۔
+    2. سوسائٹی میں شامل ہونے کے خواہش مند طلباء کی درخواستیں، رول نمبر اور شعبہ دیکھیں۔
+    3. درخواست منظور کرنے کے لیے **Approve** پر کلک کریں۔
+  </Tab>
+</Tabs>

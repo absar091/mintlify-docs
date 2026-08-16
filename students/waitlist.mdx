@@ -1,36 +1,66 @@
 ---
-title: "Automated Waitlists & Queue Management"
-description: "How to join event waitlists, track your queue position, and automatically secure tickets when cancellations occur."
+title: "Waitlists & Automated Spot Reallocation"
+description: "How students join waitlists for sold-out events and claim newly available spots when existing attendees cancel."
 ---
 
-# Fair & Automated Waitlists
+<Tabs>
+  <Tab title="English">
+    # Waitlist & Spot Reallocation Guide
 
-Popular university events, guest lectures, and concerts frequently sell out within minutes of going live. Instead of forcing students to refresh the page endlessly or rely on unfair manual lists, UniTix features an **Automated Waitlist & Reallocation Engine**.
+    When a popular campus event reaches 100% capacity, UniTix automatically activates an automated waitlist. If an existing attendee cancels their ticket or their payment verification expires, the platform immediately reallocates that slot to the next student in line.
 
----
+    ---
 
-## 1. How the Waitlist Triggers
-When an event's overall venue capacity or a specific ticket tier's inventory limit reaches `100% Sold Out`:
-- The standard **Buy Ticket / Get Free Ticket** buttons automatically convert into **Join Waitlist**.
-- Any verified student can click **Join Waitlist** with one tap.
-- You are added to a structured chronological waitlist queue, timestamped to the exact millisecond you clicked.
+    ## 1. Step-by-Step: Joining a Waitlist
 
----
+    ```
+    Step 1: Open Sold-Out Event ➔ Step 2: Click "Join Waitlist" ➔ Step 3: Track Position
+    ```
 
-## 2. Automatic Inventory Reallocation
-Our automated reallocation engine monitors event inventory 24/7. A sold-out slot automatically reopens whenever:
-1. **A Student Cancels:** An existing attendee clicks *Cancel Reservation* inside their dashboard.
-2. **A Payment Receipt Is Rejected:** An organizer rejects a pending manual payment screenshot (`pending_payment -> cancelled`).
-3. **An Organizer Increases Capacity:** The society expands the venue limit or adds additional seats to a tier.
+    1. Open the event page for a sold-out event.
+    2. The checkout button will automatically display **Join Waitlist**.
+    3. Click **Join Waitlist**.
+    4. Confirm your university email and phone number.
+    5. You are added to the queue and given a real-time waitlist position (e.g., *Position #4 in line*).
 
-### The Instant Reallocation Workflow:
-1. **Queue Check:** The moment a slot frees up, the backend queries the waitlist for the `#1` student in line for that specific event and tier.
-2. **Reservation Lock:** The slot is immediately reserved for that student, removing them from the queue and locking the ticket under their profile (`status: waitlist_claimed` or `pending`).
-3. **Instant Notification:** The system dispatches an urgent SMS and Email alert: *“Good news! A ticket for [Event Name] has become available and is reserved for you.”*
+    ---
 
----
+    ## 2. Step-by-Step: Claiming an Available Spot
 
-## 3. Claiming Your Reallocated Slot
-Once you receive a waitlist reallocation notification:
-- **Free Tickets:** If the ticket is free, the system automatically marks it `Approved` and deposits the digital QR pass into your **My Tickets** dashboard immediately!
-- **Paid Tickets:** If the ticket has a cost, you are given a **24-Hour Exclusive Claim Window**. You must log into UniTix, complete the checkout, and upload your payment screenshot before the countdown timer expires. If you miss the window, your reservation lapses, and the slot is automatically offered to student `#2` on the waitlist.
+    ```
+    Step 1: Receive Alert ➔ Step 2: Open Claim Link ➔ Step 3: Complete Checkout within 2 Hours
+    ```
+
+    1. When a ticket slot becomes available, the system immediately sends you an **Email and In-App Notification**.
+    2. Open the claim link provided in the notification.
+    3. Your ticket slot is held exclusively for you for a **2-hour reservation window**.
+    4. Choose your payment method and complete checkout.
+    5. If you do not claim the ticket within the 2-hour window, the slot is automatically offered to the next student in line.
+  </Tab>
+
+  <Tab title="اردو (Urdu)">
+    # ویٹ لسٹ اور خالی سیٹوں کا خودکار نظام
+
+    جب کسی ایونٹ کے تمام ٹکٹ فروخت ہو جائیں (100% فل ہو جائے)، تو UniTix کا خودکار ویٹ لسٹ سسٹم فعال ہو جاتا ہے۔ اگر کوئی پرانا خریدار اپنا ٹکٹ منسوخ کرے تو خالی ہونے والی سیٹ ویٹ لسٹ میں موجود اگلے طالب علم کو مل جاتی ہے۔
+
+    ---
+
+    ## 1. ویٹ لسٹ میں شامل ہونے کا طریقہ
+
+    1. وہ ایونٹ کھولیں جس کے تمام ٹکٹ ختم ہو چکے ہوں۔
+    2. سکرین پر **Join Waitlist** کا بٹن نظر آئے گا۔
+    3. **Join Waitlist** پر کلک کریں۔
+    4. اپنا ای میل اور موبائل نمبر تصدیق کریں۔
+    5. آپ کو ویٹ لسٹ میں ایک نمبر مل جائے گا (مثلاً قطار میں نمبر 4)۔
+
+    ---
+
+    ## 2. سیٹ خالی ہونے پر ٹکٹ کلیم کرنے کا طریقہ
+
+    1. جیسے ہی کوئی سیٹ خالی ہوگی، آپ کو فوری طور پر **ای میل اور نوٹیفکیشن** موصول ہوگا۔
+    2. نوٹیفکیشن میں دیے گئے لنک پر کلک کریں۔
+    3. یہ سیٹ اگلے **2 گھنٹے** کے لیے صرف آپ کے نام پر مخصوص رہے گی۔
+    4. اپنی ادائیگی مکمل کر کے ٹکٹ حاصل کریں۔
+    5. اگر آپ 2 گھنٹے میں بکنگ نہیں کریں گے تو یہ موقع قطار میں موجود اگلے طالب علم کو مل جائے گا۔
+  </Tab>
+</Tabs>

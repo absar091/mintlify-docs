@@ -1,43 +1,55 @@
 ---
-title: "Analytics, Reporting & Exports"
-description: "How to track event conversions, analyze ticket velocity, and export attendee manifests."
+title: "Event Analytics & Attendee Reports"
+description: "How societies analyze ticket sales trends, monitor hourly gate arrival velocity, and export attendee rosters."
 ---
 
-# Deep-Dive Analytics & Reporting
+<Tabs>
+  <Tab title="English">
+    # Analytics & Attendee Export Reports
 
-Data drives successful campus events. Beyond the high-level metrics on your main overview, the **Analytics Suite** (`society-dashboard/analytics`) provides detailed, multi-dimensional reporting across all your events and financial cycles.
+    The **Analytics Hub** (`/society-dashboard/analytics` and `/society-dashboard/events/[id]/analytics`) provides organizers with reporting tools to evaluate attendance trends and export verified rosters.
 
----
+    ---
 
-## 1. Core Analytics Metrics
-Navigate to the **Analytics** tab in your sidebar to track interactive time-series performance:
-- **Total Revenue & Net Take-Home:** Compare gross ticket volume against net proceeds after platform fees and refunds.
-- **Ticket Sales Velocity:** Track exact daily and hourly ticket purchase spikes to measure the direct ROI of your Instagram posts, campus booth promotions, or early bird deadline countdowns.
-- **Conversion Rate Tracking:** Monitor how many unique students visited your public event page versus how many completed a checkout. If page views are high but conversions are low, adjust your pricing tiers or add clearer event details!
+    ## 1. Exporting Attendee Rosters (CSV / Excel)
 
----
+    ```
+    Step 1: Open Event Analytics ➔ Step 2: Click Export ➔ Step 3: Download Complete Attendee CSV
+    ```
 
-## 2. Dynamic Date Range & Event Filtering
-Customize your reporting scope with two powerful filtering dimensions:
-- **Time Horizons:** Filter data by *Last 7 Days*, *Last 30 Days*, *Last 90 Days*, or *All Time*.
-- **Event-Specific Breakdown:** Select an individual event from the top switcher to isolate its exact conversion funnel, revenue breakdown, and check-in rate independently of your broader society portfolio.
+    1. Go to **Society Dashboard** $\to$ **Events** $\to$ Click on your event $\to$ Click **Analytics**.
+    2. Click the **Export Attendee List (CSV)** button.
+    3. The file downloads with:
+       - **Attendee Full Name**
+       - **Registration / Roll Number**
+       - **Department & University**
+       - **Ticket Tier Purchased**
+       - **Gate Check-In Status & Timestamp**
 
----
+    ---
 
-## 3. Exporting Attendee Manifests (`.CSV`)
-While the digital Gate Scanner app is recommended for real-time check-ins, certain venue regulations or physical badge printing workflows require raw data spreadsheets.
+    ## 2. Gate Arrival Velocity & Hourly Check-In Curve
 
-### How to Export Attendee Lists
-1. Navigate to the **Events** tab in your dashboard sidebar.
-2. Click on the specific event you want to export.
-3. In the top right header, click **Export Attendees**.
-4. The system automatically compiles and downloads a structured `.csv` spreadsheet containing:
-   - **Student Full Name**
-   - **University Roll/Registration Number**
-   - **Ticket Tier (`Early Bird`, `VIP`, etc.)**
-   - **Order Reference ID & Payment Method**
-   - **Check-in Status (`Checked In`, `Valid`, `Pending`)**
-   - **Check-in Timestamp (if scanned at gate)**
+    - **Hourly Arrival Graph**: Tracks how many attendees entered the gates each hour (e.g., 5:00 PM – 6:00 PM peak arrival).
+    - **No-Show Rate**: Automatically calculates the percentage of ticket holders who did not attend.
+  </Tab>
 
-> [!IMPORTANT]
-> Exported attendee manifests contain personal identifiable information (PII) such as student roll numbers and phone/email contacts. Treat these files securely in accordance with university data protection policies (`PDPA / GDPR`).
+  <Tab title="اردو (Urdu)">
+    # اینالیٹکس اور حاضرین کی فہرست ڈاؤن لوڈ کرنا
+
+    **اینالیٹکس ہب** سوسائٹی کے منتظمین کو حاضرین کے ڈیٹا کی جانچ پڑتال اور رپورٹیں ڈاؤن لوڈ کرنے کی سہولت فراہم کرتا ہے۔
+
+    ---
+
+    ## 1. حاضرین کی مکمل لسٹ ڈاؤن لوڈ کرنا (Excel / CSV)
+
+    1. سوسائٹی ڈیش بورڈ میں اپنے ایونٹ کے **Analytics** سیکشن میں جائیں۔
+    2. **Export Attendee List (CSV)** پر کلک کریں۔
+    3. فائل میں تمام شرکاء کے نام، رول نمبر، شعبہ، ٹکٹ کی قسم اور گیٹ پر حاضری کا وقت شامل ہوگا۔
+
+    ---
+
+    ## 2. گیٹ پر آمد کا گھنٹہ وار چارٹ
+    - دیکھ سکتے ہیں کہ کس گھنٹے میں سب سے زیادہ لوگ ہال میں داخل ہوئے تاکہ آئندہ ایونٹس میں گیٹ کے انتظامات بہتر کیے جا سکیں۔
+  </Tab>
+</Tabs>

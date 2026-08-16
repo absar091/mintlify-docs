@@ -1,59 +1,63 @@
 ---
-title: "Configuring Refunds & Cancellation Policies"
-description: "Detailed operational guide on setting up tiered cancellation penalty distributions and automated refund workflows."
+title: "Refund Policies & Processing Cancellations"
+description: "How societies configure tiered cancellation penalty schedules and process attendee refund requests."
 ---
 
-# The Multi-Tiered Refund Engine
+<Tabs>
+  <Tab title="English">
+    # Refund Policies & Cancellation Management
 
-UniTix empowers event organizers with a fully customizable, automated **Multi-Tiered Cancellation & Refund Engine**. Instead of dealing with messy manual disputes on social media or email, your cancellation rules are codified into your event settings, displayed transparently during checkout, and enforced automatically by our serverless logic.
+    The **Refunds Hub** (`/society-dashboard/refunds`) gives societies complete control over cancellation penalties while automating refund processing.
 
----
+    ---
 
-## 1. Enabling & Structuring Refund Policies
-When creating or modifying an event in the Event Builder (`society-dashboard/events`), scroll to the **Cancellation & Refund Policy** section. You can toggle **Allow Refunds** on or off:
-- **No Refunds (Strict):** Once purchased, tickets cannot be cancelled by the student for financial reimbursement (though they may still transfer them if transfers are enabled).
-- **Tiered Refunds (Dynamic):** Students can cancel their reservations within specific time windows, triggering automated split distributions.
+    ## 1. Setting Up Your Tiered Refund Policy
 
----
+    When creating or managing events, configure standard cancellation penalty rules:
+    - **Early Cancellation (>7 days before event)**: 100% refund to attendee (0% penalty kept).
+    - **Mid-Window Cancellation (3 to 7 days before event)**: 80% refund to attendee (20% penalty retained by society).
+    - **Late Cancellation (24 to 72 hours before event)**: 50% refund to attendee (50% penalty retained by society).
+    - **Last-Minute (<24 hours)**: 0% refund (slot cannot be re-allocated).
 
-## 2. Penalty Split Distribution Logic
-For every cancellation window you define, the financial distribution across three entities **must equal exactly 100%**:
+    ---
 
-$$\text{Student Refund \%} + \text{Society Cut \%} + \text{Platform Cut \%} = 100\%$$
+    ## 2. Step-by-Step: Processing Attendee Refund Requests
 
-### Breakdown of Entities:
-1. **Student Refund (`% Refunded to Student`):** The exact percentage of the original ticket price returned to the student's payment account (`PKR`).
-2. **Society Cut (`% Kept by Society`):** The cancellation penalty fee retained by your society as compensation for holding the inventory slot. This amount remains part of your take-home revenue.
-3. **Platform Cut (`% Kept by Platform`):** The processing and gateway fee retained by UniTix (`10% - 20%` depending on tier) to cover payment reversal costs, SMS notifications, and database operations.
+    ```
+    Step 1: Open Refunds Hub ➔ Step 2: Review Request ➔ Step 3: Check Penalty Calculation ➔ Step 4: Approve or Reject
+    ```
 
----
+    1. Go to **Society Dashboard** $\to$ **Refunds** (`/society-dashboard/refunds`).
+    2. In the **Refund Requests** table, review the attendee's Name, Roll Number, Ticket Code, and Reason for Cancellation.
+    3. The system automatically calculates:
+       - **Total Ticket Price** (e.g., `PKR 2,000`)
+       - **Refund Amount to Student** (e.g., `PKR 1,600`)
+       - **Penalty Retained by Society** (e.g., `PKR 400`)
+    4. **To Approve**: Click **Approve Refund**. The net refund is dispatched to the student, and the penalty amount is credited to your society wallet.
+    5. **To Reject**: Click **Reject**, enter the justification, and click **Confirm**.
+  </Tab>
 
-## 3. Standard Time-Window Configurations
-Our system evaluates cancellation requests based on the exact timestamp difference between the cancellation click and your event's scheduled start time:
+  <Tab title="اردو (Urdu)">
+    # ریفنڈ پالیسی اور ٹکٹ منسوخی کا انتظام
 
-| Cancellation Window | Recommended Student Refund | Recommended Society Cut | Recommended Platform Cut | Operational Rationale |
-| :--- | :--- | :--- | :--- | :--- |
-| **Tier 1: > 7 Days Before Event** | `80%` | `10%` | `10%` | Plenty of time remains to resell the ticket to waitlisted students. |
-| **Tier 2: 48 Hours to 7 Days** | `50%` | `30%` | `20%` | Moderate penalty to discourage casual cancellations closer to event day. |
-| **Final Window: < 48 Hours** | `0%` | `100%` | `0%` | **Hard Lock:** Prevents last-minute no-shows from leaving empty seats at the venue. |
+    **ریفنڈز ہب** (`/society-dashboard/refunds`) سوسائٹی کو منسوخی کی فیس مقرر کرنے اور طلباء کی ریفنڈ کی درخواستوں پر فیصلہ کرنے کی سہولت دیتا ہے۔
 
----
+    ---
 
-## 4. Built-In Platform Safety Policies
-To protect both students and organizers from edge cases, the UniTix backend enforces two immutable global rules:
+    ## 1. ریفنڈ کٹوتی کا شیڈول
+    - **7 دن پہلے منسوخی**: طالب علم کو 100% مکمل واپسی (کوئی کٹوتی نہیں)۔
+    - **3 تا 7 دن پہلے**: 80% رقم واپس، 20% فیس سوسائٹی کے پاس رہے گی۔
+    - **24 تا 72 گھنٹے پہلے**: 50% رقم واپس، 50% فیس سوسائٹی کے پاس رہے گی۔
+    - **24 گھنٹے سے کم**: آخری وقت کی وجہ سے کوئی ریفنڈ نہیں۔
 
-### ⏱️ 24-Hour Buyer's Remorse Grace Period
-If a student purchases a ticket and requests a cancellation **within 24 hours of the original purchase timestamp** (and the event is more than 48 hours away), they are automatically granted a **100% full refund**. This protects students who accidentally selected the wrong tier or date during checkout.
+    ---
 
-### 🛑 48-Hour Hard Cutoff Guard
-Once the clock ticks below **48 hours prior to event commencement**, automated cancellation requests are locked across all standard events (`0% refund`). This ensures your catering, venue seating, and security numbers remain stable during final preparations.
+    ## 2. ریفنڈ کی درخواستوں پر فیصلہ کرنے کا طریقہ
 
----
-
-## 5. What Happens When a Ticket Is Cancelled?
-When a student triggers a valid cancellation from their dashboard (`My Tickets -> Cancel Reservation`):
-1. **Status Update:** The student's ticket record immediately transitions from `approved` to `cancelled` (or `refunded`).
-2. **QR Invalidation:** The student's digital QR token (`qrToken`) is permanently revoked, ensuring the cancelled pass cannot be scanned at the gate.
-3. **Inventory Release:** The venue capacity and specific ticket tier inventory count are instantly decremented (`sold - 1`), reopening one available slot for new purchases.
-4. **Waitlist Trigger:** If students are queued on the automated waitlist, our background allocation engine immediately reserves the newly freed slot for the first student in line and dispatches an SMS/Email notification.
-5. **Ledger Reconciliation:** Your dashboard Net Revenue card dynamically updates to subtract the refunded portion while retaining your society's cancellation penalty cut.
+    1. سوسائٹی ڈیش بورڈ میں **Refunds** پر جائیں۔
+    2. طالب علم کا نام، رول نمبر اور منسوخی کی وجہ دیکھیں۔
+    3. سسٹم خود بخود رقم اور سوسائٹی کی فیس کا حساب لگا دے گا (مثلاً 2000 روپے کے ٹکٹ پر 1600 روپے واپس اور 400 روپے سوسائٹی کی بچت)۔
+    4. درخواست منظور کرنے کے لیے **Approve Refund** پر کلک کریں۔
+    5. اگر درخواست مسترد کرنی ہو تو **Reject** پر کلک کر کے وجہ بیان کریں۔
+  </Tab>
+</Tabs>

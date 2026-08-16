@@ -1,38 +1,73 @@
 ---
-title: "Digital Attendance Certificates"
-description: "How to claim verifiable post-event certificates, verify attendance eligibility, and share credentials on LinkedIn."
+title: "Claiming & Verifying Digital Certificates"
+description: "How students claim verified certificates of attendance, download high-resolution PDFs, and verify credentials via QR code."
 ---
 
-# Verifiable Academic Credentials
+<Tabs>
+  <Tab title="English">
+    # Claiming Verified Event Certificates
 
-Attending technical workshops, leadership seminars, and academic symposiums adds significant value to your student resume. UniTix features an integrated **Automated Certificate Issuance Engine** that awards verifiable digital certificates to confirmed attendees immediately after an event concludes.
+    UniTix allows students to earn official, cryptographically verifiable certificates of participation for workshops, hackathons, seminars, and conferences they physically attended.
 
----
+    ---
 
-## 1. Eligibility & Attendance Verification
-You cannot simply claim a certificate for purchasing a ticket—**you must physically attend the event and get checked in at the gate.**
+    ## 1. Eligibility Requirements
 
-### The Verification Rule:
-- When you present your digital pass at the venue entrance and the organizer scans your QR code (`unitix.aarx.online/scan`), your ticket document transitions to `Used` (`checkedIn: true`).
-- Once the organizer marks the event as `Completed` in their dashboard, our automated certificate generation engine unlocks exclusively for students whose tickets carry the verified `Used / Checked In` timestamp.
+    To claim an official certificate, two conditions must be met:
+    1. **Physical Gate Attendance**: Your ticket must have been scanned at the entrance gate during the event (status must show **Used / Checked In**).
+    2. **Certificate Enabled**: The organizing society must have enabled digital certificates for that event.
 
----
+    ---
 
-## 2. Claiming & Downloading Your Certificate
-1. Log into your **Student Dashboard** (`unitix.aarx.online`) post-event.
-2. Navigate to the **Certificates** tab (`dashboard/certificates`).
-3. You will see a list of all eligible past events you attended.
-4. Click **Claim Certificate** on the desired event card.
-5. The backend generates a high-resolution, branded certificate (`PNG` / `PDF`) dynamically inscribing:
-   - **Your Verified Full Name & University Roll Number**
-   - **Event Title, Date, and Organizing Society Name**
-   - **Official Society & University Logos**
-   - **Unique Cryptographic Certificate ID (`Cert-UUID`)**
-   - **Verifiable QR Code embedded in the corner**
+    ## 2. Step-by-Step: Claiming Your Certificate
 
----
+    ```
+    Step 1: Open Certificates ➔ Step 2: Locate Attended Event ➔ Step 3: Click Claim ➔ Step 4: Download PDF
+    ```
 
-## 3. LinkedIn & Resume Verification
-Every UniTix certificate is permanently hosted on a public verification endpoint (`unitix.aarx.online/c/[cert-id]`).
-- When prospective employers or graduate admissions officers scan the QR code or click your certificate URL, they are routed to a live verification page confirming your identity, roll number, and attendance timestamp.
-- **One-Click LinkedIn Share:** Use the built-in **Add to LinkedIn** button to instantly attach your verified credential to the *Licenses & Certifications* section of your profile!
+    1. Log into your **Student Dashboard** at `https://unitix.aarx.online`.
+    2. Click **Certificates** in the top navigation bar.
+    3. You will see a list of all events you physically attended.
+    4. Click the **Claim Certificate** button next to the eligible event.
+    5. The system issues your official credential with a unique **Certificate ID** and verification QR code.
+    6. Click **Download PDF** to save the print-ready certificate for your resume or LinkedIn profile.
+
+    ---
+
+    ## 3. Public Certificate Verification
+
+    - Every issued certificate features a **Verification QR Code** and a public URL: `https://unitix.aarx.online/verify-certificate/[id]`.
+    - Employers, professors, and recruiters can scan this QR code to view instant proof of authenticity, attendee name, event title, issuing society, and issue date.
+  </Tab>
+
+  <Tab title="اردو (Urdu)">
+    # تصدیق شدہ سرٹیفکیٹ حاصل کرنے اور تصدیق کا طریقہ
+
+    UniTix ان ورکشاپس، سیمینارز اور کانفرنسز کے لیے باضابطہ ڈیجیٹل سرٹیفکیٹس جاری کرتا ہے جن میں آپ نے شرکت کی ہو۔
+
+    ---
+
+    ## 1. سرٹیفکیٹ حاصل کرنے کی شرائط
+
+    1. **گیٹ پر حاضری**: آپ کا ٹکٹ ایونٹ کے گیٹ پر سکین ہو چکا ہو (اسٹیٹس Checked In ہو)۔
+    2. **سوسائٹی کی منظوری**: سوسائٹی نے اس ایونٹ کے لیے سرٹیفکیٹس فعال کیے ہوں۔
+
+    ---
+
+    ## 2. سرٹیفکیٹ کلیم کرنے کا طریقہ
+
+    1. ویب سائٹ `https://unitix.aarx.online` پر لاگ ان کریں۔
+    2. مینو میں **Certificates** پر کلک کریں۔
+    3. آپ کو ان تمام ایونٹس کی فہرست نظر آئے گی جن میں آپ نے شرکت کی۔
+    4. ایونٹ کے سامنے **Claim Certificate** پر کلک کریں۔
+    5. آپ کے نام کے ساتھ تصدیق شدہ سرٹیفکیٹ جاری ہو جائے گا۔
+    6. **Download PDF** پر کلک کر کے اپنی سی وی یا لنکڈ ان کے لیے سرٹیفکیٹ محفوظ کریں۔
+
+    ---
+
+    ## 3. سرٹیفکیٹ کی آن لائن تصدیق
+
+    - ہر سرٹیفکیٹ پر ایک سیکیورٹی QR کوڈ ہوتا ہے۔
+    - کوئی بھی ادارہ یا پروفیسر اس QR کوڈ کو سکین کر کے تصدیق کر سکتا ہے کہ یہ سرٹیفکیٹ اصلی ہے اور آپ نے واقعی اس ایونٹ میں شرکت کی تھی۔
+  </Tab>
+</Tabs>
