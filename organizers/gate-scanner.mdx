@@ -1,25 +1,25 @@
 ---
 title: "The Gate Scanner App & Attendance Verification"
-description: "Comprehensive guide for operating the UniTix Gate Scanner mobile APK and PWA with Online, Offline SQLite Manifest, and P2P Mesh modes."
+description: "Comprehensive guide for operating the UniTix Gate Scanner mobile APK and Web app in Online, Offline, and Multi-Gate Mesh modes."
 ---
 
 <Tabs>
   <Tab title="English">
     # Operating the Gate Scanner
 
-    The **UniTix Gate Scanner** is an enterprise-grade attendee verification suite available as both a high-performance native **Android APK** and a responsive **Web App** (`unitix.aarx.online/scan`). It empowers venue entry staff to verify thousands of attendees with sub-second latency while completely preventing ticket duplication, screenshots, and cross-gate double entry.
+    The **UniTix Gate Scanner** is an attendee verification application available as a native **Android APK** and a responsive **Web App** (`unitix.aarx.online/scan`). It allows event staff to verify attendees rapidly while preventing ticket duplication, screenshots, and cross-gate double entry.
 
     ---
 
     ## 1. Attendance Metrics Dashboard
     The Gate Scanner features a 4-metric live header bar:
 
-    | Metric | Definition & Formula | Operational Meaning |
+    | Metric | Formula | Operational Meaning |
     | :--- | :--- | :--- |
-    | **Tickets Sold** | `ticketsSold` | Total valid event passes purchased or issued. |
-    | **Checked In** | `checkedInCount` | Total attendees physically verified through venue gates today. |
-    | **Remaining** | `Tickets Sold - Checked In` | Valid ticket holders who have not yet entered the venue. |
-    | **Max Capacity** | `totalCapacity` | Total venue seating or safety occupancy limit. |
+    | **Tickets Sold** | Total Issued | Total valid event passes purchased or claimed. |
+    | **Checked In** | Verified Count | Total attendees admitted through the entrance gates today. |
+    | **Remaining** | Sold - Checked In | Valid ticket holders who have not yet entered the venue. |
+    | **Max Capacity** | Safety Limit | Total venue seating or safety occupancy limit. |
 
     ---
 
@@ -28,97 +28,92 @@ description: "Comprehensive guide for operating the UniTix Gate Scanner mobile A
     The scanner automatically adapts to venue network conditions:
 
     ### A. Online Cloud Direct Mode (Default)
-    - **How It Works**: The scanner transmits ticket scans directly to cloud Firestore transactions over 4G/5G or venue Wi-Fi.
-    - **Latency**: Sub-300ms verification.
-    - **Double-Entry Lock**: Real-time database locking prevents a pass from being used twice across any gate.
+    - **How It Works**: The scanner transmits ticket scans directly to the secure cloud over 4G/5G or venue Wi-Fi.
+    - **Speed**: Sub-second verification.
+    - **Double-Entry Lock**: Real-time locking prevents a pass from being used twice across any gate.
 
-    ### B. Offline SQLite Manifest Mode (Zero Internet)
-    - **How It Works**: Before entering remote or underground halls, staff tap **Download Manifest**. The app downloads the cryptographically signed event manifest into an encrypted local SQLite database.
-    - **Offline Verification**: The scanner validates dynamic HMAC-SHA256 TOTP tokens completely offline using local cryptographic keys.
-    - **Audit Log Sync**: Scans are recorded in a local SQLite ledger and automatically synchronized to the cloud once an internet connection is re-established.
+    ### B. Offline Mode (Zero Internet)
+    - **How It Works**: Before entering remote or underground halls, staff tap **Download Manifest**. The app downloads the verified attendee list locally.
+    - **Offline Verification**: The scanner validates dynamic passes completely offline.
+    - **Automatic Sync**: Scans are stored locally and automatically uploaded to the cloud once an internet connection is available.
 
-    ### C. Event Hub P2P Star Mesh Mode (Multi-Gate Offline)
-    - **How It Works**: One scanner phone acts as the central **Event Hub**, while other gate phones connect via local Wi-Fi hotspot or Bluetooth star mesh.
-    - **Atomic Cross-Gate Locks**: When Gate 1 scans Ticket `#007`, the Hub assigns a monotonic sequence counter (`seqId`) and instantly broadcasts a `SCAN_BROADCAST` to Gate 2 within 15 milliseconds.
-    - **Zero Double Entry**: If Ticket `#007` is presented at Gate 2 simultaneously, it is immediately rejected with `ALREADY_USED`.
+    ### C. Multi-Gate Peer Mode (Multi-Gate Offline)
+    - **How It Works**: One scanner phone acts as the central hub, while other gate phones connect wirelessly over local Wi-Fi or Bluetooth.
+    - **Instant Cross-Gate Sync**: When Gate 1 admits an attendee, all other gates are instantly notified on-site within milliseconds.
+    - **Double-Entry Prevention**: If the same pass is presented at Gate 2 simultaneously, it is immediately rejected.
 
     ---
 
     ## 3. How to Operate the Scanner App
 
-    ```
-    1. Login ➔ 2. Select Event ➔ 3. Choose Mode (Online / Download Manifest / P2P Hub) ➔ 4. Scan QR Code
-    ```
-
     1. **Login**: Enter authorized scanner staff credentials.
     2. **Select Event**: Pick the active event from the list.
-    3. **Scan Ticket**: Point the rear camera at the attendee's digital pass or badge.
+    3. **Scan Ticket**: Point the rear camera at the attendee's digital pass.
     4. **Observe Response State**:
 
     | Alert State | Visual & Audio Indicator | Meaning & Gate Protocol |
     | :--- | :--- | :--- |
-    | **VALID / CHECKED IN** | 🟢 Green Full-Screen + Beep | Ticket is authentic and unused. Displays Attendee Name, Roll Number, and Tier. **Admit Attendee.** |
-    | **ALREADY USED** | 🔴 Red Full-Screen + Buzz | Ticket was previously scanned today. Displays first check-in time and gate ID. **Deny Entry.** |
-    | **WRONG EVENT** | 🟡 Amber Full-Screen + Beep | Ticket is valid but issued for a different event gate. **Redirect Attendee.** |
-    | **REVOKED / CANCELLED** | 🔴 Red Warning Banner | Pass was cancelled, refunded, or transferred away. **Deny Entry.** |
-    | **EXPIRED DYNAMIC QR** | ⚠️ Grey Warning Banner | Attendee presented an expired screenshot older than 15s. **Ask for live app view.** |
+    | **Valid / Checked In** | Green Screen + Beep | Ticket is authentic and unused. Displays Attendee Name, Roll Number, and Tier. **Admit Attendee.** |
+    | **Already Used** | Red Screen + Buzz | Ticket was previously scanned today. Displays first check-in time and gate ID. **Deny Entry.** |
+    | **Wrong Event** | Amber Screen + Beep | Ticket is valid but issued for a different event gate. **Redirect Attendee.** |
+    | **Revoked / Cancelled** | Red Warning Screen | Pass was cancelled, refunded, or transferred away. **Deny Entry.** |
+    | **Expired Dynamic Pass** | Grey Warning Screen | Attendee presented an expired screenshot. **Ask for live app view.** |
 
     ---
 
     ## 4. Multi-Tenant Society Protection
-    - **Society Scope Isolation**: Staff assigned to **Society A** cannot scan tickets for **Society B**, preventing unauthorized access in multi-society universities.
-    - **Automated Claim Fallback**: Legitimate scanner accounts are verified against live Firestore profile records to ensure zero false permission blocks.
+    - **Society Isolation**: Staff assigned to Society A cannot scan tickets for Society B, preventing unauthorized access in multi-society campuses.
   </Tab>
 
   <Tab title="اردو (Urdu)">
     # گیٹ سکینر ایپ اور حاضری کی تصدیق کا طریقہ کار
 
-    **UniTix گیٹ سکینر** ایونٹس کے داخلی راستوں پر تیزی اور حفاظت کے ساتھ ٹکٹوں کی تصدیق کا جدید ترین نظام ہے۔ یہ موبائل ایپ (Android APK) اور ویب پورٹل دونوں پر دستیاب ہے، جو انٹرنیٹ کی موجودگی اور عدم موجودگی (Offline) دونوں حالتوں میں فراڈ اور ڈبل انٹری کو روکتا ہے۔
+    **UniTix گیٹ سکینر** ایونٹس کے داخلی راستوں پر تیزی اور حفاظت کے ساتھ ٹکٹوں کی تصدیق کا نظام ہے۔ یہ موبائل ایپ (Android APK) اور ویب پورٹل دونوں پر دستیاب ہے، جو انٹرنیٹ کی موجودگی اور عدم موجودگی دونوں حالتوں میں فراڈ اور ڈبل انٹری کو روکتا ہے۔
 
     ---
 
     ## 1. حاضری کے 4 اہم اعدادوشمار
     سکینر ایپ کی سکرین پر چار اہم معلومات ظاہر ہوتی ہیں:
 
-    | اعدادوشمار | پیمانہ | مطلب اور اہمیت |
+    | اعدادوشمار | فارمولا | مطلب اور اہمیت |
     | :--- | :--- | :--- |
-    | **Tickets Sold** | کل فروخت شدہ ٹکٹ | ایونٹ کے لیے جاری کردہ کل تصدیق شدہ پاسز۔ |
+    | **Tickets Sold** | کل فروخت | ایونٹ کے لیے جاری کردہ کل تصدیق شدہ پاسز۔ |
     | **Checked In** | داخل شدہ افراد | وہ افراد جن کے ٹکٹ گیٹ پر سکین ہو کر اندر جا چکے ہیں۔ |
     | **Remaining** | باقی آنے والے | وہ افراد جن کے پاس درست ٹکٹ ہے لیکن ابھی تک داخل نہیں ہوئے۔ |
     | **Max Capacity** | ہال کی گنجائش | مقام پر افراد کے بیٹھنے یا داخلے کی زیادہ سے زیادہ حد۔ |
 
     ---
 
-    ## 2. سکیننگ کے تین مختلف طریقے
+    ## 2. سکیننگ کے تین طریقے
 
-    ### الف. آن لائن کلاؤڈ موڈ (Online Cloud Mode)
-    - **طریقہ کار**: جب موبائل انٹرنیٹ یا وائی فائی سے جڑا ہو، تو ہر ٹکٹ فوری طور پر کلاؤڈ سرور پر تصدیق ہو کر سیکنڈ کے دسویں حصے میں لاک ہو جاتا ہے۔
+    ### الف. آن لائن کلاؤڈ موڈ (Online Mode)
+    - جب موبائل انٹرنیٹ یا وائی فائی سے جڑا ہو، تو ہر ٹکٹ فوری طور پر کلاؤڈ سرور پر تصدیق ہو کر محفوظ ہو جاتا ہے۔
 
-    ### ب. آف لائن مینی فیسٹ موڈ (Offline SQLite Mode)
-    - **طریقہ کار**: جہاں انٹرنیٹ بالکل نہ ہو، وہاں عملہ ایونٹ شروع ہونے سے پہلے **Download Manifest** کا بٹن دبا کر تمام ٹکٹوں کی فہرست ڈاؤن لوڈ کر لیتا ہے۔ ایپ بغیر انٹرنیٹ کے ٹکٹ کے ڈیجیٹل دستخط کی تصدیق کرتی ہے۔ انٹرنیٹ آنے پر تمام ڈیٹا خود بخود سرور پر سنک ہو جاتا ہے۔
+    ### ب. آف لائن موڈ (Offline Mode)
+    - جہاں انٹرنیٹ بالکل نہ ہو، وہاں عملہ ایونٹ شروع ہونے سے پہلے **Download Manifest** کا بٹن دبا کر لسٹ ڈاؤن لوڈ کر لیتا ہے۔ ایپ بغیر انٹرنیٹ کے ٹکٹ کی تصدیق کرتی ہے اور انٹرنیٹ آنے پر تمام ڈیٹا خود بخود اپ ڈیٹ ہو جاتا ہے۔
 
-    ### ج. P2P گیٹ مطابقت پذیری (P2P Star Mesh Mode)
-    - **طریقہ کار**: جب ایک سے زیادہ گیٹس ہوں اور انٹرنیٹ نہ ہو، تو ایک موبائل **Event Hub** بن جاتا ہے اور دوسرے تمام موبائل بغیر انٹرنیٹ کے آپس میں وائی فائی یا بلوٹوتھ کے ذریعے جڑ جاتے ہیں۔ ایک گیٹ پر سکین ہونے والا ٹکٹ دوسرے تمام گیٹس پر فوراً بلاک ہو جاتا ہے۔
+    ### ج. ایک سے زیادہ گیٹس کا رابطہ (Peer Mode)
+    - بغیر انٹرنیٹ کے تمام گیٹس کے موبائل آپس میں جڑ جاتے ہیں۔ ایک گیٹ پر سکین ہونے والا ٹکٹ دوسرے تمام گیٹس پر فوراً بلاک ہو جاتا ہے۔
 
     ---
 
     ## 3. سکینر ایپ استعمال کرنے کا طریقہ
 
     1. **لاگ ان کریں**: اپنے عملے کا نام اور پاس ورڈ درج کریں۔
-    2. **ایونٹ منتخب کریں**: فہرست میں سے متعلقہ ایونٹ پر کلک کریں۔
+    2. **ایونٹ منتخب کریں**: فہرست میں سے متعلقہ ایونٹ منتخب کریں۔
     3. **ٹکٹ سکین کریں**: موبائل کیمرہ طالب علم کے QR کوڈ کے سامنے لائیں۔
     4. **نتیجہ دیکھیں**:
 
-    | سکرین کا رنگ | آواز اور الرٹ | مطلب اور ہدایت |
+    | سکرین کا رنگ | آواز | مطلب اور ہدایت |
     | :--- | :--- | :--- |
-    | 🟢 **سبز سکرین** | ایک بیپ | ٹکٹ درست اور اصلی ہے! طالب علم کا نام اور رول نمبر دیکھ کر **داخلے کی اجازت دیں**۔ |
-    | 🔴 **سرخ سکرین** | مسلسل بیپ | یہ ٹکٹ پہلے استعمال ہو چکا ہے! پہلا وقت سکرین پر آئے گا۔ **داخلہ روکیں**۔ |
-    | 🟡 **پیلی سکرین** | انتباہی آواز | یہ ٹکٹ کسی دوسرے ایونٹ کا ہے۔ **متعلقہ گیٹ پر بھیجیں**۔ |
-    | ⚠️ **سرمئی سکرین** | ایکسپائرڈ الرٹ | طالب علم نے پرانا سکرین شاٹ دکھایا ہے۔ **اسے ایپ سے لائیو کوڈ دکھانے کو کہیں**۔ |
+    | **سبز سکرین** | ایک بیپ | ٹکٹ درست اور اصلی ہے! طالب علم کا نام اور رول نمبر دیکھ کر **داخلے کی اجازت دیں**۔ |
+    | **سرخ سکرین** | مسلسل بیپ | یہ ٹکٹ پہلے استعمال ہو چکا ہے! پہلا وقت سکرین پر آئے گا۔ **داخلہ روکیں**۔ |
+    | **پیلی سکرین** | انتباہی آواز | یہ ٹکٹ کسی دوسرے ایونٹ کا ہے۔ **متعلقہ گیٹ پر بھیجیں**۔ |
+    | **سرمئی سکرین** | ایکسپائرڈ الرٹ | طالب علم نے پرانا سکرین شاٹ دکھایا ہے۔ **اسے ایپ سے لائیو پاس دکھانے کو کہیں**۔ |
 
     ---
 
     ## 4. سوسائٹیوں کی سیکیورٹی
-    - ایک سوسائٹی کا عملہ دوسری سوسائٹی کے ایونٹ کے ٹکٹ سکین نہیں کر سکتا، جس سے کیمپس میں ہر سوسائٹی کا نظام الگ اور محفوظ رہتا ہے۔
+    - ایک سوسائٹی کا عملہ دوسری سوسائٹی کے ایونٹ کے ٹکٹ سکین نہیں کر سکتا۔
   </Tab>
 </Tabs>

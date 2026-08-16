@@ -35,10 +35,13 @@
           "organizers/dashboard-overview",
           "organizers/public-presence",
           "organizers/event-creation",
-          "organizers/refund-configuration",
-          "organizers/team-management",
+          "organizers/marketing-and-promos",
+          "organizers/sponsors-management",
           "organizers/gate-scanner",
           "organizers/live-gate-monitor",
+          "organizers/attendee-feedback",
+          "organizers/refund-configuration",
+          "organizers/team-management",
           "organizers/finances-and-payouts",
           "organizers/analytics-and-reports"
         ]
