@@ -25,6 +25,9 @@
           "students/digital-tickets",
           "students/ticket-transfer",
           "students/disputes-and-appeals",
+          "students/financials-and-receipts",
+          "students/profile-and-campus-id",
+          "students/notifications",
           "students/certificates",
           "students/policies"
         ]
@@ -99,7 +102,7 @@
   },
   "favicon": {
     "light": "/images/ChatGPTImageJun16,2026,08_13_44AM.png",
-    "dark": "/images/ChatGPTImageJun16,2026,08_13_44AM.png"
+    "dark": "/images/ChatGPTImageJun16,2026,08_13_50AM.png"
   },
   "fonts": {
     "heading": {

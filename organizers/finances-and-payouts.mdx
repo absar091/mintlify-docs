@@ -1,51 +1,123 @@
 ---
-title: "Finances, Revenue & Payouts"
-description: "How to manage ticket verifications, understand Net Revenue deductions, and withdraw your funds."
+title: "Society Wallet, Financials & Bank Payouts"
+description: "Step-by-step guide on managing society revenue, understanding escrow holds, adding bank account details, and requesting payouts."
 ---
 
-# Financial Operations & Control
+<Tabs>
+  <Tab title="English">
+    # Society Financials & Bank Payout Guide
 
-Your **Wallet** and **Payments** dashboard sections provide transparent, real-time control over every rupee entering and leaving your society's accounts.
+    The **Society Wallet** (`/society-dashboard/wallet`) manages all ticket revenue, platform fee calculations, and automated bank payout disbursements for your society.
 
----
+    ---
 
-## 1. Verifying Manual Bank Transfers
-To accommodate university students who do not use credit/debit cards, UniTix supports **Manual Bank Transfers, JazzCash, and EasyPaisa**. When a student checks out via manual transfer, their order enters a **Pending Verification** state (`pending_payment`).
+    ## 1. Understanding Wallet Balances
 
-### The Verification Workflow
-1. Navigate to the **Payments** tab in your dashboard sidebar.
-2. Review the list of all pending transactions showing:
-   - **Student Name & Roll Number**
-   - **Ticket Tier & Amount (`PKR`)**
-   - **Transaction Reference ID (TxID)**
-   - **Uploaded Payment Screenshot**
-3. Click **View Screenshot** to inspect the transfer receipt submitted by the student.
-4. **Bank App Audit:** Open your official Society Bank, JazzCash, or EasyPaisa app and confirm that the exact amount (`PKR`) matching that Transaction ID was credited to your ledger.
-5. **Take Action:**
-   - Click **Approve** if verified: The ticket instantly transitions to `Approved`, generating a valid digital QR pass (`qrToken`) for the student.
-   - Click **Reject** if the screenshot is forged or uncredited: The ticket is voided (`Cancelled`), freeing up the capacity slot for other students or waitlist members.
+    | Balance Type | Meaning & Status |
+    | :--- | :--- |
+    | **Total Gross Revenue** | Total funds collected from all confirmed ticket sales before deductions. |
+    | **Platform Fee (2.5%)** | Standard platform processing fee automatically calculated per ticket. |
+    | **In Escrow (Upcoming Events)** | Revenue from events that have not yet taken place. Held securely in escrow to protect against cancellations. |
+    | **Available Balance** | Net revenue from completed events that is ready for bank payout withdrawal. |
 
----
+    ---
 
-## 2. Understanding Net Revenue & Fees
-UniTix operates on full financial transparency. Your dashboard metrics clearly differentiate between Gross collection and Net take-home revenue:
+    ## 2. Step-by-Step: Adding Your Society Bank Account
 
-$$\text{Net Revenue} = \text{Gross Revenue} - \text{Platform Fee} - \text{Total Refunds}$$
+    Before requesting your first payout, you must link your official society or university bank account:
 
-### How Fees Are Applied
-- **Global Platform Fee:** By default, UniTix deducts a flat **2.5% platform fee** on gross ticket sales to cover infrastructure, automated SMS/email gateways, and server operations.
-- **Custom Society Tiers:** If your society has negotiated a custom fee tier with university administration (`customFeePercentage`), that exact custom percentage (`0%`, `1.5%`, etc.) is dynamically calculated and displayed directly on your Net Revenue metric card (`Net Revenue (after X% fee)`).
-- **Refund Deductions:** Any tickets approved for a refund are subtracted from both your active sales volume and net take-home calculation automatically.
+    ```
+    Step 1: Open Wallet ➔ Step 2: Fill Bank Details ➔ Step 3: Click Save ➔ Step 4: Ready for Payouts
+    ```
 
----
+    1. Log into your **Society Dashboard** at `https://unitix.aarx.online`.
+    2. Click **Wallet** in the sidebar navigation.
+    3. Scroll to the **Bank Account Details** card.
+    4. Fill in the required fields:
+       - **Bank Name**: e.g., *Meezan Bank, HBL, Bank Alfalah, or Standard Chartered*.
+       - **Account Title**: The official name registered on the bank account (e.g., *FAST Computer Society*).
+       - **Account / IBAN Number**: Your 24-character IBAN or standard account number.
+    5. Click **Save Bank Details**. A green confirmation banner will appear.
 
-## 3. Requesting a Payout
-Once your event successfully concludes, you can withdraw your clean **Available Balance** directly to your society's bank account.
+    ---
 
-### How to Withdraw Funds
-1. Navigate to the **Wallet** tab in your dashboard.
-2. Verify that your **Society Bank Details** (IBAN, Bank Name, Account Title) are securely registered and up to date in your Profile.
-3. Review your **Available to Withdraw (`PKR`)** balance (which shows your net revenue minus any previously processed withdrawals).
-4. Click **Request Payout**.
+    ## 3. Step-by-Step: Requesting a Bank Payout
 
-Once submitted, UniTix Operations audits the event reconciliation and processes a direct wire transfer (`EFT / IBFT`) to your society's account within 3 to 5 business days. You can monitor every payout status (`Pending`, `Completed`, `Rejected`) alongside official bank transaction IDs directly in your **Payout History** ledger.
+    Once an event finishes and funds move from Escrow to Available Balance:
+
+    ```
+    Step 1: Check Available Balance ➔ Step 2: Enter Amount ➔ Step 3: Submit ➔ Step 4: Track Transfer
+    ```
+
+    1. On the **Wallet** page, check your **Available Balance** (e.g., `PKR 85,000`).
+    2. In the **Request Payout** box, enter the amount you wish to withdraw (e.g., `50000`).
+    3. Click **Submit Payout Request**.
+    4. The requested amount is deducted from your Available Balance and logged in the **Payout History** table below.
+    5. Platform administrators review and process the direct bank transfer within 1–2 business days.
+
+    ---
+
+    ## 4. Payout Status Tracking
+
+    | Status | Meaning & Next Step |
+    | :--- | :--- |
+    | **Pending Review** | Payout request submitted; awaiting administrative verification. |
+    | **Approved** | Payout approved; bank transfer dispatched. |
+    | **Completed** | Funds successfully credited to your society bank account. |
+    | **Rejected** | Request declined (e.g., invalid IBAN or pending ticket dispute). Reason is displayed in the table. |
+  </Tab>
+
+  <Tab title="اردو (Urdu)">
+    # سوسائٹی والیٹ، آمدن اور بینک ادائیگی کا طریقہ کار
+
+    **سوسائٹی والیٹ** (`/society-dashboard/wallet`) ایونٹس کی کل آمدن، پلیٹ فارم فیس اور بینک اکاؤنٹ میں رقوم کی منتقلی (Payouts) کا انتظام سنبھالتا ہے۔
+
+    ---
+
+    ## 1. والیٹ میں رقوم کی مختلف اقسام
+
+    | رقم کی قسم | مطلب اور حیثیت |
+    | :--- | :--- |
+    | **کل آمدن (Total Revenue)** | ایونٹ کے بک شدہ ٹکٹوں کی کل رقم۔ |
+    | **پلیٹ فارم فیس (2.5%)** | فی ٹکٹ معیاری سروس فیس۔ |
+    | **محفوظ رقم (In Escrow)** | آنے والے ایونٹس کی رقم جو ایونٹ کے کامیاب انعقاد تک محفوظ رہتی ہے۔ |
+    | **قابلِ نکلوانا بیلنس (Available)** | مکمل ہو چکے ایونٹس کی رقم جو بینک اکاؤنٹ میں ٹرانسفر کے لیے تیار ہے۔ |
+
+    ---
+
+    ## 2. بینک اکاؤنٹ درج کرنے کا طریقہ
+
+    پہلی بار رقم نکلوانے سے پہلے اپنا بینک اکاؤنٹ شامل کریں:
+
+    1. سوسائٹی ڈیش بورڈ میں **Wallet** کے سیکشن میں جائیں۔
+    2. **Bank Account Details** کے خانے میں آئیں۔
+    3. مطلوبہ تفصیلات درج کریں:
+       - **بینک کا نام**: مثلاً میزان بینک، ایچ بی ایل، یا ال فلاح۔
+       - **اکاؤنٹ ٹائٹل**: وہ نام جس پر بینک اکاؤنٹ کھلا ہوا ہے (مثلاً فاسٹ کمپیوٹر سوسائٹی)۔
+       - **اکاؤنٹ / IBAN نمبر**: اپنا 24 ہندسوں پر مشتمل IBAN درج کریں۔
+    4. **Save Bank Details** پر کلک کریں۔
+
+    ---
+
+    ## 3. رقم بینک اکاؤنٹ میں نکلوانے کا طریقہ (Request Payout)
+
+    ایونٹ کے اختتام پر جب رقم Available Balance میں آ جائے:
+
+    1. اپنے والیٹ میں **Available Balance** دیکھیں (مثلاً 85,000 روپے)۔
+    2. **Request Payout** کے خانے میں مطلوبہ رقم لکھیں (مثلاً `50000`)۔
+    3. **Submit Payout Request** کے بٹن پر کلک کریں۔
+    4. درخواست جمع ہو جائے گی اور نیچے **Payout History** کی فہرست میں نظر آئے گی۔
+    5. ایڈمن کی تصدیق کے بعد 1 سے 2 دفتری ایام میں رقم آپ کے بینک اکاؤنٹ میں منتقل ہو جائے گی۔
+
+    ---
+
+    ## 4. ادائیگی کے سٹیٹس کی معلومات
+
+    | سٹیٹس | مطلب |
+    | :--- | :--- |
+    | **Pending Review** | درخواست جمع ہو چکی ہے اور جائزہ لیا جا رہا ہے۔ |
+    | **Approved** | درخواست منظور ہو گئی اور بینک ٹرانسفر بھیج دیا گیا۔ |
+    | **Completed** | رقم کامیابی کے ساتھ آپ کے بینک اکاؤنٹ میں پہنچ چکی ہے۔ |
+    | **Rejected** | کسی خرابی (مثلاً غلط IBAN) کی وجہ سے درخواست مسترد ہوئی۔ وجہ سکرین پر نظر آئے گی۔ |
+  </Tab>
+</Tabs>

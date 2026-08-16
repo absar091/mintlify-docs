@@ -1,42 +1,82 @@
 ---
-title: "Secure Ticket Transfers"
-description: "How to safely transfer or gift your ticket to another student using the cryptographic Transfer Link system."
+title: "Transferring Tickets to Friends"
+description: "Step-by-step instructions on transferring a purchased event pass to a classmate or friend safely."
 ---
 
-# Giving Your Ticket to Someone Else
+<Tabs>
+  <Tab title="English">
+    # Ticket Transfer Guide
 
-While **you cannot simply screenshot your digital pass to give it to a friend** (because our gate scanners detect duplicate and revoked screenshots), UniTix provides an official, secure **Ticket Transfer Engine**. 
+    If you purchased an event ticket but can no longer attend, you can transfer your pass directly to a classmate or friend. The platform securely creates a new pass for your friend while immediately voiding your old ticket to prevent duplicate entries.
 
-This system guarantees that the recipient student receives a brand new, cryptographically signed QR code (`qrToken`) tied directly to their own student profile and university roll number.
+    ---
 
-> [!WARNING]
-> **Society Policies & Restrictions:** Certain high-security campus events or university workshops may have ticket transfers disabled by the organizers. If the **Transfer Ticket** button is disabled or greyed out on your ticket card, that specific event strictly prohibits transfers.
+    ## 1. Step-by-Step: Sending a Ticket
 
----
+    ```
+    Step 1: Open My Tickets ➔ Step 2: Click Transfer ➔ Step 3: Copy Claim Link ➔ Step 4: Share with Friend
+    ```
 
-## 1. How to Initiate a Transfer
-If your plans change and you want to gift or sell your ticket to a classmate:
-1. Log into your **Student Dashboard** (`My Tickets`).
-2. Locate the specific approved ticket you wish to transfer.
-3. Click the **Transfer Ticket** button (`Send` / `Share` icon) on the ticket card.
-4. The UniTix backend securely generates a unique, single-use **Cryptographic Transfer Link** (`/transfer/[id]`).
-5. Click **Copy Link** to save it to your clipboard.
-6. Share this link directly with your recipient via WhatsApp, Email, or Campus Discord.
+    1. Log into your **Student Dashboard** at `https://unitix.aarx.online`.
+    2. Click **My Tickets** in the top navigation bar.
+    3. Click on the active ticket pass you want to transfer.
+    4. Click the **Transfer Ticket** button.
+    5. Enter your friend's email address or click **Generate Claim Link**.
+    6. Click **Copy Transfer Link** and send this link to your friend via WhatsApp, message, or email.
+    7. Your ticket status will now show **Transfer Pending** and its QR code will be temporarily locked.
 
----
+    ---
 
-## 2. How to Claim a Transferred Ticket
-If someone has sent you an official UniTix Transfer Link:
-1. Click the link (`unitix.aarx.online/transfer/abc-123...`).
-2. Log in or register for a verified **UniTix Student Account** (you cannot claim a ticket without a verified profile and roll number).
-3. Review the ticket details on the claim page (Event Title, Date, Venue, Tier).
-4. Click **Claim Transfer**.
-5. Within milliseconds, the backend executes a secure ownership swap and deposits the ticket into your **My Tickets** wallet.
+    ## 2. Step-by-Step: Claiming a Transferred Ticket
 
----
+    ```
+    Step 1: Open Link ➔ Step 2: Log into UniTix ➔ Step 3: Click Claim ➔ Step 4: Ticket Ready!
+    ```
 
-## 3. Cryptographic QR Revocation (Security Notice)
-To prevent ticket scalping and screenshot duplication fraud at venue gates, our transfer system enforces **Instant QR Revocation**:
-- **Automatic Revocation:** The exact moment a transfer link is claimed by the recipient, the original owner's QR code (`qrToken`) is permanently revoked in the global database.
-- **Gate Scanner Protection:** If the original sender attempts to scan a saved screenshot or printout of their old QR code after transferring it away, the gate scanner will instantly sound an alarm and reject entry with: `Security Validation Failed: This ticket QR code has been revoked due to a transfer.`
-- **New Token Generation:** A completely new, unique QR token is generated exclusively for the recipient, ensuring clean 1-to-1 gate validation.
+    1. Open the transfer link sent by your friend in any mobile or desktop browser.
+    2. Log into UniTix (or create a free student account).
+    3. You will see the event summary and the transfer invitation.
+    4. Click **Accept & Claim Ticket**.
+    5. The ticket is immediately transferred to your account and appears in your **My Tickets** list.
+    6. A brand-new dynamic security pass is generated with your name and roll number.
+
+    ---
+
+    ## 3. Cancelling a Pending Transfer
+    - If your friend changes their mind before claiming the ticket, go to **My Tickets** $\to$ click the pending ticket $\to$ click **Cancel Transfer**.
+    - The claim link is instantly invalidated and your original ticket is unlocked for your own use.
+  </Tab>
+
+  <Tab title="اردو (Urdu)">
+    # دوست کو ٹکٹ ٹرانسفر کرنے کا طریقہ کار
+
+    اگر آپ نے کسی ایونٹ کا ٹکٹ خریدا تھا لیکن اب آپ شرکت نہیں کر سکتے، تو آپ اپنا ٹکٹ باآسانی کسی کلاس فیلو یا دوست کے نام منتقل کر سکتے ہیں۔
+
+    ---
+
+    ## 1. ٹکٹ بھیجنے کا طریقہ (Sender Guide)
+
+    1. ویب سائٹ `https://unitix.aarx.online` پر اپنے اسٹوڈنٹ اکاؤنٹ میں لاگ ان کریں۔
+    2. **My Tickets** کے سیکشن میں جائیں۔
+    3. وہ ٹکٹ منتخب کریں جو آپ دوست کو بھیجنا چاہتے ہیں۔
+    4. **Transfer Ticket** کے بٹن پر کلک کریں۔
+    5. اپنے دوست کا ای میل درج کریں یا **Generate Claim Link** پر کلک کریں۔
+    6. لنک کاپی کر کے اپنے دوست کو واٹس ایپ یا میسج پر بھیج دیں۔
+    7. آپ کے ٹکٹ پر **Transfer Pending** لکھا آ جائے گا۔
+
+    ---
+
+    ## 2. ٹکٹ وصول کرنے کا طریقہ (Recipient Guide)
+
+    1. دوست کے بھیجے ہوئے لنک پر کلک کریں۔
+    2. اپنے UniTix اکاؤنٹ میں لاگ ان کریں۔
+    3. **Accept & Claim Ticket** پر کلک کریں۔
+    4. ٹکٹ فوراً آپ کے نام ٹرانسفر ہو جائے گا اور آپ کے **My Tickets** میں شامل ہو جائے گا۔
+    5. دوست کا پرانا پاس فوری طور پر منسوخ ہو جائے گا۔
+
+    ---
+
+    ## 3. ٹرانسفر کینسل کرنا
+    - اگر دوست نے ابھی تک ٹکٹ کلیم نہیں کیا اور آپ خود جانا چاہتے ہیں، تو اپنے ٹکٹ پر جا کر **Cancel Transfer** پر کلک کریں۔ ٹکٹ دوبارہ آپ کے لیے فعال ہو جائے گا۔
+  </Tab>
+</Tabs>
