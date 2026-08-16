@@ -1,110 +1,89 @@
 ---
 title: "Welcome to UniTix Documentation"
-description: "The complete technical, operational, and financial manual for the UniTix University Ticketing & Event Management Platform."
+description: "The modern campus ticketing, gate management, and event operations manual for universities, student bodies, and event organizers."
 ---
 
-# Your Campus. Your Events. Completely Reengineered.
+<Tabs>
+  <Tab title="English">
+    # Your Campus. Your Events. Completely Reengineered.
 
-Welcome to the official documentation for **UniTix** (`unitix.aarx.online`), the next-generation event management, digital ticketing, and financial reconciliation ecosystem designed from the ground up for university societies, campus organizers, and student attendees.
+    Welcome to the official documentation for **UniTix** (`https://unitix.aarx.online`), the all-in-one digital ticketing, real-time gate telemetry, and campus event management platform.
 
-Traditional campus ticketing relies on disorganized WhatsApp spreadsheets, cash boxes, paper sign-up sheets, and unverified Google Forms—leading to rampant gate crashing, financial discrepancies, and scalping. UniTix replaces this outdated infrastructure with a centralized, serverless, **Zero-Trust Ticketing Architecture**.
+    UniTix replaces chaotic manual spreadsheets, paper tokens, and unverified forms with a modern, high-speed ecosystem tailored for student attendees, society presidents, and venue gate teams.
 
----
+    ---
 
-## The Four Core Pillars of the UniTix Ecosystem
+    ## 🏛️ The Four Core Pillars of UniTix
 
-### 1. 🛍️ The Student Marketplace
-A centralized, high-converting discovery portal where students across university campuses can browse upcoming workshops, cultural festivals, tech symposiums, and sports tournaments.
-- **Smart Filtering:** Filter events by category, specific university, verified society, or date horizon.
-- **Real-Time Inventory Badges:** Dynamic visual cues indicating *On Sale*, *Selling Fast (`>80% capacity`)*, *Sold Out*, and *Sales Closed*.
-- **Localized Payment Gateways:** Seamless checkout supporting both instant free reservations and manual bank verification (`JazzCash`, `EasyPaisa`, `IBFT`) with screenshot receipt auditing.
+    ### 1. The Student Discovery & Checkout Experience
+    A responsive campus marketplace where students discover workshops, galas, hackathons, and sports tournaments.
+    - **Smart Campus Filters**: Filter by university, verified society, category, or event date.
+    - **Dynamic Ticket Passes**: Fraud-proof, time-rotating dynamic QR passes that eliminate static screenshot counterfeiting.
+    - **Flexible Payment Options**: Instant digital checkout or manual bank transfer / mobile wallet receipt uploads with automated status tracking.
 
-### 2. 📱 The Gate Scanner & QR Revocation Engine
-A progressive web application (`unitix.aarx.online/scan`) turning any mobile smartphone camera into an enterprise-grade venue entrance scanner.
-- **Cryptographic JWT Tokens:** Every digital pass contains a signed JSON Web Token (`qrToken`) verifying attendee identity, roll number, and tier.
-- **Zero-Screenshot Fraud Protection:** When scanned at the gate, tickets instantly flip to `Used`. Attempting to scan a saved screenshot five minutes later triggers a loud double-scan security alarm.
-- **Instant QR Revocation:** If a ticket is transferred or refunded, the original owner's QR pass (`qrToken`) is immediately revoked across all live gate scanners (`Security Validation Failed: Revoked Token`).
+    ### 2. The 8-Step Event Builder & Multimedia Engine
+    Comprehensive tools for society organizers to design high-converting event pages in minutes.
+    - **Multi-Tier Ticketing**: Configure Early Bird, VIP, and General passes with individual quotas and per-student limits.
+    - **Double-Capacity Safety Locks**: Automatic hard stops prevent physical venue overcrowding and fire safety violations.
+    - **Interactive Multimedia**: Embed Spotify ambient soundtracks and custom FAQ accordions directly on public event pages.
 
-### 3. 👑 The Organizer Command Center
-A high-velocity dashboard built for Society Presidents, Vice Presidents, and Event Directors (`society-dashboard`).
-- **Hero Analytics Suite:** 8 real-time metric cards tracking *Gross Revenue, Net Take-Home (`Gross - Fee - Refunds`), Tickets Sold, Available Inventory, Pending Verifications, Booked Passes, Cancelled Orders,* and *Refund Requests*.
-- **Interactive Visualizations:** `Recharts` powered time-series revenue graphs and ticket status pie breakdowns.
-- **Double-Capacity Protection:** Strict venue safety locks preventing overcrowding and blocking capacity reductions below already sold ticket counts.
-- **Automated Waitlists:** Automated background workers instantly reallocate sold-out slots to queued students whenever an attendee cancels or a payment receipt is rejected.
+    ### 3. High-Velocity Gate Operations & Offline Verification
+    The native **Gate Scanner Mobile APK** and **Live Gate Telemetry Monitor** empower entrance staff to admit thousands of attendees rapidly.
+    - **4 Live Attendance Metrics**: Real-time tracking of *Sold, Checked In, Remaining,* and *Venue Capacity*.
+    - **Zero-Internet Manifest Mode**: Download verified attendee lists before entering underground halls to scan 100% offline.
+    - **Event Hub P2P Mesh Pairing**: Multiple gate phones connect directly via local wireless mesh to eliminate duplicate cross-gate entries without cellular data.
 
-### 4. 🔒 Role-Based Access Control & Financial Transparency
-- **Multi-Tiered RBAC:** Delegate operations without exposing sensitive credentials. Invite officers as *Event Managers* (can edit events and verify payments) or volunteers as *Gate Scanners* (can only access the `/scan` mobile app).
-- **KYC & Faculty Advisor Audits:** Protect students by ensuring every society submits president `CNIC` verification and supervising Faculty Advisor endorsement (`☑️ Verified Society`).
-- **Clean Wire Withdrawals:** Request direct bank electronic wire payouts (`IBFT`) of your clean Net Revenue directly to your registered society ledger.
+    ### 4. Transparent Financials & Dispute Arbitration
+    - **Society Wallet**: Transparent breakdown of Gross Revenue, Platform Fees (2.5%), Escrow Holds, and Available Balance.
+    - **Automated Bank Payouts**: Secure wire disbursements directly to verified society bank accounts.
+    - **Dispute Operations Center**: Independent platform arbitration ensuring fair treatment for ticket appeals and cancellations.
 
----
+    ---
 
-## Documentation Navigation Guide
+    ## 📚 Explore Documentation by Category
 
-Explore our exhaustive operational guides tailored to your exact campus role:
+    <CardGroup cols={2}>
+      <Card title="Student Portal Guide" icon="graduation-cap" href="/students/browsing-events">
+        Discover events, apply promo codes, manage digital rotating passes, and claim certificates.
+      </Card>
+      <Card title="Society Organizer Hub" icon="users-gear" href="/organizers/dashboard-overview">
+        Use the 8-step Event Builder, launch promo campaigns, manage sponsors, and request payouts.
+      </Card>
+      <Card title="Gate Scanner Mobile App" icon="mobile-screen" href="/organizers/gate-scanner">
+        Operate the mobile scanner APK in Online, Offline SQLite Manifest, and Multi-Gate Peer modes.
+      </Card>
+      <Card title="Live Gate Telemetry Monitor" icon="chart-line" href="/organizers/live-gate-monitor">
+        Monitor real-time gate velocity (scans/min), live check-in streams, and queue density.
+      </Card>
+    </CardGroup>
+  </Tab>
 
-<CardGroup cols={2}>
-  <Card title="Student Marketplace & Discovery" icon="magnifying-glass" href="/students/browsing-events">
-    Learn how to filter campus events, inspect tier availability badges, and navigate the marketplace.
-  </Card>
-  <Card title="Checkout & Payment Verification" icon="credit-card" href="/students/checkout-payments">
-    Master our paid checkout workflow: claiming free passes, uploading JazzCash/IBFT receipts, and tracking pending reviews.
-  </Card>
-  <Card title="Automated Waitlists & Queue Tracking" icon="clock" href="/students/waitlist">
-    Understand how our automated reallocation engine reassigns sold-out inventory and how to claim waitlisted slots within 24 hours.
-  </Card>
-  <Card title="Digital QR Passes & Security" icon="qrcode" href="/students/digital-tickets">
-    Explore the cryptographic JWT structure of your mobile pass, offline presentation, and why screenshots are blocked at gates.
-  </Card>
-  <Card title="Secure Ticket Transfers" icon="share-nodes" href="/students/ticket-transfer">
-    Learn how to safely gift your ticket using one-time cryptographic transfer links and understand automatic QR revocation.
-  </Card>
-  <Card title="Digital Attendance Certificates" icon="certificate" href="/students/certificates">
-    Understand how post-event attendance verification unlocks claimable `PNG/PDF` certificates with one-click LinkedIn sharing.
-  </Card>
-  <Card title="Student Policies & Refunds" icon="scale-balanced" href="/students/policies">
-    Review our tiered cancellation penalty distributions, 24-hour buyer's remorse guarantee, and 48-hour final cutoffs.
-  </Card>
-  <Card title="Organizer Dashboard Overview" icon="chart-line" href="/organizers/dashboard-overview">
-    Navigate the 8 Hero Analytics cards, interactive Recharts, current event switcher, and custom sidebar pinning.
-  </Card>
-  <Card title="The Event Builder & Capacity Guards" icon="calendar-plus" href="/organizers/event-creation">
-    Configure multi-tier ticket pricing, per-student limits, automated waitlists, corporate sponsors, and venue safety locks.
-  </Card>
-  <Card title="Finances, Net Revenue & Payouts" icon="building-columns" href="/organizers/finances-and-payouts">
-    Master the `Gross - Fee - Refunds` take-home formula, verify student payment screenshots, and request electronic wire payouts.
-  </Card>
-  <Card title="Gate Scanner Mobile App (/scan)" icon="mobile-screen" href="/organizers/gate-scanner">
-    Train volunteer scanners to validate mobile QR passes, understand alert states (`Success vs. Revoked`), and prevent entry fraud.
-  </Card>
-  <Card title="Multi-Tier Refund Engine" icon="rotate-left" href="/organizers/refund-configuration">
-    Configure custom cancellation penalty splits (`Student % + Society % + Platform % = 100%`) and automate refund recalculations.
-  </Card>
-  <Card title="Team & RBAC Delegation" icon="users-gear" href="/organizers/team-management">
-    Invite officers as Event Managers or Gate Scanners while strictly locking sensitive wallet and IBAN credentials.
-  </Card>
-  <Card title="Public Profiles & Brand Verification" icon="shield-check" href="/organizers/public-presence">
-    Customize your society profile banner, connect social feeds, link corporate sponsors, and earn the Verified Blue Checkmark.
-  </Card>
-  <Card title="Deep-Dive Analytics & CSV Exports" icon="file-csv" href="/organizers/analytics-and-reports">
-    Track ticket sales velocity, analyze conversion funnels across date horizons, and export structured `.CSV` attendee manifests.
-  </Card>
-  <Card title="Privacy & Data Protection Policy" icon="lock" href="/legal/privacy-policy">
-    Review how we encrypt student identity, protect identity records via multi-region cloud storage, and comply with data protection regulations.
-  </Card>
-  <Card title="Terms of Service & Platform Rules" icon="gavel" href="/legal/terms-of-service">
-    Examine user agreements governing ticket ownership, anti-scalping bans, overcrowding safety rules, and payout obligations.
-  </Card>
-  <Card title="Platform Governance & Compliance" icon="shield-halved" href="/admin/platform-governance">
-    Explore how administration audits society KYC records, manages fee structures, and enforces venue safety standards.
-  </Card>
-  <Card title="Financial Audit & Payout Operations" icon="file-invoice-dollar" href="/admin/financial-reconciliation">
-    Review how administration audits ledger balances, executes electronic wire transfers (`IBFT`), and reconciles event refunds.
-  </Card>
-  <Card title="Student Ambassador Program" icon="bullhorn" href="/programs/student-ambassadors">
-    Learn how campus promoters earn rewards, generate unique referral links, and track sales commissions across leaderboards.
-  </Card>
-  <Card title="Public Certificate Verification" icon="circle-check" href="/programs/public-certificate-verification">
-    Discover how employers and HR recruiters verify attendance certificates instantly via QR scan or unique Certificate UUIDs.
-  </Card>
-</CardGroup>
+  <Tab title="اردو (Urdu)">
+    # خوش آمدید — UniTix آفیشل گائیڈ اور دستاویزات
+
+    **UniTix** (`https://unitix.aarx.online`) یونیورسٹی سوسائٹیز، طلباء اور ایونٹ آرگنائزرز کے لیے جدید ترین ڈیجیٹل ٹکٹنگ، گیٹ مینجمنٹ اور فنانشل سسٹم ہے۔
+
+    روایتی کاغذی پرچیوں اور غیر منظم فہرستوں کے بجائے، UniTix کیمپس ایونٹس کو مکمل ڈیجیٹل اور محفوظ بناتا ہے۔
+
+    ---
+
+    ## 🏛️ UniTix کے 4 بنیادی ستون
+
+    ### 1. طلباء کے لیے مارکیٹ پلیس اور ٹکٹ بکنگ
+    - **کیمپس ایونٹس کی تلاش**: یونیورسٹی، سوسائٹی اور کیٹیگری کے لحاظ سے ایونٹس تلاش کریں۔
+    - **متحرک سیکیورٹی پاسز**: خودکار تبدیل ہونے والا QR کوڈ جو سکرین شاٹ کے غلط استعمال کو روکتا ہے۔
+    - **ادائیگی کے آسان طریقے**: آن لائن کارڈ یا بینک رسید اپ لوڈ کر کے ٹکٹ بک کریں۔
+
+    ### 2. ایونٹ بلڈر اور میڈیا ٹولز
+    - **مختلف کیٹیگریز کے ٹکٹ**: ارلی برڈ، وی آئی پی اور عام ٹکٹوں کی قیمتیں اور تعداد مقرر کریں۔
+    - **ہال کی گنجائش کی حد**: اوور کراؤڈنگ روکنے کے لیے خودکار سیٹ لمٹ۔
+    - **بیک گراؤنڈ میوزک**: ایونٹ کے پیج پر اسپاٹیفائی میوزک شامل کریں۔
+
+    ### 3. تیز ترین گیٹ سکیننگ اور آف لائن موڈ
+    - **گیٹ سکینر موبائل ایپ**: بغیر انٹرنیٹ کے ہال میں ٹکٹ سکین کریں اور ڈبل انٹری روکیں۔
+    - **لائیو گیٹ مانیٹر**: ریئل ٹائم میں دیکھیں کہ کس رفتار سے طلباء گیٹ سے اندر آ رہے ہیں۔
+
+    ### 4. شفاف فنانس اور بینک ادائیگیاں
+    - **سوسائٹی والیٹ**: کل آمدن، فیس اور بینک اکاؤنٹ میں براہ راست رقوم کی منتقلی کا مکمل ریکارڈ۔
+  </Tab>
+</Tabs>
