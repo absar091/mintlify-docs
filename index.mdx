@@ -1,89 +1,135 @@
 ---
 title: "Welcome to UniTix Documentation"
-description: "The modern campus ticketing, gate management, and event operations manual for universities, student bodies, and event organizers."
+description: "The complete technical, operational, and financial documentation for UniTix — the all-in-one university ticketing, gate operations, and campus event infrastructure."
 ---
 
 <Tabs>
   <Tab title="English">
     # Your Campus. Your Events. Completely Reengineered.
 
-    Welcome to the official documentation for **UniTix** (`https://unitix.aarx.online`), the all-in-one digital ticketing, real-time gate telemetry, and campus event management platform.
-
-    UniTix replaces chaotic manual spreadsheets, paper tokens, and unverified forms with a modern, high-speed ecosystem tailored for student attendees, society presidents, and venue gate teams.
+    **UniTix** is the enterprise-grade event management, fraud-proof digital ticketing, gate operations, and automated financial settlement platform purpose-built for universities, student bodies, and campus societies.
 
     ---
 
-    ## 🏛️ The Four Core Pillars of UniTix
+    ## 🎯 Why UniTix Exists (The Problem with Legacy Campus Ticketing)
 
-    ### 1. The Student Discovery & Checkout Experience
-    A responsive campus marketplace where students discover workshops, galas, hackathons, and sports tournaments.
-    - **Smart Campus Filters**: Filter by university, verified society, category, or event date.
-    - **Dynamic Ticket Passes**: Fraud-proof, time-rotating dynamic QR passes that eliminate static screenshot counterfeiting.
-    - **Flexible Payment Options**: Instant digital checkout or manual bank transfer / mobile wallet receipt uploads with automated status tracking.
+    Historically, campus event organizing has suffered from fragmented, insecure, and manual workflows:
+    - **Google Forms & WhatsApp Spreadsheets**: Lost records, manual payment receipt reconciliation errors, and human bottlenecks.
+    - **Counterfeit Paper Passes & Screenshot Abuse**: Attendees forward static QR codes or screenshot barcodes to multiple classmates, causing widespread gate-crashing.
+    - **Dangerous Overcrowding**: Inability to enforce strict physical venue capacity limits, leading to fire safety hazards.
+    - **Disorganized Financials & Cash Bags**: Delayed society funds, lack of automated fee transparency, and disputes over ticket cancellations.
+    - **Zero Offline Infrastructure**: Entrance gates collapse when underground auditoriums or crowded halls experience mobile network outages.
 
-    ### 2. The 8-Step Event Builder & Multimedia Engine
-    Comprehensive tools for society organizers to design high-converting event pages in minutes.
-    - **Multi-Tier Ticketing**: Configure Early Bird, VIP, and General passes with individual quotas and per-student limits.
-    - **Double-Capacity Safety Locks**: Automatic hard stops prevent physical venue overcrowding and fire safety violations.
-    - **Interactive Multimedia**: Embed Spotify ambient soundtracks and custom FAQ accordions directly on public event pages.
-
-    ### 3. High-Velocity Gate Operations & Offline Verification
-    The native **Gate Scanner Mobile APK** and **Live Gate Telemetry Monitor** empower entrance staff to admit thousands of attendees rapidly.
-    - **4 Live Attendance Metrics**: Real-time tracking of *Sold, Checked In, Remaining,* and *Venue Capacity*.
-    - **Zero-Internet Manifest Mode**: Download verified attendee lists before entering underground halls to scan 100% offline.
-    - **Event Hub P2P Mesh Pairing**: Multiple gate phones connect directly via local wireless mesh to eliminate duplicate cross-gate entries without cellular data.
-
-    ### 4. Transparent Financials & Dispute Arbitration
-    - **Society Wallet**: Transparent breakdown of Gross Revenue, Platform Fees (2.5%), Escrow Holds, and Available Balance.
-    - **Automated Bank Payouts**: Secure wire disbursements directly to verified society bank accounts.
-    - **Dispute Operations Center**: Independent platform arbitration ensuring fair treatment for ticket appeals and cancellations.
+    **UniTix replaces this broken system with a unified, cloud-native campus operating ecosystem.**
 
     ---
 
-    ## 📚 Explore Documentation by Category
+    ## 🏛️ What UniTix Solves — Feature Architecture
+
+    | Challenge | Legacy Method | The UniTix Solution |
+    | :--- | :--- | :--- |
+    | **Ticket Counterfeiting** | Static paper or forwarded screenshots | **Dynamic Rotating Security Passes**: Pass refreshes automatically every few seconds on screen; screenshots expire and are rejected at the gate. |
+    | **No-Internet Venues** | Paper checklist or unverified entry | **Offline Manifest Engine & P2P Mesh**: Download verified attendee manifests on-device and pair gate phones wirelessly without cellular data. |
+    | **Overcrowding & Safety** | Guesswork across multiple tiers | **Double-Capacity Hard Stop**: Sales automatically halt across all tiers the instant the venue's overall safety capacity is reached. |
+    | **Payment Reconciliation** | Manually checking banking SMS alerts | **Dual Payment Rails**: Automated card processing + structured manual bank transfer/EasyPaisa slip verification with transaction logs. |
+    | **Post-Event Validation** | Manual paper certificates | **Automated Verifiable Credentials**: Gate scan unlocks official attendance certificates with public verification QR codes. |
+
+    ---
+
+    ## 🚀 Complete Platform Capabilities by User Role
+
+    ### 🎓 For Students (The Attendee Experience)
+    - **Campus Marketplace**: Discover workshops, summits, competitions, and concerts with smart university and society filters.
+    - **Dynamic Rotating Passes**: Display high-contrast digital passes with live attendance status indicators.
+    - **One-Click Ticket Transfers**: Safely transfer a ticket to a classmate; the old pass is instantly revoked while a fresh pass is issued.
+    - **Automated Waitlists**: Join queues for sold-out events and receive automatic reallocation notices when spots open.
+    - **Official Invoices & Spending Ledger**: Track all transactions and download PDF payment receipts.
+    - **Dispute Operations**: Submit ticket appeals and receive transparent platform arbitration.
+
+    ### 🏰 For Society Presidents & Organizers
+    - **8-Step Event Builder**: Configure multi-tier pricing, hard capacity stops, Spotify ambient audio, and FAQ accordions.
+    - **5-Tab Marketing Hub**: Launch percentage or fixed promo codes, send attendee email broadcasts, auto-generate digital flyers, and track referral links.
+    - **Sponsorships Hub**: Manage sponsor tiers and automate brand logo placement on PDF tickets and public event pages.
+    - **Live Gate Telemetry Monitor**: Real-time velocity gauge (scans/min), live check-in streams, and queue density tracking.
+    - **Society Financial Wallet**: Monitor gross revenue, platform fee deductions (2.5%), escrow holds, and request direct bank wire payouts.
+    - **Team Roles & Permissions**: Delegate operations to Event Managers, Payment Verifiers, and Gate Volunteers.
+
+    ### 📱 For Gate Security & Volunteer Scanners
+    - **Native Android APK & Web App**: High-speed camera verification with sub-second response times.
+    - **4-Metric Live Bar**: Real-time header displaying *Tickets Sold, Checked In, Remaining, and Max Capacity*.
+    - **Three Validation Modes**: Online Cloud, Offline Local Database, and Multi-Gate Peer Pairing.
+    - **Instant Visual & Audio Alerts**: Green (Valid entry), Red (Already scanned / duplicate), Amber (Wrong gate/event), and Grey (Expired screenshot).
+
+    ---
+
+    ## 🧭 Documentation Roadmap
 
     <CardGroup cols={2}>
+      <Card title="Comprehensive Getting Started" icon="rocket" href="/getting-started">
+        Step-by-step account onboarding, campus profile setup, and society registration guide.
+      </Card>
       <Card title="Student Portal Guide" icon="graduation-cap" href="/students/browsing-events">
-        Discover events, apply promo codes, manage digital rotating passes, and claim certificates.
+        Explore event booking, dynamic passes, ticket transfers, and verified certificates.
       </Card>
-      <Card title="Society Organizer Hub" icon="users-gear" href="/organizers/dashboard-overview">
-        Use the 8-step Event Builder, launch promo campaigns, manage sponsors, and request payouts.
+      <Card title="Society Organizer Manual" icon="users-gear" href="/organizers/dashboard-overview">
+        Master the 8-step Event Builder, marketing tools, sponsor perks, and wallet withdrawals.
       </Card>
-      <Card title="Gate Scanner Mobile App" icon="mobile-screen" href="/organizers/gate-scanner">
-        Operate the mobile scanner APK in Online, Offline SQLite Manifest, and Multi-Gate Peer modes.
-      </Card>
-      <Card title="Live Gate Telemetry Monitor" icon="chart-line" href="/organizers/live-gate-monitor">
-        Monitor real-time gate velocity (scans/min), live check-in streams, and queue density.
+      <Card title="Gate Scanner Operations" icon="mobile-screen" href="/organizers/gate-scanner">
+        Complete operator guide for the mobile scanner APK, offline manifest downloads, and P2P mesh pairing.
       </Card>
     </CardGroup>
   </Tab>
 
   <Tab title="اردو (Urdu)">
-    # خوش آمدید — UniTix آفیشل گائیڈ اور دستاویزات
+    # خوش آمدید — UniTix مکمل دستاویزی گائیڈ
 
-    **UniTix** (`https://unitix.aarx.online`) یونیورسٹی سوسائٹیز، طلباء اور ایونٹ آرگنائزرز کے لیے جدید ترین ڈیجیٹل ٹکٹنگ، گیٹ مینجمنٹ اور فنانشل سسٹم ہے۔
-
-    روایتی کاغذی پرچیوں اور غیر منظم فہرستوں کے بجائے، UniTix کیمپس ایونٹس کو مکمل ڈیجیٹل اور محفوظ بناتا ہے۔
+    **UniTix** یونیورسٹی سوسائٹیز، طلباء اور کیمپس ایونٹ آرگنائزرز کے لیے جدید ترین ڈیجیٹل ٹکٹنگ، گیٹ سیکیورٹی اور خودکار مالیاتی نظام ہے۔
 
     ---
 
-    ## 🏛️ UniTix کے 4 بنیادی ستون
+    ## 🎯 UniTix کی ضرورت کیوں پیش آئی؟ (روایتی نظام کے مسائل)
 
-    ### 1. طلباء کے لیے مارکیٹ پلیس اور ٹکٹ بکنگ
-    - **کیمپس ایونٹس کی تلاش**: یونیورسٹی، سوسائٹی اور کیٹیگری کے لحاظ سے ایونٹس تلاش کریں۔
-    - **متحرک سیکیورٹی پاسز**: خودکار تبدیل ہونے والا QR کوڈ جو سکرین شاٹ کے غلط استعمال کو روکتا ہے۔
-    - **ادائیگی کے آسان طریقے**: آن لائن کارڈ یا بینک رسید اپ لوڈ کر کے ٹکٹ بک کریں۔
+    پہلے کیمپس ایونٹس کا انتظام دستی طریقوں پر منحصر تھا جس سے کئی سنگین مسائل پیدا ہوتے تھے:
+    - **گوگل فارمز اور واٹس ایپ کا غیر منظم نظام**: ٹکٹوں کے ریکارڈ کا گم ہونا اور بینک رسیدوں کی تصدیق میں غلطیاں۔
+    - **جعلی ٹکٹ اور سکرین شاٹ کا غلط استعمال**: ایک ہی ٹکٹ کا سکرین شاٹ کئی طلباء کو بھیج کر غیر قانونی داخلہ لینا۔
+    - **ہال میں گنجائش سے زیادہ افراد (Overcrowding)**: ہال کی گنجائش کا درست کنٹرول نہ ہونا جس سے حفاظتی خطرات پیدا ہوتے ہیں۔
+    - **انٹرنیٹ کی بندش**: بیسمنٹ ہالز میں انٹرنیٹ نہ ہونے پر گیٹ پر چیکنگ کا رک جانا۔
 
-    ### 2. ایونٹ بلڈر اور میڈیا ٹولز
-    - **مختلف کیٹیگریز کے ٹکٹ**: ارلی برڈ، وی آئی پی اور عام ٹکٹوں کی قیمتیں اور تعداد مقرر کریں۔
-    - **ہال کی گنجائش کی حد**: اوور کراؤڈنگ روکنے کے لیے خودکار سیٹ لمٹ۔
-    - **بیک گراؤنڈ میوزک**: ایونٹ کے پیج پر اسپاٹیفائی میوزک شامل کریں۔
+    **UniTix ان تمام مسائل کو حل کر کے کیمپس ایونٹس کو مکمل محفوظ اور ڈیجیٹل بناتا ہے۔**
 
-    ### 3. تیز ترین گیٹ سکیننگ اور آف لائن موڈ
-    - **گیٹ سکینر موبائل ایپ**: بغیر انٹرنیٹ کے ہال میں ٹکٹ سکین کریں اور ڈبل انٹری روکیں۔
-    - **لائیو گیٹ مانیٹر**: ریئل ٹائم میں دیکھیں کہ کس رفتار سے طلباء گیٹ سے اندر آ رہے ہیں۔
+    ---
 
-    ### 4. شفاف فنانس اور بینک ادائیگیاں
-    - **سوسائٹی والیٹ**: کل آمدن، فیس اور بینک اکاؤنٹ میں براہ راست رقوم کی منتقلی کا مکمل ریکارڈ۔
+    ## 🏛️ اہم مسائل اور UniTix کا حل
+
+    | مسئلہ | پرانا طریقہ | UniTix کا جدید حل |
+    | :--- | :--- | :--- |
+    | **ٹکٹ کی نقل اور فراڈ** | پرنٹ شدہ کاغذ یا سکرین شاٹ | **متحرک سیکیورٹی QR کوڈ**: ہر چند سیکنڈ بعد تبدیل ہوتا ہے؛ سکرین شاٹ گیٹ پر مسترد ہو جاتا ہے۔ |
+    | **بغیر انٹرنیٹ کے ایونٹ** | کاغذی لسٹ یا بغیر چیکنگ داخلہ | **آف لائن موڈ اور گیٹ میش**: انٹرنیٹ کے بغیر موبائل میں لسٹ محفوظ کریں اور تمام گیٹس کو آپس میں جوڑیں۔ |
+    | **اوور کراؤڈنگ** | اندازے سے ٹکٹ بیچنا | **ہال کی گنجائش کی حد**: جیسے ہی ہال فل ہوتا ہے، تمام کیٹیگریز کے ٹکٹوں کی بکنگ خود بخود بند ہو جاتی ہے۔ |
+    | **ادائیگی کی تصدیق** | میسجز دیکھنا | **خودکار سسٹم**: آن لائن کارڈ اور بینک رسیدوں کی باضابطہ تصدیق اور ریکارڈ۔ |
+    | **شرکت کا سرٹیفکیٹ** | کاغذی سرٹیفکیٹ | **ڈیجیٹل سرٹیفکیٹ**: گیٹ پر حاضری لگتے ہی تصدیق شدہ سرٹیفکیٹ آن لائن جاری ہوتا ہے۔ |
+
+    ---
+
+    ## 🚀 ہر صارف کے لیے مکمل سہولیات
+
+    ### 🎓 طلباء کے لیے
+    - کیمپس ایونٹس کی تلاش اور فوری ٹکٹ بکنگ۔
+    - سکرین شاٹ پروٹیکشن کے ساتھ محفوظ متحرک پاسز۔
+    - دوست کو باآسانی اور محفوظ طریقے سے ٹکٹ ٹرانسفر کرنے کی سہولت۔
+    - ایونٹ فل ہونے پر ویٹ لسٹ میں شامل ہونا اور خالی سیٹ ملنا۔
+    - سرکاری رسیدیں ڈاؤن لوڈ کرنا اور سرٹیفکیٹس حاصل کرنا۔
+
+    ### 🏰 سوسائٹی منتظمین کے لیے
+    - 8 مراحل پر مشتمل ایونٹ بلڈر (میوزک، ٹکٹ کیٹیگریز، اور نقشہ)۔
+    - مارکیٹنگ ہب (پرومو کوڈز، ای میل پیغامات، خودکار پوسٹرز، اور ٹریکنگ لنکس)۔
+    - سپانسرز کا انتظام اور ٹکٹ پر ان کے لوگو کا خودکار اندراج۔
+    - لائیو گیٹ مانیٹر اور طلباء کے داخلے کی لائیو رفتار۔
+    - سوسائٹی والیٹ اور براہِ راست بینک اکاؤنٹ میں رقوم کی منتقلی۔
+
+    ### 📱 گیٹ کے عملے کے لیے
+    - تیز رفتار موبائل سکینر ایپ (Android APK)۔
+    - لائیو حاضری کے اعدادوشمار (فروخت، داخل شدہ، باقی)۔
+    - انٹرنیٹ کے بغیر مکمل آف لائن اور ملٹی گیٹ موڈ۔
   </Tab>
 </Tabs>
