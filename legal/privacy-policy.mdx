@@ -1,56 +1,59 @@
 ---
 title: "Privacy Policy & Data Protection"
-description: "How UniTix collects, encrypts, and safeguards student personal identifiable information (PII) and society financial documents."
+description: "How UniTix collects, encrypts, and safeguards student personal identifiable information (PII) and society financial documents with strict privacy-by-design."
 ---
 
 # Privacy & Data Security Policy
 
-At **UniTix** (`unitix.aarx.online`), safeguarding student identity and organizer financial records is our highest priority. This Privacy Policy details the exact mechanisms by which we collect, store, process, and protect your data in compliance with international privacy standards and local data protection regulations (`PDPA / GDPR`).
+At **UniTix** (`https://unitix.aarx.online`), safeguarding student privacy, personal identity, and organizer financial records is our highest priority. We follow strict **Privacy-by-Design** principles that respect student dignity, cultural values, and international data protection standards (`GDPR / PDPA`).
 
 ---
 
 ## 1. Information We Collect
 
 ### A. From Student Attendees
-To verify academic status and issue forgery-proof digital passes, we collect:
-- **Core Identity:** Full Legal Name, Primary Email Address, and Phone Number (`SMS OTP validation`).
-- **Academic Verification:** University Name, Degree Program, and Official University Roll/Registration Number (`e.g., 2022-CS-101`).
-- **Profile Headshot:** A clear facial photograph uploaded during onboarding. This photo is displayed to on-site Gate Scanners exclusively for facial verification against ticket transfers or QR fraud.
-- **Transaction Proofs:** Screenshots of manual bank transfers (`JazzCash`, `EasyPaisa`, `IBFT`) and transaction reference IDs (`TxID`) submitted during paid checkouts.
+To verify academic status and issue forgery-proof digital passes:
+- **Core Identity:** Full Legal Name, Primary Email Address, and Phone Number.
+- **Academic Verification:** University Name, Academic Department, and Official University Roll/Registration Number (e.g., `2022-CS-101`).
+- **Transaction Proofs:** Screenshots of manual bank transfers (`JazzCash`, `EasyPaisa`, `IBFT`) and transaction reference IDs (`TxID`) submitted during manual checkouts for organizer verification.
 
-### B. From Society Organizers & Presidents
-To comply with Anti-Money Laundering (`AML`) and Know-Your-Customer (`KYC`) financial regulations:
-- **Official Identifiers:** Society Name, Campus Slug, and Faculty Advisor verification credentials (`Email & Contact`).
+### B. Cultural & Personal Privacy Protection
+- **No Facial Photo Display on Scanner Screens:** Volunteer gate scanners never receive or display student photographs on their screens. This ensures full privacy and dignity for all students, including female students who observe hijab or niqab.
+- **Zero-Trust Token Verification:** Ticket validation is performed using 15-second dynamic time-rotating cryptographic tokens and official university roll numbers, eliminating any need for facial recognition or photo scanning.
+
+### C. From Society Organizers & Presidents
+To comply with financial accountability and verification standards:
+- **Official Identifiers:** Society Name, Campus Handle, and Faculty Advisor credentials (`Name, Title, Official Email`).
 - **President KYC Documents:** National ID Card (`CNIC`) Front and Back photographs submitted during society registration.
 - **Banking Credentials:** Official Bank Account Title, Bank Name, and International Bank Account Number (`IBAN`) for ticket sales payout transfers.
 
 ---
 
 ## 2. How Your Data Is Used & Processed
-We process your personal information strictly for core platform functionality:
-1. **Cryptographic Ticket Issuance:** Generating dynamic JSON Web Tokens (`JWT`) and QR codes (`qrToken`) tied directly to your roll number and identity.
-2. **Gate Check-in & Security:** Displaying your name, roll number, and profile headshot to authorized volunteer Gate Scanners during on-site entry to prevent screenshot sharing.
-3. **Financial Reconciliation:** Verifying payment screenshots against society ledger statements and executing payout wire transfers (`IBFT`).
-4. **Automated Waitlists & Notifications:** Dispatches SMS (`OTP/Alerts`) and transaction emails when tickets are approved, transferred, or reallocated from waitlists.
+We process personal information strictly for core platform functionality:
+1. **Cryptographic Ticket Issuance:** Generating dynamic, time-rotating security passes tied to your roll number and ticket ID.
+2. **Gate Check-in & Security:** Displaying verified attendee Name, Roll Number, Department, and Ticket Tier on gate scanners for physical student card matching.
+3. **Financial Reconciliation:** Verifying payment receipts against society accounts and executing direct wire payouts (`IBFT`).
+4. **Automated Waitlists & Notifications:** Dispatching real-time notifications when tickets are confirmed, transferred, or reallocated.
 
 ---
 
 ## 3. Data Sharing & Disclosure Boundaries
-**UniTix never sells, rents, or monetizes your personal data to third-party advertisers.** Data access is strictly compartmentalized:
-- **Society Visibility:** When you reserve a ticket, the organizing society gains access to your Name, Roll Number, Email, and Check-in Status for event management and `.CSV` attendee manifest generation.
-- **Role-Based Access Control (RBAC):** Volunteer Gate Scanners only see your Name, Roll Number, and Photo during the split-second scan. They cannot download attendee spreadsheets or view financial details.
-- **Legal Compliance:** We reserve the right to disclose KYC identity records to university administration or law enforcement if required by lawful subpoena in cases of financial fraud, ticket forgery, or campus safety violations.
+**UniTix never sells, rents, or monetizes personal data to third-party advertisers.**
+- **Society Access:** When you reserve a ticket, the organizing society gains access to your Name, Roll Number, Email, Department, and Check-in Status for attendee management and `.CSV` manifest generation.
+- **Volunteer Scanner Isolation:** Volunteer gate staff can only view your Name, Roll Number, and Ticket Tier during the split-second scan. They cannot download attendee manifests, export personal emails, or view financial ledgers.
+- **Legal Compliance:** We reserve the right to disclose records to university administration or law enforcement if required by lawful authority in cases of fraud or campus safety threats.
 
 ---
 
 ## 4. Encryption & Data Storage
-- **In-Transit Encryption:** All communication between mobile browsers, gate scanners, and our server platform is encrypted using industry-standard `TLS 1.3 / HTTPS`.
-- **At-Rest Storage:** User records, event data, and cryptographic tickets are stored securely inside **Enterprise Multi-Region Cloud Databases** protected by strict Identity & Access Management (`IAM`) security boundaries.
-- **KYC & Receipt Storage:** Sensitive CNIC identity images and bank receipts are stored inside isolated, encrypted cloud object storage governed by short-lived, signed cryptographic access tokens.
+- **In-Transit Encryption:** All communication is encrypted using industry-standard `TLS 1.3 / HTTPS`.
+- **At-Rest Storage:** User records, event data, and cryptographic tickets are stored securely inside encrypted cloud databases protected by strict Identity & Access Management (`IAM`) security boundaries.
+- **Financial & KYC Storage:** Sensitive CNIC identity images and bank receipts are stored inside isolated, encrypted cloud object storage governed by short-lived, signed access tokens.
 
 ---
 
 ## 5. Your Data Rights & Deletion Requests
-As a registered student or organizer, you retain absolute sovereignty over your profile data:
-- **Access & Corrections:** You can update your profile name, roll number, and password anytime inside `My Profile`.
-- **Account Deletion (`Right to be Forgotten`):** You may request permanent deletion of your account and personal identifiers by contacting `support@unitix.aarx.online`. Note that financial audit logs, completed payout records, and used ticket transaction IDs must be retained for `7 years` to comply with tax and AML regulations.
+As a registered student or organizer:
+- **Access & Corrections:** You can update your profile details and password anytime inside `/dashboard/profile`.
+- **Account Deletion:** You may request permanent deletion of your account and personal identifiers by contacting `support@unitix.com`. Financial audit records and completed payout logs are retained as required by financial regulations.
