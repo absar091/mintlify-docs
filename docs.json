@@ -8,68 +8,141 @@
     "dark": "#44337A"
   },
   "navigation": {
-    "pages": [
+    "languages": [
       {
-        "group": "Getting Started",
-        "pages": [
-          "index",
-          "getting-started"
+        "language": "en",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "pages": [
+              "index",
+              "getting-started"
+            ]
+          },
+          {
+            "group": "For Students",
+            "pages": [
+              "students/browsing-events",
+              "students/checkout-payments",
+              "students/waitlist",
+              "students/digital-tickets",
+              "students/offline-pass-app",
+              "students/ticket-transfer",
+              "students/disputes-and-appeals",
+              "students/financials-and-receipts",
+              "students/profile-and-campus-id",
+              "students/notifications",
+              "students/certificates",
+              "students/policies"
+            ]
+          },
+          {
+            "group": "For Organizers",
+            "pages": [
+              "organizers/dashboard-overview",
+              "organizers/public-presence",
+              "organizers/event-creation",
+              "organizers/marketing-and-promos",
+              "organizers/sponsors-management",
+              "organizers/gate-scanner",
+              "organizers/live-gate-monitor",
+              "organizers/attendee-feedback",
+              "organizers/refund-configuration",
+              "organizers/team-management",
+              "organizers/finances-and-payouts",
+              "organizers/analytics-and-reports"
+            ]
+          },
+          {
+            "group": "Platform & Compliance Governance",
+            "pages": [
+              "admin/platform-governance",
+              "admin/security-and-anti-fraud",
+              "admin/financial-reconciliation"
+            ]
+          },
+          {
+            "group": "Ecosystem & Special Programs",
+            "pages": [
+              "programs/student-ambassadors",
+              "programs/public-certificate-verification"
+            ]
+          },
+          {
+            "group": "Legal & Compliance",
+            "pages": [
+              "legal/privacy-policy",
+              "legal/terms-of-service"
+            ]
+          }
         ]
       },
       {
-        "group": "For Students",
-        "pages": [
-          "students/browsing-events",
-          "students/checkout-payments",
-          "students/waitlist",
-          "students/digital-tickets",
-          "students/offline-pass-app",
-          "students/ticket-transfer",
-          "students/disputes-and-appeals",
-          "students/financials-and-receipts",
-          "students/profile-and-campus-id",
-          "students/notifications",
-          "students/certificates",
-          "students/policies"
-        ]
-      },
-      {
-        "group": "For Organizers",
-        "pages": [
-          "organizers/dashboard-overview",
-          "organizers/public-presence",
-          "organizers/event-creation",
-          "organizers/marketing-and-promos",
-          "organizers/sponsors-management",
-          "organizers/gate-scanner",
-          "organizers/live-gate-monitor",
-          "organizers/attendee-feedback",
-          "organizers/refund-configuration",
-          "organizers/team-management",
-          "organizers/finances-and-payouts",
-          "organizers/analytics-and-reports"
-        ]
-      },
-      {
-        "group": "Platform & Compliance Governance",
-        "pages": [
-          "admin/platform-governance",
-          "admin/security-and-anti-fraud",
-          "admin/financial-reconciliation"
-        ]
-      },
-      {
-        "group": "Ecosystem & Special Programs",
-        "pages": [
-          "programs/student-ambassadors",
-          "programs/public-certificate-verification"
-        ]
-      },
-      {
-        "group": "Legal & Compliance",
-        "pages": [
-          "legal/privacy-policy",
-          "legal/terms-of-service"
+        "language": "ur",
+        "groups": [
+          {
+            "group": "شروعات اور تعارف",
+            "pages": [
+              "ur/index",
+              "ur/getting-started"
+            ]
+          },
+          {
+            "group": "طلباء کے لیے رہنمائی",
+            "pages": [
+              "ur/students/browsing-events",
+              "ur/students/checkout-payments",
+              "ur/students/waitlist",
+              "ur/students/digital-tickets",
+              "ur/students/offline-pass-app",
+              "ur/students/ticket-transfer",
+              "ur/students/disputes-and-appeals",
+              "ur/students/financials-and-receipts",
+              "ur/students/profile-and-campus-id",
+              "ur/students/notifications",
+              "ur/students/certificates",
+              "ur/students/policies"
+            ]
+          },
+          {
+            "group": "سوسائٹی منتظمین کے لیے مینوئل",
+            "pages": [
+              "ur/organizers/dashboard-overview",
+              "ur/organizers/public-presence",
+              "ur/organizers/event-creation",
+              "ur/organizers/marketing-and-promos",
+              "ur/organizers/sponsors-management",
+              "ur/organizers/gate-scanner",
+              "ur/organizers/live-gate-monitor",
+              "ur/organizers/attendee-feedback",
+              "ur/organizers/refund-configuration",
+              "ur/organizers/team-management",
+              "ur/organizers/finances-and-payouts",
+              "ur/organizers/analytics-and-reports"
+            ]
+          },
+          {
+            "group": "پلیٹ فارم ایڈمن اور گورننس",
+            "pages": [
+              "ur/admin/platform-governance",
+              "ur/admin/security-and-anti-fraud",
+              "ur/admin/financial-reconciliation"
+            ]
+          },
+          {
+            "group": "پروگرامز اور تصدیقی پورٹل",
+            "pages": [
+              "ur/programs/student-ambassadors",
+              "ur/programs/public-certificate-verification"
+            ]
+          },
+          {
+            "group": "قانونی قواعد اور پرائیویسی",
+            "pages": [
+              "ur/legal/privacy-policy",
+              "ur/legal/terms-of-service"
+            ]
+          }
         ]
       }
     ],
@@ -92,31 +165,22 @@
   },
   "footer": {
     "socials": {
-      "github": "https://github.com/AARXLabs",
+      "github": "https://github.com/absar091/unitix",
       "website": "https://unitix.aarx.online"
     }
   },
   "description": "UniTix is a modern, all-in-one event management and ticketing platform designed exclusively for university societies and student bodies. We bridge the gap between event organizers and students. We've built a platform that handles everything from beautiful event pages and seamless checkout flows to on-the-ground QR scanning and post-event analytics.",
   "logo": {
-    "light": "/images/ChatGPTImageAug17,2026,04_28_53PM.png",
-    "dark": "/images/ChatGPTImageAug17,2026,04_28_53PM.png"
+    "light": "/images/ChatGPTImageJun16,2026,08_13_44AM.png",
+    "dark": "/images/ChatGPTImageJun16,2026,08_13_50AM.png"
   },
   "favicon": {
     "light": "/images/ChatGPTImageJun16,2026,08_13_44AM.png",
-    "dark": "/images/ChatGPTImageAug17,2026,04_28_53PM.png"
+    "dark": "/images/ChatGPTImageJun16,2026,08_13_50AM.png"
   },
   "fonts": {
     "heading": {
       "family": "Roboto"
     }
-  },
-  "thumbnails": {
-    "background": "/images/ChatGPTImageAug17,2026,04_38_40PM.png"
-  },
-  "metadata": {
-    "timestamp": true
-  },
-  "seo": {
-    "indexing": "navigable"
   }
 }
