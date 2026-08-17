@@ -1,0 +1,117 @@
+---
+title: "Student Offline Pass App (UniTix Student APK)"
+description: "How to use the native UniTix Student mobile app to store offline event passes, generate rotating QR codes without internet, and sync your pass vault."
+---
+
+<Tabs>
+  <Tab title="English">
+    # Student Offline Pass App (UniTix Student APK)
+
+    The **UniTix Student App** (`unitix_student.apk`) is a lightweight, native mobile application designed to ensure university students can always access and present their event passes—even in underground auditoriums, crowded basements, or during total campus cellular network blackouts.
+
+    ---
+
+    ## 🎯 Why an Offline Student App is Essential
+
+    - **Zero-Cellular Venues**: University basements, sports complexes, and auditoriums frequently suffer from severe network congestion or zero mobile reception.
+    - **No Waiting on Slow Web Pages**: Once synced, your passes open instantly without loading spinners or network timeouts.
+    - **100% Offline Dynamic Pass Generation**: The app computes the time-rotating security QR code on-device every 15 seconds using secure local credentials, eliminating the need to ping a server at the venue entrance.
+
+    ---
+
+    ## 📱 Onboarding & First-Time Setup
+
+    ```
+    Step 1: Install APK ➔ Step 2: Log In with Student Email ➔ Step 3: Auto-Sync Vault ➔ Step 4: Ready for Offline Entry
+    ```
+
+    1. **Download & Install**: Install `unitix_student.apk` on your Android device (or launch the mobile app).
+    2. **Sign In**: Enter your registered UniTix student email address and password.
+    3. **Vault Initialization**: On initial sign-in, the app initializes your secure on-device local database and automatically downloads all active event tickets you have purchased or claimed.
+
+    ---
+
+    ## 🗂️ App Screen Layout & UI Components
+
+    ### 1. The Ticket Vault Header (`TicketWalletScreen`)
+    - **UniTix Wallet Branding**: Top app bar showing the purple gradient ticket icon and the app title.
+    - **Student Identity**: Displays your verified name (e.g., *Student Pass Vault*).
+    - **Sync Vault Button (`(🔄) Sync Ticket Vault`)**: Tap this icon at any time while connected to the internet to fetch newly purchased tickets or status updates. A rotating spinner indicates active cloud synchronization.
+    - **Sign Out Button (`(🚪) Sign Out`)**: Securely clears credentials and returns to the login screen.
+    - **Status Sync Banner**: A notification bar at the top displays sync progress:
+      - `Passes synchronized with cloud (X passes ready).` (When synced successfully)
+      - `Offline Mode active.` (When viewing cached tickets without internet)
+
+    ### 2. Event Pass Cards
+    Each purchased ticket is rendered as an interactive card containing:
+    - **Status Badge**: Green `OFFLINE READY` badge indicating the ticket is permanently cached on-device.
+    - **Price Tag**: Displays `FREE PASS` or the ticket price in PKR (e.g., `Rs. 500`).
+    - **Event Title**: Bold heading with the event name.
+    - **Society Name**: Listed with a university building icon.
+    - **Venue & Date**: Listed with a location pin icon (e.g., *Main Auditorium • 2026-08-25*).
+    - **Action Button**: Wide purple button labelled **`[OPEN DYNAMIC PASS 🎟️]`**.
+
+    ---
+
+    ## 🔄 The Dynamic QR Screen (`DynamicQrScreen`)
+
+    Tapping **`[OPEN DYNAMIC PASS 🎟️]`** opens the dedicated full-screen entrance pass:
+
+    1. **Top Security Badge**: Green capsule reading `100% Offline Ready • 15s Rotation`.
+    2. **Event Header**: Event title and your ticket tier (e.g., *VIP Front Row, General Admission*).
+    3. **Dynamic QR Code Container**: High-contrast white container rendering your active time-rotating QR pass.
+    4. **Slot Identifier**: Dark monospace pill showing `SLOT #X` (indicating the active time slice).
+    5. **Refresh Countdown Timer**: Displays `Xs remaining` alongside a purple linear progress indicator that smoothly drains as the 15-second window elapses.
+    6. **Zero-Internet Assurance Card**: Informs gate staff and attendees that this pass is generated entirely on-device and will be successfully validated by the Gate Scanner APK even without Wi-Fi.
+
+    ---
+
+    ## 💡 Best Practices for Gate Entry
+
+    1. **Sync Before Heading to the Venue**: Open the app at home or on campus Wi-Fi and tap the **Sync Vault** icon to ensure all your latest tickets are downloaded.
+    2. **Screen Brightness**: Turn your screen brightness to high before presenting your phone to the gate scanner.
+    3. **Do Not Take Screenshots**: Screenshots are static and will fail gate validation because the time slot expires within seconds. Always present the live screen inside the app.
+  </Tab>
+
+  <Tab title="اردو (Urdu)">
+    # اسٹوڈنٹ آف لائن پاس ایپ (UniTix Student APK)
+
+    **UniTix اسٹوڈنٹ ایپ** (`unitix_student.apk`) طلباء کے لیے ایک موبائل ایپلیکیشن ہے جو بغیر انٹرنیٹ کے ایونٹ ٹکٹس دکھانے اور گیٹ پر داخلہ لینے کی سہولت فراہم کرتی ہے۔
+
+    ---
+
+    ## 🎯 آف لائن اسٹوڈنٹ ایپ کی ضرورت کیوں ہے؟
+
+    - **بیسمنٹ اور سگنل کے بغیر ہالز**: یونیورسٹی کے تہہ خانوں اور آڈیٹوریمز میں اکثر موبائل سگنل نہیں آتا۔
+    - **تیز رفتار لوڈنگ**: ایپ میں ٹکٹ پہلے سے محفوظ ہوتے ہیں، اس لیے کسی انٹرنیٹ لوڈنگ کا انتظار نہیں کرنا پڑتا۔
+    - **100% آف لائن متحرک QR کوڈ**: ایپ ہر 15 سیکنڈ بعد نیا سیکیورٹی QR کوڈ بغیر انٹرنیٹ کے خود تیار کرتی ہے جو گیٹ سکینر پر فوری قبول ہوتا ہے۔
+
+    ---
+
+    ## 📱 اکاؤنٹ لاگ ان اور پہلا سیٹ اپ
+
+    1. اپنے اینڈرائیڈ فون میں `unitix_student.apk` انسٹال کریں۔
+    2. اپنا رجسٹرڈ یونیورسٹی ای میل اور پاس ورڈ درج کر کے لاگ ان کریں۔
+    3. لاگ ان ہوتے ہی ایپ آپ کے تمام خریدے ہوئے ٹکٹ خود بخود موبائل میں ڈاؤن لوڈ کر کے محفوظ کر لے گی۔
+
+    ---
+
+    ## 🗂️ ایپ کے اہم حصے اور بٹنز
+
+    ### 1. ٹکٹ والٹ ہوم سکرین
+    - **سنک بٹن (`(🔄) Sync`)**: نئے خریدے گئے ٹکٹ ڈاؤن لوڈ کرنے کے لیے یہ بٹن دبائیں۔
+    - **سٹیٹس بار**: سکرین پر لکھا آتا ہے کہ کتنے ٹکٹ آف لائن تیار ہیں۔
+    - **ٹکٹ کارڈ**: ہر ایونٹ کے کارڈ پر سبز رنگ میں `OFFLINE READY` کا بیج، تاریخ اور ہال کا نام درج ہوتا ہے۔
+    - **پاس کھولنے کا بٹن**: کارڈ کے نیچے **`[OPEN DYNAMIC PASS 🎟️]`** کا بڑا بٹن ہوتا ہے۔
+
+    ### 2. متحرک QR کوڈ سکرین
+    - **ٹائم کاؤنٹ ڈاؤن**: ہر 15 سیکنڈ بعد QR کوڈ خود بخود تبدیل ہوتا ہے اور ساتھ ٹائمر چلتا ہے۔
+    - **سکرین شاٹ کی ممانعت**: سکرین شاٹ کام نہیں کرے گا کیونکہ کوڈ چند سیکنڈ میں ایکسپائر ہو جاتا ہے۔ ہمیشہ لائیو ایپ کھول کر دکھائیں۔
+
+    ---
+
+    ## 💡 ضروری ہدایات
+    1. ایونٹ ہال میں جانے سے پہلے گھر یا کیمپس Wi-Fi پر ایپ کھول کر **Sync** کا بٹن ضرور دبا لیں۔
+    2. گیٹ پر پہنچ کر موبائل کی اسکرین کی روشنی تیز کر کے کیمرے کے سامنے رکھیں۔
+  </Tab>
+</Tabs>
