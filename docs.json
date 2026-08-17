@@ -109,5 +109,14 @@
     "heading": {
       "family": "Roboto"
     }
+  },
+  "thumbnails": {
+    "background": "/images/ChatGPTImageAug17,2026,04_38_40PM.png"
+  },
+  "metadata": {
+    "timestamp": true
+  },
+  "seo": {
+    "indexing": "navigable"
   }
 }

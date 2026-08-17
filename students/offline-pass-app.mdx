@@ -1,6 +1,7 @@
 ---
 title: "Student Offline Pass App (UniTix Student APK)"
 description: "How to use the native UniTix Student mobile app to store offline event passes, generate rotating QR codes without internet, and sync your pass vault."
+icon: "android"
 ---
 
 <Tabs>
@@ -11,7 +12,7 @@ description: "How to use the native UniTix Student mobile app to store offline e
 
     ---
 
-    ## 🎯 Why an Offline Student App is Essential
+    ## Why an Offline Student App is Essential
 
     - **Zero-Cellular Venues**: University basements, sports complexes, and auditoriums frequently suffer from severe network congestion or zero mobile reception.
     - **No Waiting on Slow Web Pages**: Once synced, your passes open instantly without loading spinners or network timeouts.
@@ -21,7 +22,7 @@ description: "How to use the native UniTix Student mobile app to store offline e
 
     ## 📱 Onboarding & First-Time Setup
 
-    ```
+    ```text
     Step 1: Install APK ➔ Step 2: Log In with Student Email ➔ Step 3: Auto-Sync Vault ➔ Step 4: Ready for Offline Entry
     ```
 
@@ -34,8 +35,9 @@ description: "How to use the native UniTix Student mobile app to store offline e
     ## 🗂️ App Screen Layout & UI Components
 
     ### 1. The Ticket Vault Header (`TicketWalletScreen`)
+
     - **UniTix Wallet Branding**: Top app bar showing the purple gradient ticket icon and the app title.
-    - **Student Identity**: Displays your verified name (e.g., *Student Pass Vault*).
+    - **Student Identity**: Displays your verified name (e.g., _Student Pass Vault_).
     - **Sync Vault Button (`(🔄) Sync Ticket Vault`)**: Tap this icon at any time while connected to the internet to fetch newly purchased tickets or status updates. A rotating spinner indicates active cloud synchronization.
     - **Sign Out Button (`(🚪) Sign Out`)**: Securely clears credentials and returns to the login screen.
     - **Status Sync Banner**: A notification bar at the top displays sync progress:
@@ -43,12 +45,14 @@ description: "How to use the native UniTix Student mobile app to store offline e
       - `Offline Mode active.` (When viewing cached tickets without internet)
 
     ### 2. Event Pass Cards
+
     Each purchased ticket is rendered as an interactive card containing:
+
     - **Status Badge**: Green `OFFLINE READY` badge indicating the ticket is permanently cached on-device.
     - **Price Tag**: Displays `FREE PASS` or the ticket price in PKR (e.g., `Rs. 500`).
     - **Event Title**: Bold heading with the event name.
     - **Society Name**: Listed with a university building icon.
-    - **Venue & Date**: Listed with a location pin icon (e.g., *Main Auditorium • 2026-08-25*).
+    - **Venue & Date**: Listed with a location pin icon (e.g., _Main Auditorium • 2026-08-25_).
     - **Action Button**: Wide purple button labelled **`[OPEN DYNAMIC PASS 🎟️]`**.
 
     ---
@@ -58,7 +62,7 @@ description: "How to use the native UniTix Student mobile app to store offline e
     Tapping **`[OPEN DYNAMIC PASS 🎟️]`** opens the dedicated full-screen entrance pass:
 
     1. **Top Security Badge**: Green capsule reading `100% Offline Ready • 15s Rotation`.
-    2. **Event Header**: Event title and your ticket tier (e.g., *VIP Front Row, General Admission*).
+    2. **Event Header**: Event title and your ticket tier (e.g., _VIP Front Row, General Admission_).
     3. **Dynamic QR Code Container**: High-contrast white container rendering your active time-rotating QR pass.
     4. **Slot Identifier**: Dark monospace pill showing `SLOT #X` (indicating the active time slice).
     5. **Refresh Countdown Timer**: Displays `Xs remaining` alongside a purple linear progress indicator that smoothly drains as the 15-second window elapses.
@@ -72,7 +76,6 @@ description: "How to use the native UniTix Student mobile app to store offline e
     2. **Screen Brightness**: Turn your screen brightness to high before presenting your phone to the gate scanner.
     3. **Do Not Take Screenshots**: Screenshots are static and will fail gate validation because the time slot expires within seconds. Always present the live screen inside the app.
   </Tab>
-
   <Tab title="اردو (Urdu)">
     # اسٹوڈنٹ آف لائن پاس ایپ (UniTix Student APK)
 
@@ -99,18 +102,21 @@ description: "How to use the native UniTix Student mobile app to store offline e
     ## 🗂️ ایپ کے اہم حصے اور بٹنز
 
     ### 1. ٹکٹ والٹ ہوم سکرین
+
     - **سنک بٹن (`(🔄) Sync`)**: نئے خریدے گئے ٹکٹ ڈاؤن لوڈ کرنے کے لیے یہ بٹن دبائیں۔
     - **سٹیٹس بار**: سکرین پر لکھا آتا ہے کہ کتنے ٹکٹ آف لائن تیار ہیں۔
     - **ٹکٹ کارڈ**: ہر ایونٹ کے کارڈ پر سبز رنگ میں `OFFLINE READY` کا بیج، تاریخ اور ہال کا نام درج ہوتا ہے۔
     - **پاس کھولنے کا بٹن**: کارڈ کے نیچے **`[OPEN DYNAMIC PASS 🎟️]`** کا بڑا بٹن ہوتا ہے۔
 
     ### 2. متحرک QR کوڈ سکرین
+
     - **ٹائم کاؤنٹ ڈاؤن**: ہر 15 سیکنڈ بعد QR کوڈ خود بخود تبدیل ہوتا ہے اور ساتھ ٹائمر چلتا ہے۔
     - **سکرین شاٹ کی ممانعت**: سکرین شاٹ کام نہیں کرے گا کیونکہ کوڈ چند سیکنڈ میں ایکسپائر ہو جاتا ہے۔ ہمیشہ لائیو ایپ کھول کر دکھائیں۔
 
     ---
 
     ## 💡 ضروری ہدایات
+
     1. ایونٹ ہال میں جانے سے پہلے گھر یا کیمپس Wi-Fi پر ایپ کھول کر **Sync** کا بٹن ضرور دبا لیں۔
     2. گیٹ پر پہنچ کر موبائل کی اسکرین کی روشنی تیز کر کے کیمرے کے سامنے رکھیں۔
   </Tab>
