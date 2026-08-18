@@ -1,38 +1,54 @@
 ---
 title: "Refund Policies & Processing Cancellations"
-description: "How societies configure tiered cancellation penalty schedules and process attendee refund requests."
+description: "How societies configure refund policies on an event-by-event basis, tiered cancellation penalty schedules, and automated attendee refund requests."
 ---
 
 <Tabs>
   <Tab title="English">
     # Refund Policies & Cancellation Management
 
-    The **Refunds Hub** (`/society-dashboard/refunds`) gives societies complete control over cancellation penalties while automating refund processing.
+    The **Refunds Hub** (`/society-dashboard/refunds`) gives societies complete flexibility over event cancellation rules while automating attendee refund processing.
 
     ---
 
-    ## 1. Setting Up Your Tiered Refund Policy
+    ## 1. Society Autonomy & UniTix Recommendation
 
-    When creating or managing events, configure standard cancellation penalty rules:
-    - **Early Cancellation (>7 days before event)**: 100% refund to attendee (0% penalty kept).
-    - **Mid-Window Cancellation (3 to 7 days before event)**: 80% refund to attendee (20% penalty retained by society).
-    - **Late Cancellation (24 to 72 hours before event)**: 50% refund to attendee (50% penalty retained by society).
-    - **Last-Minute (<24 hours)**: 0% refund (slot cannot be re-allocated).
+    Every University Society has full autonomy to choose the refund policy for each event individually (e.g., enabling refunds on an academic workshop, but selecting No Refunds for a dinner or sports tournament).
+
+    > **Platform Best Practice:** UniTix strongly encourages organizers to enable the **Tiered Refund Policy**. Providing transparent cancellation terms builds student buyer confidence, removes ticket purchase hesitation, and consistently maximizes total ticket sales.
 
     ---
 
-    ## 2. Step-by-Step: Processing Attendee Refund Requests
+    ## 2. Standard Tiered Cancellation Schedule
+
+    Where an organizer enables the Tiered Refund Policy:
+    - **Within 24 Hours of Purchase (>48h before event)**: 100% full refund to attendee (0% penalty).
+    - **Early Cancellation (≥7 days before event)**: 80% refund to student (10% penalty to society, 10% platform fee).
+    - **Mid-Window Cancellation (48 hours to 7 days before event)**: 50% refund to student (30% penalty to society, 20% platform fee).
+    - **Last-Minute (<48 hours before event)**: 0% refund (no cancellation allowed; slot cannot be re-allocated).
+
+    ---
+
+    ## 3. Event Cancellation Guarantee
+
+    If an event is cancelled entirely by the Society:
+    - Attendees are automatically issued a **100% full refund** of the ticket face value.
+    - Late cancellations without valid justification may incur compliance penalty points on the society health score.
+
+    ---
+
+    ## 4. Step-by-Step: Processing Attendee Refund Requests
 
     ```
-    Step 1: Open Refunds Hub ➔ Step 2: Review Request ➔ Step 3: Check Penalty Calculation ➔ Step 4: Approve or Reject
+    Step 1: Open Refunds Hub ➔ Step 2: Review Request ➔ Step 3: Check Calculation ➔ Step 4: Approve or Reject
     ```
 
     1. Go to **Society Dashboard** $\to$ **Refunds** (`/society-dashboard/refunds`).
     2. In the **Refund Requests** table, review the attendee's Name, Roll Number, Ticket Code, and Reason for Cancellation.
     3. The system automatically calculates:
        - **Total Ticket Price** (e.g., `PKR 2,000`)
-       - **Refund Amount to Student** (e.g., `PKR 1,600`)
-       - **Penalty Retained by Society** (e.g., `PKR 400`)
+       - **Refund Amount to Student** (e.g., `PKR 1,600` for Tier 1)
+       - **Penalty Retained by Society** (e.g., `PKR 200`)
     4. **To Approve**: Click **Approve Refund**. The net refund is dispatched to the student, and the penalty amount is credited to your society wallet.
     5. **To Reject**: Click **Reject**, enter the justification, and click **Confirm**.
   </Tab>
@@ -40,23 +56,36 @@ description: "How societies configure tiered cancellation penalty schedules and 
   <Tab title="اردو (Urdu)">
     # ریفنڈ پالیسی اور ٹکٹ منسوخی کا انتظام
 
-    **ریفنڈز ہب** (`/society-dashboard/refunds`) سوسائٹی کو منسوخی کی فیس مقرر کرنے اور طلباء کی ریفنڈ کی درخواستوں پر فیصلہ کرنے کی سہولت دیتا ہے۔
+    **ریفنڈز ہب** (`/society-dashboard/refunds`) سوسائٹی کو ہر ایونٹ کے لیے الگ سے ریفنڈ پالیسی منتخب کرنے اور طلباء کی ریفنڈ کی درخواستوں کا خودکار انتظام کرنے کی سہولت دیتا ہے۔
 
     ---
 
-    ## 1. ریفنڈ کٹوتی کا شیڈول
-    - **7 دن پہلے منسوخی**: طالب علم کو 100% مکمل واپسی (کوئی کٹوتی نہیں)۔
-    - **3 تا 7 دن پہلے**: 80% رقم واپس، 20% فیس سوسائٹی کے پاس رہے گی۔
-    - **24 تا 72 گھنٹے پہلے**: 50% رقم واپس، 50% فیس سوسائٹی کے پاس رہے گی۔
-    - **24 گھنٹے سے کم**: آخری وقت کی وجہ سے کوئی ریفنڈ نہیں۔
+    ## 1. سوسائٹی کے اختیارات اور یونی ٹکس کی سفارش
+
+    ہر سوسائٹی کو ہر ایونٹ کے لیے الگ پالیسی منتخب کرنے کا مکمل اختیار ہے (مثلاً ایک سیمینار پر ریفنڈ کی اجازت اور ڈنر پارٹی پر No Refunds)۔
+    
+    > **یونی ٹکس کی سفارش:** یونی ٹکس سوسائٹیز کو **Tiered Refund Policy** فعال کرنے کی سفارش کرتا ہے تاکہ طلباء کا اعتماد بڑھے اور ٹکٹوں کی فروخت میں اضافہ ہو۔
 
     ---
 
-    ## 2. ریفنڈ کی درخواستوں پر فیصلہ کرنے کا طریقہ
+    ## 2. ریفنڈ کٹوتی کا باضابطہ شیڈول
+    - **خریداری کے 24 گھنٹوں کے اندر**: 100% مکمل واپسی (0% کٹوتی)۔
+    - **ایونٹ سے ≥7 دن پہلے**: 80% رقم واپس (10% سوسائٹی کا حصہ، 10% یونی ٹکس فیس)۔
+    - **48 گھنٹے تا 7 دن پہلے**: 50% رقم واپس (30% سوسائٹی کا حصہ، 20% یونی ٹکس فیس)۔
+    - **48 گھنٹے سے کم**: آخری وقت کی وجہ سے کوئی ریفنڈ نہیں (0%)۔
+
+    ---
+
+    ## 3. ایونٹ منسوخ ہونے کی صورت میں
+    اگر سوسائٹی خود ایونٹ منسوخ کرے تو تمام طلباء کو **100% پوری رقم واپس کی جائے گی**۔
+
+    ---
+
+    ## 4. ریفنڈ کی درخواستوں پر فیصلہ کرنے کا طریقہ
 
     1. سوسائٹی ڈیش بورڈ میں **Refunds** پر جائیں۔
     2. طالب علم کا نام، رول نمبر اور منسوخی کی وجہ دیکھیں۔
-    3. سسٹم خود بخود رقم اور سوسائٹی کی فیس کا حساب لگا دے گا (مثلاً 2000 روپے کے ٹکٹ پر 1600 روپے واپس اور 400 روپے سوسائٹی کی بچت)۔
+    3. سسٹم خود بخود رقم اور سوسائٹی کی فیس کا حساب لگا دے گا (مثلاً 2000 روپے کے ٹکٹ پر 1600 روپے واپس اور 200 روپے سوسائٹی کا حصہ)۔
     4. درخواست منظور کرنے کے لیے **Approve Refund** پر کلک کریں۔
     5. اگر درخواست مسترد کرنی ہو تو **Reject** پر کلک کر کے وجہ بیان کریں۔
   </Tab>
