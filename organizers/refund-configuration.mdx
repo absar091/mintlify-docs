@@ -1,5 +1,11 @@
 ---
 title: "Refund Policies & Processing Cancellations"
+description: "How societies configure tiered cancellation penalty schedules and process attendee refund requests."
+---
+
+```mdx
+---
+title: "Refund Policies & Processing Cancellations"
 description: "How societies configure refund policies on an event-by-event basis, tiered cancellation penalty schedules, and automated attendee refund requests."
 ---
 
@@ -38,55 +44,57 @@ description: "How societies configure refund policies on an event-by-event basis
     ---
 
     ## 4. Step-by-Step: Processing Attendee Refund Requests
+```
 
-    ```
-    Step 1: Open Refunds Hub ➔ Step 2: Review Request ➔ Step 3: Check Calculation ➔ Step 4: Approve or Reject
-    ```
+Step 1: Open Refunds Hub ➔ Step 2: Review Request ➔ Step 3: Check Calculation ➔ Step 4: Approve or Reject
 
-    1. Go to **Society Dashboard** $\to$ **Refunds** (`/society-dashboard/refunds`).
-    2. In the **Refund Requests** table, review the attendee's Name, Roll Number, Ticket Code, and Reason for Cancellation.
-    3. The system automatically calculates:
-       - **Total Ticket Price** (e.g., `PKR 2,000`)
-       - **Refund Amount to Student** (e.g., `PKR 1,600` for Tier 1)
-       - **Penalty Retained by Society** (e.g., `PKR 200`)
-    4. **To Approve**: Click **Approve Refund**. The net refund is dispatched to the student, and the penalty amount is credited to your society wallet.
-    5. **To Reject**: Click **Reject**, enter the justification, and click **Confirm**.
-  </Tab>
+```text
 
-  <Tab title="اردو (Urdu)">
-    # ریفنڈ پالیسی اور ٹکٹ منسوخی کا انتظام
+1. Go to **Society Dashboard** $\to$ **Refunds** (`/society-dashboard/refunds`).
+2. In the **Refund Requests** table, review the attendee's Name, Roll Number, Ticket Code, and Reason for Cancellation.
+3. The system automatically calculates:
+   - **Total Ticket Price** (e.g., `PKR 2,000`)
+   - **Refund Amount to Student** (e.g., `PKR 1,600` for Tier 1)
+   - **Penalty Retained by Society** (e.g., `PKR 200`)
+4. **To Approve**: Click **Approve Refund**. The net refund is dispatched to the student, and the penalty amount is credited to your society wallet.
+5. **To Reject**: Click **Reject**, enter the justification, and click **Confirm**.
+</Tab>
 
-    **ریفنڈز ہب** (`/society-dashboard/refunds`) سوسائٹی کو ہر ایونٹ کے لیے الگ سے ریفنڈ پالیسی منتخب کرنے اور طلباء کی ریفنڈ کی درخواستوں کا خودکار انتظام کرنے کی سہولت دیتا ہے۔
+<Tab title="اردو (Urdu)">
+# ریفنڈ پالیسی اور ٹکٹ منسوخی کا انتظام
 
-    ---
+**ریفنڈز ہب** (`/society-dashboard/refunds`) سوسائٹی کو ہر ایونٹ کے لیے الگ سے ریفنڈ پالیسی منتخب کرنے اور طلباء کی ریفنڈ کی درخواستوں کا خودکار انتظام کرنے کی سہولت دیتا ہے۔
 
-    ## 1. سوسائٹی کے اختیارات اور یونی ٹکس کی سفارش
+---
 
-    ہر سوسائٹی کو ہر ایونٹ کے لیے الگ پالیسی منتخب کرنے کا مکمل اختیار ہے (مثلاً ایک سیمینار پر ریفنڈ کی اجازت اور ڈنر پارٹی پر No Refunds)۔
-    
-    > **یونی ٹکس کی سفارش:** یونی ٹکس سوسائٹیز کو **Tiered Refund Policy** فعال کرنے کی سفارش کرتا ہے تاکہ طلباء کا اعتماد بڑھے اور ٹکٹوں کی فروخت میں اضافہ ہو۔
+## 1. سوسائٹی کے اختیارات اور یونی ٹکس کی سفارش
 
-    ---
+ہر سوسائٹی کو ہر ایونٹ کے لیے الگ پالیسی منتخب کرنے کا مکمل اختیار ہے (مثلاً ایک سیمینار پر ریفنڈ کی اجازت اور ڈنر پارٹی پر No Refunds)۔
 
-    ## 2. ریفنڈ کٹوتی کا باضابطہ شیڈول
-    - **خریداری کے 24 گھنٹوں کے اندر**: 100% مکمل واپسی (0% کٹوتی)۔
-    - **ایونٹ سے ≥7 دن پہلے**: 80% رقم واپس (10% سوسائٹی کا حصہ، 10% یونی ٹکس فیس)۔
-    - **48 گھنٹے تا 7 دن پہلے**: 50% رقم واپس (30% سوسائٹی کا حصہ، 20% یونی ٹکس فیس)۔
-    - **48 گھنٹے سے کم**: آخری وقت کی وجہ سے کوئی ریفنڈ نہیں (0%)۔
+> **یونی ٹکس کی سفارش:** یونی ٹکس سوسائٹیز کو **Tiered Refund Policy** فعال کرنے کی سفارش کرتا ہے تاکہ طلباء کا اعتماد بڑھے اور ٹکٹوں کی فروخت میں اضافہ ہو۔
 
-    ---
+---
 
-    ## 3. ایونٹ منسوخ ہونے کی صورت میں
-    اگر سوسائٹی خود ایونٹ منسوخ کرے تو تمام طلباء کو **100% پوری رقم واپس کی جائے گی**۔
+## 2. ریفنڈ کٹوتی کا باضابطہ شیڈول
+- **خریداری کے 24 گھنٹوں کے اندر**: 100% مکمل واپسی (0% کٹوتی)۔
+- **ایونٹ سے ≥7 دن پہلے**: 80% رقم واپس (10% سوسائٹی کا حصہ، 10% یونی ٹکس فیس)۔
+- **48 گھنٹے تا 7 دن پہلے**: 50% رقم واپس (30% سوسائٹی کا حصہ، 20% یونی ٹکس فیس)۔
+- **48 گھنٹے سے کم**: آخری وقت کی وجہ سے کوئی ریفنڈ نہیں (0%)۔
 
-    ---
+---
 
-    ## 4. ریفنڈ کی درخواستوں پر فیصلہ کرنے کا طریقہ
+## 3. ایونٹ منسوخ ہونے کی صورت میں
+اگر سوسائٹی خود ایونٹ منسوخ کرے تو تمام طلباء کو **100% پوری رقم واپس کی جائے گی**۔
 
-    1. سوسائٹی ڈیش بورڈ میں **Refunds** پر جائیں۔
-    2. طالب علم کا نام، رول نمبر اور منسوخی کی وجہ دیکھیں۔
-    3. سسٹم خود بخود رقم اور سوسائٹی کی فیس کا حساب لگا دے گا (مثلاً 2000 روپے کے ٹکٹ پر 1600 روپے واپس اور 200 روپے سوسائٹی کا حصہ)۔
-    4. درخواست منظور کرنے کے لیے **Approve Refund** پر کلک کریں۔
-    5. اگر درخواست مسترد کرنی ہو تو **Reject** پر کلک کر کے وجہ بیان کریں۔
-  </Tab>
+---
+
+## 4. ریفنڈ کی درخواستوں پر فیصلہ کرنے کا طریقہ
+
+1. سوسائٹی ڈیش بورڈ میں **Refunds** پر جائیں۔
+2. طالب علم کا نام، رول نمبر اور منسوخی کی وجہ دیکھیں۔
+3. سسٹم خود بخود رقم اور سوسائٹی کی فیس کا حساب لگا دے گا (مثلاً 2000 روپے کے ٹکٹ پر 1600 روپے واپس اور 200 روپے سوسائٹی کا حصہ)۔
+4. درخواست منظور کرنے کے لیے **Approve Refund** پر کلک کریں۔
+5. اگر درخواست مسترد کرنی ہو تو **Reject** پر کلک کر کے وجہ بیان کریں۔
+</Tab>
 </Tabs>
+```
