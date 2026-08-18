@@ -1,6 +1,7 @@
 ---
 title: "The Gate Scanner App — Complete Operational Guide"
 description: "Step-by-step instructions for operating the UniTix Gate Scanner mobile APK, downloading offline manifests, pairing in Event Hub mesh, and configuring scanner preferences."
+icon: "mobile-android"
 ---
 
 <Tabs>
@@ -16,12 +17,14 @@ description: "Step-by-step instructions for operating the UniTix Gate Scanner mo
     When you log in and open the **Select Campus Event** screen, each assigned event card displays live metrics and three distinct action buttons:
 
     ### Event Card Metrics
+
     - **Tickets Sold**: Total valid passes purchased or issued.
     - **Checked In**: Number of attendees who have entered through the gates today.
     - **Remaining**: Number of attendees who have not yet arrived.
     - **Cached Badge**: Appears in green when tickets are downloaded offline on your device.
 
     ### The 3 Card Buttons
+
     1. **Start Gate Scan Button** (Wide button with camera icon): Immediately opens your phone camera to start scanning ticket passes.
     2. **Event Hub Button** (Icon button with green Wi-Fi tethering icon): Opens Multi-Gate Peer Mode to pair multiple gate phones together without internet.
     3. **Download Manifest Button** (Icon button with purple download icon): Downloads all attendee tickets into your phone's offline database for zero-internet entry.
@@ -30,7 +33,7 @@ description: "Step-by-step instructions for operating the UniTix Gate Scanner mo
 
     ## 2. Standard Online Scanning (When Internet is Available)
 
-    ```
+    ```text
     Step 1: Log In ➔ Step 2: Tap "Start Gate Scan" ➔ Step 3: Point Camera ➔ Step 4: Confirm Entry
     ```
 
@@ -49,11 +52,12 @@ description: "Step-by-step instructions for operating the UniTix Gate Scanner mo
 
     Follow these steps when scanning in basements, underground auditoriums, or open grounds without Wi-Fi:
 
-    ```
+    ```text
     [On Wi-Fi before event] ➔ Tap Download Manifest ➔ [Enter Venue] ➔ Tap Start Gate Scan ➔ [Re-connect & Sync]
     ```
 
     ### Step 1: Pre-Download Manifest (While you have Wi-Fi or 4G)
+
     1. Before entering the hall, open the Scanner App on your phone.
     2. On the **Select Campus Event** screen, locate your event card.
     3. Tap the **Download Manifest** button (the purple download icon next to Start Gate Scan).
@@ -61,14 +65,16 @@ description: "Step-by-step instructions for operating the UniTix Gate Scanner mo
     5. A green **Cached** badge will now appear on your event card.
 
     ### Step 2: Scan Attendees Offline
+
     1. Walk into the venue. You do not need Wi-Fi or cellular data (you can even enable Airplane Mode).
     2. Tap **Start Gate Scan**.
     3. The screen will display: `Offline Mode Active (Local Database)`.
     4. Point your camera at attendee passes. The app verifies tickets locally and records entry records on your device.
 
     ### Step 3: Synchronize Records After Event
+
     1. Once the entry rush finishes and you reconnect to Wi-Fi or mobile internet.
-    2. The app will automatically sync records, or you can go to **Settings** $\to$ tap **Sync Now** to upload all gate entries to the live society dashboard.
+    2. The app will automatically sync records, or you can go to **Settings** $$\to$$ tap **Sync Now** to upload all gate entries to the live society dashboard.
 
     ---
 
@@ -76,23 +82,26 @@ description: "Step-by-step instructions for operating the UniTix Gate Scanner mo
 
     When you have 2 or more entrance gates operating offline simultaneously:
 
-    ```
+    ```text
     Phone A (Main Gate Coordinator) ➔ Tap Green Wi-Fi Icon ➔ Tap "Host Event Hub" ➔ Displays Pairing QR
     Phone B & C (Gate 1 & Gate 2)   ➔ Tap Green Wi-Fi Icon ➔ Tap "Join Event Hub" ➔ Scan Phone A's QR ➔ Connected!
     ```
 
     ### Step 1: Set up the Coordinator Phone (Phone A)
-    1. On Phone A, find your event card $\to$ tap the **Event Hub Button** (the green Wi-Fi icon).
+
+    1. On Phone A, find your event card $$\to$$ tap the **Event Hub Button** (the green Wi-Fi icon).
     2. Tap **Host Event Hub**.
     3. Phone A will display a **Pairing QR Code** and local connection address.
 
     ### Step 2: Connect Sub-Gate Phones (Phone B & Phone C)
-    1. On Phone B and Phone C, find the same event card $\to$ tap the **Event Hub Button** (green Wi-Fi icon).
+
+    1. On Phone B and Phone C, find the same event card $$\to$$ tap the **Event Hub Button** (green Wi-Fi icon).
     2. Tap **Join Event Hub**. The camera will activate.
     3. Scan the **Pairing QR Code** displayed on Phone A's screen.
     4. Both phones will confirm: `Connected to Hub (3 Gates Active)`.
 
     ### Step 3: Scan Concurrently
+
     1. Gate 1 and Gate 2 can now scan attendees at the same time.
     2. When Gate 1 admits an attendee with Ticket #042, all other gate phones are notified in real-time.
     3. If someone tries to present that same Ticket #042 at Gate 2, Gate 2's phone immediately shows a **Red Screen: Already Checked In at Gate 1**.
@@ -104,14 +113,13 @@ description: "Step-by-step instructions for operating the UniTix Gate Scanner mo
     Tap the **Settings Gear icon** in the top-right corner of the app bar to customize scanner behavior:
 
     | Setting | What It Does | Recommended Value |
-    | :--- | :--- | :--- |
+    | :-- | :-- | :-- |
     | **Haptic Vibration Feedback** | Vibrates the phone physically on valid (single buzz) and invalid (double buzz) scans. | **Enabled (ON)** |
     | **Force Offline Mode** | Forces the app to skip network calls and use the local SQLite database. Useful in areas with weak or unstable mobile signals. | **OFF** (Turn ON if 4G is fluctuating) |
     | **Auto-Clear Delay** | Controls how many seconds the scan result card remains on screen before resetting the camera (2 sec, 3 sec, 5 sec, or Manual). | **2 sec** (Fastest for high-volume entry) |
-    | **Cached Offline Manifest** | Displays total passes cached locally. Includes a **Clear Cache** button to free device memory. | Displays count (e.g., *500 tickets*) |
+    | **Cached Offline Manifest** | Displays total passes cached locally. Includes a **Clear Cache** button to free device memory. | Displays count (e.g., _500 tickets_) |
     | **Pending Offline Scans** | Shows offline scans waiting to sync with a manual **Sync Now** button. | Tap when back on Wi-Fi |
   </Tab>
-
   <Tab title="اردو (Urdu)">
     # گیٹ سکینر ایپ کا تفصیلی اور عملی طریقہ کار
 
@@ -124,12 +132,14 @@ description: "Step-by-step instructions for operating the UniTix Gate Scanner mo
     جب آپ ایپ کھولتے ہیں تو ہر ایونٹ کے کارڈ پر اہم معلومات اور تین اہم بٹنز نظر آتے ہیں:
 
     ### کارڈ کے اعدادوشمار
+
     - **Tickets Sold**: کل بک شدہ درست ٹکٹ۔
     - **Checked In**: وہ لوگ جو گیٹ سے سکین ہو کر اندر جا چکے ہیں۔
     - **Remaining**: باقی آنے والے افراد۔
     - **Cached Badge**: سبز رنگ کا بیج جو ظاہر کرتا ہے کہ ٹکٹ موبائل میں ڈاؤن لوڈ ہو چکے ہیں۔
 
     ### کارڈ کے 3 بٹنز
+
     1. **Start Gate Scan بٹن** (بڑا مرکزی بٹن): فوری طور پر کیمرہ آن کر کے ٹکٹ سکین کرنے کے لیے۔
     2. **Event Hub بٹن** (سبز وائی فائی آئی کون): بغیر انٹرنیٹ کے ایک سے زیادہ موبائلز کو آپس میں جوڑنے کے لیے۔
     3. **Download Manifest بٹن** (جامنی ڈاؤن لوڈ آئی کون): انٹرنیٹ نہ ہونے کی صورت میں تمام ٹکٹس موبائل میں محفوظ کرنے کے لیے۔
@@ -152,16 +162,19 @@ description: "Step-by-step instructions for operating the UniTix Gate Scanner mo
     ## 3. آف لائن موڈ (جب ایونٹ میں انٹرنیٹ بالکل نہ ہو)
 
     ### مرحلہ 1: لسٹ ڈاؤن لوڈ کریں (وائی فائی پر)
+
     1. ہال میں جانے سے پہلے سکینر ایپ کھولیں۔
     2. ایونٹ کارڈ پر **Download Manifest** (جامنی ڈاؤن لوڈ کے نشان) پر کلک کریں۔
     3. دو سیکنڈ میں پیغام آئے گا: `Downloaded 500 ticket passes offline`۔ کارڈ پر سبز رنگ کا **Cached** بیج آ جائے گا۔
 
     ### مرحلہ 2: بغیر انٹرنیٹ کے سکیننگ کریں
+
     1. ہال کے اندر جائیں (انٹرنیٹ بند بھی ہو تو کوئی مسئلہ نہیں)۔
     2. **Start Gate Scan** پر کلک کریں۔ سکرین پر `Offline Mode Active` لکھا آئے گا۔
     3. عام طریقے سے ٹکٹ سکین کریں۔ ایپ بغیر انٹرنیٹ کے تصدیق کرے گی اور تمام ریکارڈ محفوظ رکھے گی۔
 
     ### مرحلہ 3: بعد میں ڈیٹا سنک کریں
+
     1. ایونٹ ختم ہونے کے بعد جب انٹرنیٹ ملے۔
     2. سیٹنگز میں جا کر **Sync Now** پر کلک کریں۔ تمام حاضری خود بخود آن لائن اپ ڈیٹ ہو جائے گی۔
 
@@ -170,15 +183,18 @@ description: "Step-by-step instructions for operating the UniTix Gate Scanner mo
     ## 4. ایونٹ ہب موڈ (بغیر انٹرنیٹ کے کئی موبائلز جوڑنا)
 
     ### مرحلہ 1: مین موبائل پر ہب بنائیں
-    1. ایونٹ کارڈ پر **سبز وائی فائی آئی کون** پر کلک کریں $\to$ **Host Event Hub** منتخب کریں۔
+
+    1. ایونٹ کارڈ پر **سبز وائی فائی آئی کون** پر کلک کریں $$\to$$ **Host Event Hub** منتخب کریں۔
     2. سکرین پر ایک **Pairing QR Code** ظاہر ہوگا۔
 
     ### مرحلہ 2: دوسرے گیٹس کے موبائل جوڑیں
-    1. دوسرے موبائلز پر اسی ایونٹ کارڈ کے **سبز وائی فائی آئی کون** پر کلک کریں $\to$ **Join Event Hub** منتخب کریں۔
-    2. کیمرہ آن ہوگا $\to$ مین موبائل کی سکرین پر موجود Pairing QR کوڈ کو سکین کریں۔
+
+    1. دوسرے موبائلز پر اسی ایونٹ کارڈ کے **سبز وائی فائی آئی کون** پر کلک کریں $$\to$$ **Join Event Hub** منتخب کریں۔
+    2. کیمرہ آن ہوگا $$\to$$ مین موبائل کی سکرین پر موجود Pairing QR کوڈ کو سکین کریں۔
     3. سکرین پر لکھا آ جائے گا: `Connected to Hub (3 Gates Active)`۔
 
     ### مرحلہ 3: بیک وقت سکیننگ کریں
+
     1. تمام گیٹس بیک وقت سکیننگ کریں گے۔ اگر کوئی گیٹ 1 سے داخل ہوتا ہے تو دوسرے تمام گیٹس پر اس کا ٹکٹ فوری بلاک ہو جائے گا۔
 
     ---
