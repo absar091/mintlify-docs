@@ -50,7 +50,8 @@
               "organizers/refund-configuration",
               "organizers/team-management",
               "organizers/finances-and-payouts",
-              "organizers/analytics-and-reports"
+              "organizers/analytics-and-reports",
+              "organizers/attendees-and-custom-data"
             ]
           },
           {
@@ -121,7 +122,8 @@
               "ur/organizers/refund-configuration",
               "ur/organizers/team-management",
               "ur/organizers/finances-and-payouts",
-              "ur/organizers/analytics-and-reports"
+              "ur/organizers/analytics-and-reports",
+              "ur/organizers/attendees-and-custom-data"
             ]
           },
           {

@@ -1,0 +1,121 @@
+﻿---
+title: "Custom Registration Questions & Attendee Data Analysis"
+description: "Learn how to build custom attendee questionnaires, collect student ID documents, analyze responses, and export detailed CSV reports."
+icon: "clipboard-list"
+---
+
+<Tabs>
+  <Tab title="English">
+    # Custom Attendee Questions & Data Analysis
+
+    UniTix allows university societies to create dynamic registration questionnaires during ticket checkout. Collect student roll numbers, departments, dietary requirements, emergency contacts, or uploaded student ID cards—and easily analyze or export the data.
+
+    ---
+
+    ## 🎯 Why Use Custom Registration Fields?
+
+    University events often require specific attendee information beyond basic names and emails:
+    - **Academic Verification**: Collect University Roll Numbers, Campus IDs, or Department/Faculty.
+    - **Identity Proof**: Require photo uploads of Student ID Cards or CNIC/National ID before ticket approval.
+    - **Event Logistics**: Gather T-Shirt sizes for hackathons, dietary preferences for dinners, or delegate preferences for MUNs.
+    - **Team / Group Registrations**: Ask for team names, project links, or partner names.
+
+    ---
+
+    ## 🛠️ Step 1: Configuring Custom Questions (Event Builder)
+
+    When creating or editing an event in the **Event Builder** (`/dashboard/events/create` or `/dashboard/events/[id]/edit`), navigate to **Step 4: Custom Attendee Form Fields**:
+
+    ```text
+    Dashboard ➔ Events ➔ Create Event ➔ Step 4: Custom Forms & Questions
+    ```
+
+    ### ⚡ 1-Click Preset Question Templates
+    Click any preset button to instantly insert standard university fields:
+    - **Roll Number**: Text field, set to *Required* by default.
+    - **Department / Major**: Text field (e.g., Computer Science, Electrical Engineering).
+    - **CNIC / National ID**: Text field for government identity verification.
+    - **T-Shirt Size**: Dropdown selector populated with *Small, Medium, Large, XL*.
+    - **Student ID Card Photo**: File uploader for secure ID verification.
+
+    ### ➕ Adding Custom Question Types
+    Click **Add Question** to create tailor-made fields. Supported field types include:
+    | Field Type | Description | Example Use Case |
+    | :--- | :--- | :--- |
+    | **Text** | Single-line text input | Roll Number, LinkedIn URL, GitHub handle |
+    | **Number** | Numeric-only input | Graduation Year, CGPA, Age |
+    | **Dropdown** | Select menu with custom choices | Dietary preference (Veg/Non-Veg), Track selection |
+    | **Checkbox** | Single boolean confirmation | "I agree to the code of conduct", "Need hostel accommodation" |
+    | **File Upload** | Image or PDF document upload | Student ID Card photo, Payment receipt screenshot |
+
+    ### 🔒 Required vs Optional
+    Toggle the **Required** checkbox for any field. When enabled, attendees cannot complete checkout without answering the question.
+
+    ---
+
+    ## 🛒 Step 2: Attendee Experience at Checkout
+
+    Once your event is published:
+    1. **Public Preview**: The event details page displays an **"Attendee Registration Requirements"** badge, letting students know upfront what details or documents are required.
+    2. **Checkout Validation**: During checkout (`/checkout`), UniTix dynamically renders your questionnaire.
+    3. **File Uploads**: When an attendee selects a file, it is securely uploaded to cloud storage and linked to their issued pass.
+    4. **Submission**: All answers are immutably tied to the attendee's ticket record (`customAnswers`).
+
+    ---
+
+    ## 📊 Step 3: Viewing & Inspecting Attendee Responses
+
+    To inspect attendee data in real time:
+    1. Go to **Society Dashboard ➔ Events ➔ Select Event ➔ Attendees** (`/dashboard/events/[id]/attendees`).
+    2. In the attendee table, each ticket displays the attendee's Name, Email, Phone, Roll Number, and Ticket ID.
+    3. Click the **📝 Form Responses** button next to any attendee:
+       - An interactive modal opens displaying every question and the attendee's exact answer.
+       - If a document or ID photo was uploaded, click **View Uploaded Document / File ↗** to preview or download the high-resolution file.
+
+    ---
+
+    ## 📥 Step 4: Exporting & Analyzing Custom Data
+
+    ### 📑 Full CSV Roster Export
+    Click the **Export CSV** button in the top right of the Attendees page. UniTix generates a comprehensive `.csv` spreadsheet containing:
+    - **Standard Fields**: Ticket ID, Full Name, Email, Phone Number, Package Tier, Price Paid, Promo Code, Referral Source, Status, Purchase Date.
+    - **Custom Question Columns**: Every custom question configured for your event is automatically exported as its own column containing each attendee's submitted answer or file URL.
+
+    ### 📤 1-Click Email to Event Staff & Scanners
+    Click **Email Roster to Staff** to automatically email the complete CSV attendee roster to all registered Event Managers, Scanners, and Society Executives for offline verification at the gate.
+
+    ---
+
+    ## 🛡️ Privacy & Data Governance
+
+    - **Access Control**: Custom attendee responses and uploaded documents are strictly private. Only authenticated Society Administrators, assigned Event Managers, and Platform Super Admins have permission to view or export them.
+    - **Data Retention**: Attendee responses remain permanently accessible in your Society Dashboard for post-event reporting, certificates generation, and financial audits.
+  </Tab>
+
+  <Tab title="اردو (Urdu)">
+    # حسب ضرورت سوالات اور شرکاء کے ڈیٹا کا تجزیہ
+
+    یونی ٹکس (UniTix) سوسائٹی منتظمین کو ٹکٹ چیک آؤٹ کے دوران طلباء سے حسب ضرورت رجسٹریشن فارم فل کروانے کی مکمل سہولت فراہم کرتا ہے۔ رول نمبر، ڈیپارٹمنٹ، شناختی کارڈ کی تصویر، یا شرٹ کا سائز باآسانی حاصل کریں اور رپورٹ ڈاؤن لوڈ کریں۔
+
+    ---
+
+    ## 🛠️ کسٹم رجسٹریشن فیلڈز شامل کرنے کا طریقہ
+
+    ایونٹ بلڈر (`/dashboard/events/create`) میں **مرحلہ 4 (Custom Forms & Questions)** پر جائیں:
+
+    ### ⚡ 1-کلک پری سیٹ ٹیمپلیٹس
+    - **رول نمبر (Roll Number)**: یونیورسٹی رول نمبر کے لیے درکار فیلڈ۔
+    - **ڈیپارٹمنٹ (Department)**: فیکلٹی یا شعبے کا نام۔
+    - **قومی شناختی کارڈ (CNIC)**: سرکاری تصدیق کے لیے۔
+    - **ٹی شرٹ سائز (T-Shirt Size)**: ہیکاتھنز اور گالا کے لیے ڈراپ ڈاؤن لسٹ۔
+    - **اسٹوڈنٹ کارڈ فوٹو (Student ID Card Photo)**: سیکیورٹی تصدیق کے لیے فوٹو اپلوڈر۔
+
+    ---
+
+    ## 📊 شرکاء کا ڈیٹا اور رپورٹس ڈاؤن لوڈ کرنا
+
+    1. **شرکاء کی فہرست**: سوسائٹی ڈیش بورڈ ➔ ایونٹس ➔ ایونٹ منتخب کریں ➔ **Attendees** پر جائیں۔
+    2. **فارم کے جوابات دیکھیں**: کسی بھی طالب علم کے نام کے ساتھ **📝 Form Responses** پر کلک کریں تاکہ ان کے تمام جوابات اور اپلوڈ شدہ شناختی کارڈ دیکھا جا سکے۔
+    3. **ایکسپورٹ CSV**: **Export CSV** پر کلک کر کے مکمل ایکسل شیٹ ڈاؤن لوڈ کریں جس میں تمام کسٹم سوالات الگ کالمز میں موجود ہوں گے۔
+  </Tab>
+</Tabs>
